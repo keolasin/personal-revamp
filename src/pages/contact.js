@@ -5,11 +5,11 @@ import Layout from "../components/layout"
 import Image from "../components/image"
 import SEO from "../components/seo"
 
-const IndexPage = () => (
+const ContactPage = () => (
   <Layout>
-    <SEO title='home'/>
-    <h1></h1>
+    <SEO title='contact'/>
+    <h1>Contact</h1>
   </Layout>
 )
 
-export default IndexPage
+export default ContactPage
