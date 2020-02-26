@@ -9,6 +9,7 @@
 const path = require(`path`);
 const { createFilePath } = require(`gatsby-source-filesystem`);
 
+// creating nodes
 exports.onCreateNode = ({ node, getNode, actions }) => {
     const { createNodeField } =  actions;
 
@@ -20,8 +21,19 @@ exports.onCreateNode = ({ node, getNode, actions }) => {
             value: slug
         });
     }
+
+    if (node.relativeDirectory === `galleries` && node.internal.type === `Directory`) {
+        const slug = createFilePath({ node, getNode, basePath: `pages` });
+        console.log(node.name, node.relativePath);
+        createNodeField({
+            node,
+            name: `slug`,
+            value: slug
+        });
+    }
 }
 
+// creating pages with slugs
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     const result = await graphql(`
@@ -37,7 +49,7 @@ exports.createPages = async ({ graphql, actions }) => {
             }
         }
     `);
-    result.data.allImageSharp.edges.forEach(({ node}) => {
+    result.data.allImageSharp.edges.forEach(({ node }) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/components/photo.js`),
