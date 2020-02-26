@@ -47,12 +47,30 @@ exports.createPages = async ({ graphql, actions }) => {
                     }
                 }
             }
+            allDirectory(filter: {relativeDirectory: {eq: "galleries"}}) {
+                edges {
+                    node {
+                        fields {
+                            slug
+                        }
+                    }
+                }
+            }
         }
     `);
     result.data.allImageSharp.edges.forEach(({ node }) => {
         createPage({
             path: node.fields.slug,
             component: path.resolve(`./src/components/photo.js`),
+            context: {
+                slug: node.fields.slug,
+            },
+        });
+    });
+    result.data.allDirectory.edges.forEach(({ node }) => {
+        createPage({
+            path: node.fields.slug,
+            component: path.resolve(`./src/components/album.js`),
             context: {
                 slug: node.fields.slug,
             },

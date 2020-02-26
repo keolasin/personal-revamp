@@ -7,25 +7,20 @@ import Layout from "./layout"
 // data query
 export const query = graphql`
     query($slug: String!) {
-        imageSharp(fields: { slug: { eq: $slug } }) {
-            fluid {
-                ...GatsbyImageSharpFluid
-            }
+        directory(fields: { slug: { eq: $slug } }) {
+            name
         }
     }
 `;
 
 // component
 export default ({ data }) => {
-    const photo = data.imageSharp;
+    const album = data.directory;
 
     return (
         <Layout>
             <section>
-                <Img
-                    fluid={photo.fluid}
-                    alt={photo.fluid.originalName}
-                />
+                {album.name.charAt(0).toUpperCase()+album.name.slice(1)}
             </section>
         </Layout>
     )
