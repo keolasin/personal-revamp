@@ -32,7 +32,7 @@ export const galleryCoverQuery = graphql`
 // then use a cover photo for each of the galleries
 // use gallery photos as links to gallery/photos page
 
-const GalleriesPage = ({data}) => {
+const GalleriesPage = ({ data, pageContext }) => {
   return (
     <Layout>
       <h2>Gallery</h2>
