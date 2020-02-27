@@ -19,37 +19,46 @@ const NavBar = styled.nav`
   display: grid;
   grid-template-columns: 2fr 1fr 1fr 1fr;
   max-width: 66%;
-  margin: 0 auto;
+  margin: 20px auto;
+  a:hover {
+    color: #798BE4;
+  }
+  a:focus {
+    color: #BC9612;
+  }
+  a:active {
+    color: #BC9612;
+  }
+`;
+
+const text = css`
+  font-family: 'Astounder Squared BB', sans-serif;
+  color: #DBE7FB;
 `;
 
 const base = css`
-  font-family: 'Astounder Squared BB', sans-serif;
+  -webkit-text-stroke-width: 2px;
+  -webkit-text-stroke-color: black;
+  text-decoration: none;
 `;
 
 const homeLink = css`
+  ${text}
   ${base}
   justify-self: center;
-  font-size: 72px;
+  font-size: 72px;  
 `;
+
 const linkStyle = css`
+  ${text}
   ${base}
   font-size: 50px;
   align-self: center;
   justify-self: center;
 `;
 
-const Layout = ({children}) => {
-  // graphQL query for site config
-  const data = useStaticQuery(graphql`
-    query SiteTitleQuery {
-      site {
-        siteMetadata {
-          title
-        }
-      }
-    }
-  `)
 
+const Layout = ({ children }) => {
   // site layout HTML
   return (
     <>
@@ -59,7 +68,7 @@ const Layout = ({children}) => {
         <Link css={linkStyle} to="/projects/">Projects</Link>
         <Link css={linkStyle} to="/contact/">Contact</Link>
       </NavBar>
-      <main>{children}</main>
+      <main css={text}>{children}</main>
     </>
   )
 }

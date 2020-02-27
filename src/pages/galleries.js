@@ -34,7 +34,6 @@ const GalleriesPage = ({ data }) => {
 
   return (
     <Layout>
-      <h2>Gallery</h2>
       {covers.map((item, index) => (
         <section key={index}>
           <Link to={`galleries/${item.relativeDirectory.replace('galleries/','')}`}>
