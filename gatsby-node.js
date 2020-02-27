@@ -88,13 +88,4 @@ exports.createPages = async ({ graphql, actions }) => {
             },
         });
     });
-
-    // create gallery page containing unique albums with cover image
-        createPage({
-            path: `/galleries`,
-            component: path.resolve(`./src/components/galleries.js`),
-            context: {
-                
-            }
-        })
 }

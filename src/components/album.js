@@ -17,6 +17,9 @@ export const query = graphql`
                         fluid {
                             ...GatsbyImageSharpFluid
                         }
+                        fields {
+                            slug
+                        }
                     }
                 }
             }
@@ -34,11 +37,13 @@ export default ({ data }) => {
             <section>
                 {album.name.charAt(0).toUpperCase()+album.name.slice(1)}
                 {photos.edges.map((image, index) => (
-                    <Img
-                        key={index}
-                        fluid={image.node.childImageSharp.fluid}
-                        alt={image.node.childImageSharp.fluid.originalName} // only use section of the file extension with the filename
-                    />
+                    <Link to={image.node.childImageSharp.fields.slug}>
+                        <Img
+                            key={index}
+                            fluid={image.node.childImageSharp.fluid}
+                            alt={image.node.childImageSharp.fluid.originalName} // only use section of the file extension with the filename
+                        />
+                    </Link>
                 ))}
             </section>
         </Layout>

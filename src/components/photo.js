@@ -10,6 +10,7 @@ export const query = graphql`
         imageSharp(fields: { slug: { eq: $slug } }) {
             fluid {
                 ...GatsbyImageSharpFluid
+                originalName
             }
         }
     }
