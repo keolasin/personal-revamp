@@ -30,13 +30,13 @@ export const query = graphql`
 // component
 export default ({ data }) => {
     const album = data.directory;
-    const photos = data.allFile;
+    const photos = data.allFile.edges;
     
     return (
         <Layout>
             <section>
                 {album.name.charAt(0).toUpperCase()+album.name.slice(1)}
-                {photos.edges.map((image, index) => (
+                {photos.map((image, index) => (
                     <Link to={image.node.childImageSharp.fields.slug}>
                         <Img
                             key={index}
