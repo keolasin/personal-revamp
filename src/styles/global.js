@@ -25,7 +25,7 @@ const base = css`
         font-size: 1.8rem;
     }
     ${mediaQuery[4]} {
-        font-size: 2.5rem;
+        font-size: 3rem;
     }
 `;
 
