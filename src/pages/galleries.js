@@ -2,7 +2,12 @@ import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+
 import Layout from "../components/layout"
+
+
 
 // query for the cover photos of each album, along with the name of each album to appear on the galleries page
 export const galleryCoverQuery = graphql`
@@ -36,13 +41,13 @@ const GalleriesPage = ({ data }) => {
     <Layout>
       {covers.map((item, index) => (
         <section key={index}>
-          <Link to={`galleries/${item.relativeDirectory.replace('galleries/','')}`}>
+          <a href={`${item.relativeDirectory.replace('galleries/','')}`}>
             {item.relativeDirectory.replace('galleries/','').charAt(0).toUpperCase() + item.name.slice(1)}
             <Img 
               fluid={item.childImageSharp.fluid}
               alt={item.childImageSharp.fluid.originalName}
             />
-          </Link>
+          </a>
         </section>
       ))}
     </Layout>

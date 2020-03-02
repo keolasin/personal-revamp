@@ -37,9 +37,8 @@ export default ({ data }) => {
             <section>
                 {album.name.charAt(0).toUpperCase()+album.name.slice(1)}
                 {photos.map((image, index) => (
-                    <Link to={image.node.childImageSharp.fields.slug}>
+                    <Link key={index} to={image.node.childImageSharp.fields.slug}>
                         <Img
-                            key={index}
                             fluid={image.node.childImageSharp.fluid}
                             alt={image.node.childImageSharp.fluid.originalName} // only use section of the file extension with the filename
                         />
