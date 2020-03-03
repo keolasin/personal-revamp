@@ -1,8 +1,12 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
-import Layout from "./layout"
+import styled from "@emotion/styled"
+import { css } from "@emotion/core"
+import { mediaQuery, base } from '../styles/global.js'
+
+import Layout from "../components/layout"
 
 // data query
 export const query = graphql`
@@ -15,7 +19,7 @@ export const query = graphql`
                 node {
                     childImageSharp {
                         fluid {
-                            ...GatsbyImageSharpFluid
+                            ...GatsbyImageSharpFluid_withWebp
                         }
                         fields {
                             slug
@@ -34,17 +38,63 @@ export default ({ data }) => {
     
     return (
         <Layout>
-            <section>
-                {album.name.charAt(0).toUpperCase()+album.name.slice(1)}
+            <h2>{album.name.charAt(0).toUpperCase()+album.name.slice(1)}</h2>
+            <AlbumGallery>
                 {photos.map((image, index) => (
-                    <Link key={index} to={image.node.childImageSharp.fields.slug}>
-                        <Img
+                    <PhotoLink key={index} to={image.node.childImageSharp.fields.slug}>
+                        <Image
                             fluid={image.node.childImageSharp.fluid}
-                            alt={image.node.childImageSharp.fluid.originalName} // only use section of the file extension with the filename
+                            alt={image.node.childImageSharp.fluid.originalName}
+                            title={image.node.childImageSharp.fluid.originalName}
                         />
-                    </Link>
+                    </PhotoLink>
                 ))}
-            </section>
+            </AlbumGallery>
         </Layout>
     )
 }
+
+const AlbumGallery = styled.section`
+  display: grid;
+  grid-gap: 1px;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  grid-auto-rows: minmax(125px, auto);
+  ${mediaQuery[0]} {
+    font-size: 1.8rem;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    grid-auto-rows: minmax(250px, auto);
+  }
+  ${mediaQuery[1]} {
+    font-size: 2rem;
+    grid-template-columns: repeat(auto-fill, minmax(275px, 1fr));
+    grid-auto-rows: minmax(275px, auto);
+  }
+  ${mediaQuery[2]} {
+    font-size: 2.3rem;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    grid-auto-rows: minmax(300px, auto);
+  }
+  ${mediaQuery[3]} {
+    font-size: 2.5rem;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    grid-auto-rows: minmax(350px, auto);
+  }
+  ${mediaQuery[4]} {
+    font-size: 3.5rem;
+    grid-gap: 5px;
+    grid-template-columns: repeat(auto-fill, minmax(400px, 1fr));
+    grid-auto-rows: minmax(400px, auto);
+  }
+`;
+
+const PhotoLink = styled(Link)`
+  
+`;
+
+const Image = styled(Img)`
+  display: flex;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+`;

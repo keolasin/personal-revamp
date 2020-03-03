@@ -42,18 +42,7 @@ export default Layout
 const main = css`
   ${base}
   height: 100%;
-  display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    "image"
-    "description";
-  ${mediaQuery[0]} {
-    width: 100%;
-  }
-  ${mediaQuery[1]} {
-    width: 100%;
-  }
+  width: 100%;
   ${mediaQuery[2]} {
     width: 95%;
   }
@@ -62,9 +51,5 @@ const main = css`
   }
   ${mediaQuery[4]} {
     width: 80%;
-    grid-template-columns: 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-      "image description";
   }
 `;

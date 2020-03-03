@@ -9,13 +9,14 @@ import SEO from "../components/seo"
 // styling imports
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+import { mediaQuery, base } from '../styles/global.js'
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
     query {
       file(childImageSharp: {}, name: {eq: "coffee"}) {
         childImageSharp {
-          fluid(srcSetBreakpoints: [320, 480, 768, 992, 1200] ) {
+          fluid {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -47,6 +48,29 @@ export default ContactPage
 
 const BlurbImage = styled(Img)`
   border-radius: 50%;
-  max-Width: 275px;
-  margin: 0 auto;
+  width: 200px;
+  height: 200px;
+  object-fit: cover;
+  margin: 10px auto;
+  ${mediaQuery[0]} {
+    width: 225px;
+    height: 225px;
+  }
+  ${mediaQuery[1]} {
+    width: 250px;
+    height: 250px;
+  }
+  ${mediaQuery[2]} {
+    width: 300px;
+    height: 300px;
+  }
+  ${mediaQuery[3]} {
+    width: 400px;
+    height: 400px;
+  }
+  ${mediaQuery[4]} {
+    width: 500px;
+    height: 500px;
+    margin: 0 auto;
+  }
 `

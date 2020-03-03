@@ -11,7 +11,7 @@ export const query = graphql`
             relativeDirectory
             childImageSharp {
                 fluid {
-                    ...GatsbyImageSharpFluid
+                    ...GatsbyImageSharpFluid_withWebp
                     originalName
                 }
             }
