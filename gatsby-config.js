@@ -20,8 +20,8 @@ module.exports = {
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
-        name: `Matthew Reyes`,
-        short_name: `MReyes`,
+        name: `gatsbyjs`,
+        short_name: `gatsbyjs`,
         start_url: `/`,
         background_color: `#DBE7FB`,
         theme_color: `#BC9612`,
@@ -29,7 +29,7 @@ module.exports = {
         icon: `src/images/blurbs/coffee.jpg`, // This path is relative to the root of the site.
       },
     },
-    `gatsby-plugin-offline`
+    // `gatsby-plugin-offline`
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
   ],
