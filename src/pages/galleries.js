@@ -1,10 +1,9 @@
-import React, { useState } from "react"
-import { graphql, Link } from "gatsby"
+import React from "react"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
+import { mediaQuery } from '../styles/global.js'
 
 import Layout from "../components/layout"
 
@@ -15,7 +14,7 @@ export const galleryCoverQuery = graphql`
       nodes {
         name
         childImageSharp {
-          fluid {
+          fluid (maxWidth: 1920) {
             ...GatsbyImageSharpFluid_withWebp
             originalName
           }
@@ -64,6 +63,8 @@ export default GalleriesPage
 // media query breakpoints array = [320, 480, 768, 992, 1200];
 const Gallery = styled.section`
   display: grid;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 10px;
   grid-gap: 1px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: minmax(125px, auto);
