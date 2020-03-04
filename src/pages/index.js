@@ -1,11 +1,10 @@
 import React from "react"
 
-import { graphql, Link, useStaticQuery } from "gatsby"
+import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
+import { mediaQuery } from '../styles/global.js'
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
@@ -25,11 +24,12 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout>
-      <BlurbImage
-        fluid={data.file.childImageSharp.fluid}
-        alt="Yours truly"
-      />
+      <SEO title='home'/>
       <Container>
+        <BlurbImage
+          fluid={portrait.file.childImageSharp.fluid}
+          alt="Yours truly"
+        />
         <BodyText>I'm a web developer in <Emphasis>San Francisco</Emphasis>, who grew up in <AltEmphasis>Arizona</AltEmphasis> and still loves the heat. You can find me climbing, running, or riding on the weekends or behind a camera lens.</BodyText>
       </Container>
     </Layout>
@@ -38,11 +38,11 @@ const IndexPage = ({ data }) => {
 
 export default IndexPage
 
-
-
 // css styling
 const Container = styled.section`
-
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
 `;
 
 const BlurbImage = styled(Img)`
@@ -64,21 +64,26 @@ const BlurbImage = styled(Img)`
     height: 300px;
   }
   ${mediaQuery[3]} {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
   }
   ${mediaQuery[4]} {
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
+    width: 450px;
+    height: 450px;
   }
 `
 
 const BodyText = styled.p`
-  margin: 10px auto;
+  color: #DBE7FB;
   font-family: 'Forma DJR Display', sans-serif;
-  font-size: 0.65em;
   line-height: 1.5em;
+  font-size: 1.5rem;
+  ${mediaQuery[1]} {
+      font-size: 1.8rem;
+  }
+  ${mediaQuery[4]} {
+      font-size: 2.3rem;
+  }
 `;
 
 const Emphasis = styled.strong`
