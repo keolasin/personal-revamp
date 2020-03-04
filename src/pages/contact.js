@@ -8,8 +8,7 @@ import SEO from "../components/seo"
 
 // styling imports
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
+import { mediaQuery } from '../styles/global.js'
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
@@ -26,18 +25,20 @@ const ContactPage = () => {
   return (
     <Layout>
       <SEO title='contact'/>
-      <h1>Contact</h1>
-      <BlurbImage
-        fluid={data.file.childImageSharp.fluid}
-        alt="Cup of coffee with succulent"
-      />
-      <section>
-        <h5>Send me an email at
-          <a href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</a>
-        </h5>
-        <p>Or, check out my social media below</p>
-      </section>
-
+      <Container>
+        <BlurbImage
+          fluid={data.file.childImageSharp.fluid}
+          alt="Cup of coffee with succulent"
+        />
+          <BodyText>Send me an email at</BodyText>
+          <BodyText>
+            <Social style={{color: '#BC9612'}}href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</Social>
+          </BodyText>
+          <BodyText>
+            <Social href="https://github.com/keolasin"> Github </Social>
+            <Social href="https://www.linkedin.com/in/reyesmatthew/">LinkedIn</Social>
+          </BodyText>
+      </Container>
     </Layout>
   )
 }
@@ -45,6 +46,11 @@ const ContactPage = () => {
 export default ContactPage
 
 // css styling
+const Container = styled.section`
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.75);
+`;
 
 const BlurbImage = styled(Img)`
   border-radius: 50%;
@@ -65,12 +71,37 @@ const BlurbImage = styled(Img)`
     height: 300px;
   }
   ${mediaQuery[3]} {
-    width: 400px;
-    height: 400px;
+    width: 350px;
+    height: 350px;
   }
   ${mediaQuery[4]} {
-    width: 500px;
-    height: 500px;
-    margin: 0 auto;
+    width: 450px;
+    height: 450px;
   }
 `
+
+const BodyText = styled.p`
+  color: #DBE7FB;
+  font-family: 'Forma DJR Display', sans-serif;
+  line-height: 1.5em;
+  font-size: 1.5rem;
+  ${mediaQuery[1]} {
+      font-size: 1.8rem;
+  }
+  ${mediaQuery[4]} {
+      font-size: 2.3rem;
+  }
+`;
+
+const Social = styled.a`
+  font-size: 1em;
+  font-weight: bold;
+  color: #798BE4;
+  text-decoration: none;
+`;
+
+const AltEmphasis = styled.strong`
+  color: #BC9612;
+  font-weight: bold;
+  font-size: 1em;
+`;
