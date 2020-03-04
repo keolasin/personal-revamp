@@ -1,10 +1,9 @@
-import React, { useState } from "react"
+import React from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
+import { mediaQuery } from '../styles/global.js'
 
 import Layout from "../components/layout"
 
@@ -18,7 +17,7 @@ export const query = graphql`
             edges {
                 node {
                     childImageSharp {
-                        fluid {
+                        fluid (maxWidth: 1920){
                             ...GatsbyImageSharpFluid_withWebp
                         }
                         fields {
