@@ -1,5 +1,4 @@
 import React from "react"
-import PropTypes from "prop-types"
 
 import { Link } from "gatsby"
 
@@ -54,14 +53,13 @@ const NavBar = () => {
 
 export default NavBar
 
-
-
 // Styling
 // media query breakpoints array = [320, 480, 768, 992, 1200];
 const Container = styled.nav`
   ${base}
+  place-items: center center;
   width: 100%;
-  margin: 6px auto;
+  min-height: 10vh;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   grid-template-rows: 1fr 1fr;
@@ -83,8 +81,6 @@ const Container = styled.nav`
     color: #BC9612;
   }
   ${mediaQuery[4]} {
-    margin: 15px auto;
-    background-color: purple;
     width: 80%;
     grid-template-columns: 1fr 1fr 1fr 1fr;
     grid-template-rows: 1fr;
@@ -105,15 +101,12 @@ const homeLink = css`
   }
   ${mediaQuery[2]} {
     font-size: 2.3rem;
-    margin: 6px auto;
   }
   ${mediaQuery[3]} {
     font-size: 2.5rem;
-    margin: 6px auto;
   }
   ${mediaQuery[4]} {
     font-size: 3.5rem;
-    text-align: left;
   }
 `;
 
@@ -134,7 +127,6 @@ const linkStyle = css`
   }
   ${mediaQuery[4]} {
     font-size: 2.5rem;
-    text-align: right;
   }
 `;
 

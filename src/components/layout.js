@@ -8,27 +8,24 @@
 import React from "react"
 import PropTypes from "prop-types"
 
-// gatsby
-import { useStaticQuery, graphql } from "gatsby"
-import { Link } from "gatsby"
-
 // styling imports
-import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 import { mediaQuery, base } from '../styles/global.js'
 import "./layout.css"
 
 // components
-import Background from "./background.js"
+import ArtBackground from "./background.js"
 import NavBar from "./navbar.js"
 
 const Layout = ({ children }) => {
   // site layout HTML
   return (
-    <Background>
+    <ArtBackground>
       <NavBar />
-      <main css={main}>{children}</main>
-    </Background>
+      <main css={main}>
+        {children}
+      </main>
+    </ArtBackground>
   )
 }
 
@@ -41,8 +38,6 @@ export default Layout
 // css
 const main = css`
   ${base}
-  height: 100%;
-  width: 100%;
   ${mediaQuery[2]} {
     width: 95%;
   }

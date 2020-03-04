@@ -6,28 +6,58 @@
  */
 
 import React from "react"
-import PropTypes from "prop-types"
 
 // gatsby
 import { useStaticQuery, graphql } from "gatsby"
+import BackgroundImage from 'gatsby-background-image'
 
 // styling imports
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
 
+const Background = ({ children, className }) => {
+  const { mobileImage, desktopImage } = useStaticQuery(graphql`
+    query {
+      mobileImage: file(name: {eq: "Joshua Tree Climbing-Cover"}) {
+        childImageSharp {
+          fluid(maxWidth: 1000, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+      desktopImage: file(name: {eq: "desertsky"}) {
+        childImageSharp {
+          fluid(maxWidth: 2000, quality: 100) {
+            ...GatsbyImageSharpFluid_withWebp
+          }
+        }
+      }
+    }
+  `);
 
-const Background = ({ children }) => {
+  const sources = [
+    mobileImage.childImageSharp.fluid,
+    {
+      ...desktopImage.childImageSharp.fluid,
+      media: `(min-width: 1200px)`
+    }
+  ];
+
   return (
-    <Container>
+    <BackgroundImage
+      fluid={sources}
+      Tag={`section`}
+      className={className}
+    >
       {children}
-    </Container>
+    </BackgroundImage>
   )
 }
 
-export default Background
-
 // css styling
-const Container = styled.div`
-    height: 100%;
+const ArtBackground = styled(Background)`
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
 `;
+
+export default ArtBackground
