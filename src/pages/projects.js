@@ -33,7 +33,7 @@ const Container = styled.article`
   width: 100%;
   height: 100%;
   max-height: 90vh;
-  align-text: left;
+  text-align: left;
   overflow: auto;
   background-color: rgba(0, 0, 0, 0.75);
 `;
