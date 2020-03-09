@@ -69,18 +69,18 @@ const ImageLink = styled(Link)`
 `;
 
 const AlbumHeader = styled.h2`
-  color: #BC9612;
-  -webkit-text-stroke-width: 1px;
-  -webkit-text-stroke-color: black;
-  font-family: 'Forma DJR Display', sans-serif;
-  line-height: 1.5em;
-  font-size: 1.2rem;
-  ${mediaQuery[1]} {
-      font-size: 1.8rem;
-  }
-  ${mediaQuery[4]} {
-      font-size: 2.3rem;
-  }
+    font-family: 'Astounder Squared BB';
+    color: #BC9612;
+    -webkit-text-stroke-width: 1px;
+    -webkit-text-stroke-color: black;
+    line-height: 1.5em;
+    font-size: 1.2rem;
+    ${mediaQuery[1]} {
+        font-size: 1.8rem;
+    }
+    ${mediaQuery[4]} {
+        font-size: 2.3rem;
+    }
 `;
 
 const Hover = styled.section`
