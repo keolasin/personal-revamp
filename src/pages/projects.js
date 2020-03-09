@@ -15,13 +15,13 @@ const ProjectPage = () => (
   <Layout>
     <SEO title='projects'/>
     <Container>
-        <BodyText><Project href="https://github.com/keolasin/grocery-todo">Grab n' Grocer</Project>An app for users to create shared grocery lists and update them in real-time</BodyText>
-        <BodyText><Project href="https://keolasin-greenlete.herokuapp.com">Greenlete</Project>An app for users to log litter they find and pick-up during a workout</BodyText>
-        <BodyText><Project href="https://github.com/keolasin/bloc-jams-react">Music Player</Project>An app for playing music</BodyText>
-        <BodyText><Project href="https://github.com/keolasin/bloc-chat-react">Chatroom</Project>A chatroom app</BodyText>
-        <BodyText><Project href="https://keolasin-bloccit.herokuapp.com/">RedditClone</Project>A place for users to share and upvote stories</BodyText>
-        <BodyText><Project href="https://keolasin-blocipedia.herokuapp.com">Wiki Clone</Project>A wiki-topic clone</BodyText>
-        <BodyText><Project href="https://repl.it/@keolasin">Repl Practice</Project>A collection of practice problems, algorithms, and data structures</BodyText>
+        <Project href="https://github.com/keolasin/grocery-todo"><Emphasis>Grab n' Grocer</Emphasis> An app for users to create shared grocery lists and update them in real-time</Project>
+        <Project href="https://keolasin-greenlete.herokuapp.com"><Emphasis>Greenlete</Emphasis> An app for users to log litter they find and pick-up during a workout</Project>
+        <Project href="https://github.com/keolasin/bloc-jams-react"><Emphasis>Music Player</Emphasis> An app for playing music</Project>
+        <Project href="https://github.com/keolasin/bloc-chat-react"><Emphasis>Chatroom</Emphasis> A chatroom app</Project>
+        <Project href="https://keolasin-bloccit.herokuapp.com/"><Emphasis>RedditClone</Emphasis> A place for users to share and upvote stories</Project>
+        <Project href="https://keolasin-blocipedia.herokuapp.com"><Emphasis>Wiki Clone</Emphasis> A wiki-topic clone</Project>
+        <Project href="https://repl.it/@keolasin"><Emphasis>Repl Practice</Emphasis> A collection of practice problems, algorithms, and data structures</Project>
     </Container>
   </Layout>
 )
@@ -39,31 +39,41 @@ const Container = styled.article`
 `;
 
 const Project = styled.a`
-  text-decoration: none;
-  display: inline-block;
-  margin: 5px;
-  font-size: 1.5em;
-  font-weight: bold;
-  color: #798BE4;
-`;
-
-const BodyText = styled.p`
-  color: #DBE7FB;
-  font-family: 'Forma DJR Display', sans-serif;
+  font-family: 'Roboto';
   line-height: 1.5em;
   font-size: 1.2rem;
+  text-decoration: none;
+  display: inline-block;
+  margin: 20px auto;
+  color: #DBE7FB;
   ${mediaQuery[1]} {
-      font-size: 1.8rem;
+      font-size: 2rem;
   }
   ${mediaQuery[4]} {
-      font-size: 2.3rem;
+      font-size: 2.5rem;
+  }
+  :hover {
+    color: #798BE4;
+  }
+  :focus {
+    color: #BC9612;
+  }
+  :active {
+    color: #BC9612;
   }
 `;
 
 const Emphasis = styled.strong`
-  font-size: 1em;
+  font-family: 'Astounder Squared BB';
+  font-size: 1.4em;
   font-weight: bold;
   color: #798BE4;
+  ${mediaQuery[1]} {
+      font-size: 2.2rem;
+  }
+  ${mediaQuery[4]} {
+      font-size: 2.8rem;
+  }
 `;
 
 const AltEmphasis = styled.strong`

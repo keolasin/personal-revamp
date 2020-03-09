@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
           fluid={portrait.file.childImageSharp.fluid}
           alt="Yours truly"
         />
-        <BodyText>I'm a web developer in <Emphasis>San Francisco</Emphasis>, who grew up in <AltEmphasis>Arizona</AltEmphasis> and still loves the heat. You can find me climbing, running, or riding on the weekends or behind a camera lens.</BodyText>
+        <BodyText><AltEmphasis>Matthew</AltEmphasis> is a web developer, photographer, and life-long learner living in <Emphasis>San Francisco</Emphasis>.</BodyText><BodyText> He has sweat through a few triathlons, topped several mountains, and loves volunteering - however, he is most <AltEmphasis>passionate</AltEmphasis> about ensuring equitable access to healthcare, the outdoors, and <Emphasis>success as an attainable goal.</Emphasis></BodyText>
       </Container>
     </Layout>
   )
@@ -43,6 +43,11 @@ const Container = styled.section`
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.75);
+  transition: 1s ease 0.3s;
+  :hover {
+    opacity: 0;
+    cursor: no-drop;
+  }
 `;
 
 const BlurbImage = styled(Img)`
@@ -75,14 +80,17 @@ const BlurbImage = styled(Img)`
 
 const BodyText = styled.p`
   color: #DBE7FB;
-  font-family: 'Forma DJR Display', sans-serif;
-  line-height: 1.5em;
-  font-size: 1.5rem;
+  font-family: 'Roboto', sans-serif;
+  line-height: 1.2em;
+  font-size: 1rem;
+  padding: 10px 0;
+  margin-bottom: 0px;
   ${mediaQuery[1]} {
-      font-size: 1.8rem;
+      font-size: 1.5rem;
   }
   ${mediaQuery[4]} {
-      font-size: 2.3rem;
+      font-size: 1.7rem;
+      margin: 0 20px;
   }
 `;
 

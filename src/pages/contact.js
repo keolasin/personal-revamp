@@ -30,7 +30,7 @@ const ContactPage = () => {
           fluid={data.file.childImageSharp.fluid}
           alt="Cup of coffee with succulent"
         />
-          <BodyText>Send me an email at</BodyText>
+          <BodyText>Email or find me on social media</BodyText>
           <BodyText>
             <Social style={{color: '#BC9612'}}href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</Social>
           </BodyText>
@@ -82,26 +82,27 @@ const BlurbImage = styled(Img)`
 
 const BodyText = styled.p`
   color: #DBE7FB;
-  font-family: 'Forma DJR Display', sans-serif;
+  font-family: 'Roboto', sans-serif;
   line-height: 1.5em;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
   ${mediaQuery[1]} {
-      font-size: 1.8rem;
+      font-size: 1.7rem;
   }
   ${mediaQuery[4]} {
-      font-size: 2.3rem;
+      font-size: 2rem;
   }
 `;
 
 const Social = styled.a`
-  font-size: 1em;
+  font-family: 'Astounder Squared BB';
+  font-size: 1.4em;
   font-weight: bold;
   color: #798BE4;
   text-decoration: none;
-`;
-
-const AltEmphasis = styled.strong`
-  color: #BC9612;
-  font-weight: bold;
-  font-size: 1em;
+  ${mediaQuery[1]} {
+      font-size: 2.4rem;
+  }
+  ${mediaQuery[4]} {
+      font-size: 3rem;
+  }
 `;
