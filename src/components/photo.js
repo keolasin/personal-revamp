@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 
 import Layout from "./layout"
 
@@ -33,9 +34,7 @@ export default ({ data }) => {
                     fluid={photo.fluid}
                     alt={photo.fluid.originalName}
                     title={photo.fluid.originalName}
-                    onHover={() => {
-
-                    }}
+                    imgStyle={{objectFit: "contain"}}
                 />
             </LinkModal>
         </Layout>
@@ -65,4 +64,6 @@ const FullImage = styled(Img)`
     height: auto;
     max-width: 100%;
     max-height: 100%;
+    object-fit: contain;
+
 `;
