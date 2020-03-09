@@ -33,7 +33,7 @@ export default ({ data, location }) => {
     const refLink = data.file.relativeDirectory;
     return (
         <Layout>
-            <LinkModal href='javascript:history.back()'>
+            <LinkModal href='javascript:history.go(-1)'>
                 <FullImage
                     fluid={photo.fluid}
                     alt={photo.fluid.originalName}
