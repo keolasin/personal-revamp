@@ -1,5 +1,5 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql, Link, navigate } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
@@ -12,10 +12,14 @@ export const query = graphql`
     query($slug: String!) {
         file(childImageSharp: {fields: {slug: {eq: $slug}}}) {
             relativeDirectory
+            name
             childImageSharp {
                 fluid (maxWidth: 3000){
                     ...GatsbyImageSharpFluid_withWebp
                     originalName
+                }
+                fields {
+                    slug
                 }
             }
         }
@@ -23,13 +27,13 @@ export const query = graphql`
 `;
 
 // component
-export default ({ data }) => {
+export default ({ data, location }) => {
     const photo = data.file.childImageSharp;
+    const photoName = data.file.name;
     const refLink = data.file.relativeDirectory;
-
     return (
         <Layout>
-            <LinkModal to={`/${refLink}`}>
+            <LinkModal href='javascript:history.go(-1)'>
                 <FullImage
                     fluid={photo.fluid}
                     alt={photo.fluid.originalName}
@@ -42,7 +46,7 @@ export default ({ data }) => {
 }
 
 // css styling
-const LinkModal = styled(Link)`
+const LinkModal = styled.a`
     display: flex;
     align-items: center;
     justify-content: center;
@@ -65,5 +69,4 @@ const FullImage = styled(Img)`
     max-width: 100%;
     max-height: 100%;
     object-fit: contain;
-
 `;

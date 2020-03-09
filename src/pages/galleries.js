@@ -73,7 +73,7 @@ const Hover = styled.section`
   width: 100%;
   opacity: 0;
   transition: 0.5s ease;
-  background-color: grey;
+  background-color: black;
   :hover {
     opacity: 0.8;
   }

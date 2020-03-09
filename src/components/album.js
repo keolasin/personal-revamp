@@ -35,16 +35,18 @@ export const query = graphql`
 `;
 
 // component
-export default ({ data }) => {
+export default ({ data, location }) => {
     const album = data.directory;
     const photos = data.allFile.edges;
+    console.log(location);
     
     return (
         <Layout>
-            <h2>{album.name.charAt(0).toUpperCase()+album.name.slice(1)}</h2>
+            <AlbumHeader>{album.name.charAt(0).toUpperCase()+album.name.slice(1)}</AlbumHeader>
             <Gallery>
                 {photos.map((image, index) => (
-                    <Container key={index} to={image.node.childImageSharp.fields.slug}>
+                    <ImageLink key={index} to={image.node.childImageSharp.fields.slug}
+                    id={image.node.name}>
                         <ImageTile
                             fluid={image.node.childImageSharp.fluid}
                             alt={image.node.childImageSharp.fluid.originalName}
@@ -53,17 +55,32 @@ export default ({ data }) => {
                         <Hover>
                             <PhotoText>{image.node.name}</PhotoText>
                         </Hover>
-                    </Container>
+                    </ImageLink>
                 ))}
             </Gallery>
         </Layout>
     )
 }
 
-const Container = styled(Link)`
+const ImageLink = styled(Link)`
     position: relative;
     overflow: hidden;
     cursor: pointer; 
+`;
+
+const AlbumHeader = styled.h2`
+  color: #BC9612;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+  font-family: 'Forma DJR Display', sans-serif;
+  line-height: 1.5em;
+  font-size: 1.2rem;
+  ${mediaQuery[1]} {
+      font-size: 1.8rem;
+  }
+  ${mediaQuery[4]} {
+      font-size: 2.3rem;
+  }
 `;
 
 const Hover = styled.section`
@@ -76,7 +93,7 @@ const Hover = styled.section`
     width: 100%;
     opacity: 0;
     transition: 0.5s ease;
-    background-color: grey;
+    background-color: black;
     :hover {
         opacity: 0.8;
     }
