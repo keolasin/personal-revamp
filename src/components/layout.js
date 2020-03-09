@@ -38,6 +38,7 @@ export default Layout
 // css
 const main = css`
   ${base}
+  overflow: auto;
   ${mediaQuery[2]} {
     width: 95%;
   }

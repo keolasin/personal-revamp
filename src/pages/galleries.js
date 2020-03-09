@@ -51,12 +51,6 @@ const GalleriesPage = ({ data }) => {
   )
 }
 
-/*
-{item.relativeDirectory.replace('galleries/','').charAt(0).toUpperCase() + item.name.slice(1)}
-            onMouseEnter={ () => setStyling(0.8, true) }
-            onMouseLeave={ () => setStyling(1, false) }
-*/
-
 export default GalleriesPage
 
 

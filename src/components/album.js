@@ -3,6 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
+import { css } from "@emotion/core"
 import { mediaQuery } from '../styles/global.js'
 
 import Layout from "../components/layout"
@@ -16,9 +17,11 @@ export const query = graphql`
         allFile (filter: {relativeDirectory: {eq: $parentAlbum }}) {
             edges {
                 node {
+                    name
                     childImageSharp {
                         fluid (maxWidth: 1920){
                             ...GatsbyImageSharpFluid_withWebp
+                            originalName
                         }
                         fields {
                             slug
@@ -40,13 +43,18 @@ export default ({ data }) => {
             <h2>{album.name.charAt(0).toUpperCase()+album.name.slice(1)}</h2>
             <AlbumGallery>
                 {photos.map((image, index) => (
-                    <PhotoLink key={index} to={image.node.childImageSharp.fields.slug}>
-                        <Image
+                    <Container key={index} to={image.node.childImageSharp.fields.slug}>
+                        <Img
                             fluid={image.node.childImageSharp.fluid}
                             alt={image.node.childImageSharp.fluid.originalName}
                             title={image.node.childImageSharp.fluid.originalName}
+                            style={ImageBox}
+                            imgStyle={Image}
                         />
-                    </PhotoLink>
+                        <Hover>
+                            <PhotoText>{image.node.name}</PhotoText>
+                        </Hover>
+                    </Container>
                 ))}
             </AlbumGallery>
         </Layout>
@@ -55,6 +63,8 @@ export default ({ data }) => {
 
 const AlbumGallery = styled.section`
   display: grid;
+  background-color: rgba(0, 0, 0, 0.75);
+  padding: 10px;
   grid-gap: 1px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   grid-auto-rows: minmax(125px, auto);
@@ -87,13 +97,49 @@ const AlbumGallery = styled.section`
   }
 `;
 
-const PhotoLink = styled(Link)`
-  
+const Container = styled(Link)`
+    position: relative;    
 `;
 
-const Image = styled(Img)`
-  display: flex;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
+const Hover = styled.section`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: 0.5s ease;
+    background-color: grey;
+    :hover {
+        opacity: 0.8;
+    }
+`;
+
+const PhotoText = styled.p`
+    color: #798BE4;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    opacity: 1;
+    -webkit-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+    text-align: center;
+    line-height: 3rem;
+`;
+
+const ImageBox = css`
+    
+`;
+
+const Image = css`
+    display: flex;
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    :hover {
+        
+    }
 `;
