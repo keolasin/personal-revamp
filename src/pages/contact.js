@@ -94,7 +94,7 @@ const BodyText = styled.p`
 `;
 
 const Social = styled.a`
-  font-family: 'Astounder Squared BB';
+  font-family: 'astounder-squared-bb';
   font-size: 1.4em;
   font-weight: bold;
   color: #798BE4;

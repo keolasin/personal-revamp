@@ -64,7 +64,7 @@ const Project = styled.a`
 `;
 
 const Emphasis = styled.strong`
-  font-family: 'Astounder Squared BB';
+  font-family: 'astounder-squared-bb';
   font-size: 1.4em;
   font-weight: bold;
   color: #798BE4;

@@ -69,7 +69,7 @@ const ImageLink = styled(Link)`
 `;
 
 const AlbumHeader = styled.h2`
-    font-family: 'Astounder Squared BB';
+    font-family: 'astounder-squared-bb';
     color: #BC9612;
     -webkit-text-stroke-width: 1px;
     -webkit-text-stroke-color: black;
