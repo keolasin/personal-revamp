@@ -7,7 +7,7 @@ const mediaQuery = breakpoints.map( breakpoint => {
 });
 
 const base = css`
-    font-family: 'Astounder Squared BB', 'Forma DJR Display', sans-serif;
+    font-family: 'astounder-squared-bb', sans-serif;
     font-size: 62.5%;
     text-decoration: none;
     text-align: center;
