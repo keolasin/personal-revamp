@@ -1,9 +1,11 @@
 import React from "react"
-import { graphql, Link, navigate } from "gatsby"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
+import { navigate } from '@reach/router'
 
 import styled from "@emotion/styled"
 import { css } from "@emotion/core"
+
 
 import Layout from "./layout"
 
@@ -31,9 +33,12 @@ export default ({ data, location }) => {
     const photo = data.file.childImageSharp;
     const photoName = data.file.name;
     const refLink = data.file.relativeDirectory;
+
     return (
         <Layout>
-            <LinkModal href='javascript:history.go(-1)'>
+            <LinkModal onClick={() => {
+                navigate(`../#${photoName}`)
+            }}>
                 <FullImage
                     fluid={photo.fluid}
                     alt={photo.fluid.originalName}
@@ -46,7 +51,7 @@ export default ({ data, location }) => {
 }
 
 // css styling
-const LinkModal = styled.a`
+const LinkModal = styled.section`
     display: flex;
     align-items: center;
     justify-content: center;

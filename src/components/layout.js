@@ -17,6 +17,11 @@ import "./layout.css"
 import ArtBackground from "./background.js"
 import NavBar from "./navbar.js"
 
+if (typeof window !== "undefined") {
+  // eslint-disable-next-line global-require
+  require("smooth-scroll")('a[href*="#"]')
+}
+
 const Layout = ({ children }) => {
   // site layout HTML
   return (

@@ -45,13 +45,13 @@ export default ({ data, location }) => {
             <AlbumHeader>{album.name.charAt(0).toUpperCase()+album.name.slice(1)}</AlbumHeader>
             <Gallery>
                 {photos.map((image, index) => (
-                    <ImageLink key={index} to={image.node.childImageSharp.fields.slug}
-                    id={image.node.name}>
+                    <ImageLink key={index} to={image.node.childImageSharp.fields.slug}>
                         <ImageTile
                             fluid={image.node.childImageSharp.fluid}
                             alt={image.node.childImageSharp.fluid.originalName}
                             title={image.node.childImageSharp.fluid.originalName}
                         />
+                        <span id={image.node.name} />
                         <Hover>
                             <PhotoText>{image.node.name}</PhotoText>
                         </Hover>
