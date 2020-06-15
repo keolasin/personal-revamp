@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
           fluid={portrait.file.childImageSharp.fluid}
           alt="Yours truly"
         />
-        <BodyText><AltEmphasis>Hello, I'm Matthew.</AltEmphasis>I live in <Emphasis>San Francisco</Emphasis>.</BodyText>
+        <BodyText>Hello, I'm <AltEmphasis>Matthew.</AltEmphasis> I live in <Emphasis>San Francisco</Emphasis>.</BodyText>
         <BodyText>Check out my <AltEmphasis>photos</AltEmphasis> or some of the <Emphasis>work</Emphasis> I've done.</BodyText>
       </Container>
     </Layout>
