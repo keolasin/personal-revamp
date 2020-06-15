@@ -30,7 +30,8 @@ const IndexPage = ({ data }) => {
           fluid={portrait.file.childImageSharp.fluid}
           alt="Yours truly"
         />
-        <BodyText><AltEmphasis>Matthew</AltEmphasis> is a web developer, photographer, and life-long learner living in <Emphasis>San Francisco</Emphasis>.</BodyText><BodyText> He has sweat through a few triathlons, topped several mountains, and loves volunteering - however, he is most <AltEmphasis>passionate</AltEmphasis> about ensuring equitable access to healthcare, the outdoors, and <Emphasis>success as an attainable goal.</Emphasis></BodyText>
+        <BodyText><AltEmphasis>Hello, I'm Matthew.</AltEmphasis>I live in <Emphasis>San Francisco</Emphasis>.</BodyText>
+        <BodyText>Check out my <AltEmphasis>photos</AltEmphasis> or some of the <Emphasis>work</Emphasis> I've done.</BodyText>
       </Container>
     </Layout>
   )
