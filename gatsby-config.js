@@ -17,17 +17,7 @@ module.exports = {
     `gatsby-transformer-sharp`,
     `gatsby-transformer-remark`,
     `gatsby-plugin-sharp`,
-    {
-      resolve: `gatsby-source-strapi`,
-      options: {
-        apiURL: process.env.STRAPI_API || "http://localhost:1377",
-        contentTypes: [
-          "project",
-          "category",
-        ],
-        queryLimit: 1000,
-      },
-    },
+    `gatsby-plugin-netlify-cms`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
