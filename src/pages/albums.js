@@ -7,7 +7,7 @@ import { mediaQuery } from '../styles/global.js'
 
 import Gallery from "../components/gallery.js"
 
-import Layout from "../components/layout"
+import Layout from "../../components/layout"
 
 // query for the cover photos of each album, along with the name of each album to appear on the galleries page
 export const galleryCoverQuery = graphql`

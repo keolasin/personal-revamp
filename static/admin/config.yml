@@ -1,6 +1,5 @@
 backend:
-    name: github
-    repo: keolasin/personal-revamp
+    name: test-repo
 
 publish_mode: editorial_workflow
 
@@ -18,7 +17,7 @@ collections:
     label: Projects
     label_singular: Project
     description: A project with a short summary and image about it, with a link to a live demo, code repo, and/or longer article.
-    folder: projects
+    folder: src/pages/projects
     create: true
     view_filters:
       - label: Projects with index
@@ -41,7 +40,7 @@ collections:
     label: Albums
     label_singular: Album
     description: A photo album showing it's title, the list of photos in the album and a short description about the album.
-    folder: albums
+    folder: src/pages/albums
     create: true
     fields:
       - { name: title, label: Title }

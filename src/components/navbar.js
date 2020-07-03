@@ -21,7 +21,7 @@ const NavBar = () => {
         <Link 
             css={linkStyle} 
             style={{gridArea: 'photos'}} 
-            to="/galleries/" 
+            to="/albums" 
             activeStyle={{ color: '#BC9612' }} 
             partiallyActive={true}
         >
@@ -31,7 +31,7 @@ const NavBar = () => {
         <Link 
             css={linkStyle} 
             style={{gridArea: 'projects'}} 
-            to="/projects/" 
+            to="/projects" 
             activeStyle={{ color: '#BC9612' }} 
             partiallyActive={true}
         >
@@ -41,7 +41,7 @@ const NavBar = () => {
         <Link 
             css={linkStyle} 
             style={{gridArea: 'contact'}} 
-            to="/contact/" 
+            to="/contact" 
             activeStyle={{ color: '#BC9612' }} 
             partiallyActive={true}
         >
