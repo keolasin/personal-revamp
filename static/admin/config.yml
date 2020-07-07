@@ -1,13 +1,15 @@
 backend:
-    name: test-repo
+  name: github
+  repo: keolasin/personal-revamp
+  branch: view-projects
 
 publish_mode: editorial_workflow
 
 media_library:
-    name: cloudinary
-    config:
-        cloud_name: keolasin
-        api_key: 267523381728576
+  name: cloudinary
+  config:
+    cloud_name: keolasin
+    api_key: 267523381728576
 
 media_folder: static/assets
 public_folder: /assets
