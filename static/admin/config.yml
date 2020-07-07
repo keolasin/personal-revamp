@@ -51,7 +51,7 @@ collections:
       - { name: title, label: Title }
       - { name: photographer, label: Photographer }
       - { name: date, label: Date, widget: date }
-      - { name: cover, label: Cover Image, widget: image }
+      - { name: coverImg, label: Cover Image, widget: image }
       - { name: description, label: Description, widget: string }
       - name: photos
         label: Photos
