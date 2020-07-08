@@ -39,12 +39,7 @@ export const projectsQuery = graphql`
 `;
 
 // component
-const ProjectPage = ({
-  data: {
-      allMarkdownRemark: {edges},
-  },
-}) => {
-  
+const ProjectPage = ( {data: {allMarkdownRemark: {edges}}} ) => {
   // create ProjectLink components for each project returned from query
   const Projects = edges
     .map(edge => <ProjectLink key={edge.node.id} project={edge.node} />)
