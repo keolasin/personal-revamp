@@ -30,7 +30,7 @@ const IndexPage = ({ data }) => {
           fluid={portrait.file.childImageSharp.fluid}
           alt="Yours truly"
         />
-        <BodyText>Hello, I'm <AltEmphasis>Matthew.</AltEmphasis> I live in <Emphasis>San Francisco</Emphasis>.</BodyText>
+        <BodyText>Hello, I'm <AltEmphasis>Matthew.</AltEmphasis> I live in <Emphasis>San Francisco.</Emphasis></BodyText>
         <BodyText>Check out my <AltEmphasis>photos</AltEmphasis> or some of the <Emphasis>work</Emphasis> I've done.</BodyText>
       </Container>
     </Layout>
@@ -81,7 +81,7 @@ const BlurbImage = styled(Img)`
 
 const BodyText = styled.p`
   color: #DBE7FB;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'acumin-pro', sans-serif;
   line-height: 1.2em;
   font-size: 1rem;
   padding: 10px 0;

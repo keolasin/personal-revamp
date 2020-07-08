@@ -17,14 +17,14 @@ import styled from "@emotion/styled"
 const Background = ({ children, className }) => {
   const { mobileImage, desktopImage } = useStaticQuery(graphql`
     query {
-      mobileImage: file(name: {eq: "Joshua Tree Climbing-Cover"}) {
+      mobileImage: file(name: {eq: "Deserts-1"}) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
       }
-      desktopImage: file(name: {eq: "desertsky"}) {
+      desktopImage: file(name: {eq: "Deserts-2"}) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp

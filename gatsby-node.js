@@ -7,11 +7,58 @@
 // You can delete this file if you're not using it
 
 const path = require(`path`);
-const { createFilePath } = require(`gatsby-source-filesystem`);
+const { createFilePath, createRemoteFileNode } = require(`gatsby-source-filesystem`);
 
-// creating nodes
-exports.onCreateNode = ({ node, getNode, actions }) => {
-    const { createNodeField } =  actions;
+// schema declarations
+exports.createSchemaCustomization = ({ actions }) => {
+    const { createTypes } = actions;
+
+    createTypes(`
+        type MarkdownRemark implements Node {
+            frontmatter: Frontmatter
+            image: File @link(from: "image___NODE")
+            coverImg: File @link(from: "coverImg___NODE")
+        }
+
+        type Frontmatter {
+            title: String!
+            image: String
+            imageAlt: String
+            coverImg: String
+        }
+    `);
+}
+
+exports.onCreateNode = async({
+    node,
+    getNode,
+    actions: { createNode, createNodeField },
+    store,
+    cache,
+    createNodeId,
+}) => {
+    /* For all MarkdownRemark nodes that have an:
+        "image" url property
+        "coverImg" image property
+    */
+    if ( 
+        node.internal.type === "MarkdownRemark" &&
+        ( node.frontmatter.image !== null || node.frontmatter.coverImg !== null )
+    ) {
+        let fileNode = await createRemoteFileNode({
+            url: node.frontmatter.image || node.frontmatter.coverImg,
+            parentNodeId: node.id,
+            createNode,
+            createNodeId,
+            cache,
+            store,
+        });
+
+        if (fileNode) {
+            node.image___NODE = fileNode.id;
+            node.coverImg___NODE = fileNode.id;
+        }
+    }
 
     if (node.internal.type === `ImageSharp`) {
         const slug = createFilePath({ node, getNode, basePath: `pages` });

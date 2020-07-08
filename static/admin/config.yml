@@ -1,14 +1,15 @@
 backend:
-    name: github
-    repo: keolasin/personal-revamp
+  name: github
+  repo: keolasin/personal-revamp
+  branch: view-projects
 
 publish_mode: editorial_workflow
 
 media_library:
-    name: cloudinary
-    config:
-        cloud_name: keolasin
-        api_key: 267523381728576
+  name: cloudinary
+  config:
+    cloud_name: keolasin
+    api_key: 267523381728576
 
 media_folder: static/assets
 public_folder: /assets
@@ -18,7 +19,8 @@ collections:
     label: Projects
     label_singular: Project
     description: A project with a short summary and image about it, with a link to a live demo, code repo, and/or longer article.
-    folder: projects
+    folder: src/pages/projects
+    preview_path: "projects/{{slug}}"
     create: true
     view_filters:
       - label: Projects with index
@@ -34,20 +36,22 @@ collections:
         - { name: title, label: Title }
         - { name: draft, label: Draft, widget: boolean, default: false }
         - { name: date, label: Date, widget: date, dateFormat: MM-DD-YYYY }
+        - { name: link, label: Link, widget: string, hint: Link to the live site/demo }
         - { name: body, label: Body, widget: markdown, hint: Main content goes here }
         - { name: image, label: Cover image, widget: image, required: false }
+        - { name: imageAlt, label: Image Alt Text, widget: string, required: false, hint: Alternate text to show when an image cannot be loaded or displayed }
 
   - name: albums
     label: Albums
     label_singular: Album
-    description: A photo album showing it's title, the list of photos in the album and a short description about the album.
-    folder: albums
+    description: A photo album showing it's title, the photos in the album, and a short description about the album.
+    folder: src/pages/albums
     create: true
     fields:
       - { name: title, label: Title }
       - { name: photographer, label: Photographer }
       - { name: date, label: Date, widget: date }
-      - { name: cover, label: Cover Image, widget: image }
+      - { name: coverImg, label: Cover Image, widget: image }
       - { name: description, label: Description, widget: string }
       - name: photos
         label: Photos
@@ -56,6 +60,7 @@ collections:
           - { name: title, label: Title, widget: string }
           - { name: image, label: Image, widget: image }
           - { name: date, label: Date, widget: date }
+          - { name: imageAlt, label: Image Alt Text, widget: string, required: false, hint: Alternate text to show when an image cannot be loaded or displayed}
             
             
             
