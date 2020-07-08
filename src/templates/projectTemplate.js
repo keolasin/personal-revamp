@@ -14,7 +14,7 @@ import { css } from "@emotion/core"
 import { mediaQuery, base } from '../styles/global.js'
 
 // query
-export const templateQuery = graphql`
+/*export const templateQuery = graphql`
     query($slug: String!) {
         markdownRemark(frontmatter: { slug: { eq: $slug } }){
             html
@@ -26,7 +26,7 @@ export const templateQuery = graphql`
         }
     }
 `;
-
+*/
 function Template( {data} ){
     const { markdownRemark } = data;
     const { frontmatter, html } = markdownRemark;
