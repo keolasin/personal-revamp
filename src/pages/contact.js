@@ -82,7 +82,7 @@ const BlurbImage = styled(Img)`
 
 const BodyText = styled.p`
   color: #DBE7FB;
-  font-family: 'Roboto', sans-serif;
+  font-family: 'acumin-pro', sans-serif;
   line-height: 1.5em;
   font-size: 1.2rem;
   ${mediaQuery[1]} {
@@ -94,7 +94,7 @@ const BodyText = styled.p`
 `;
 
 const Social = styled.a`
-  font-family: 'astounder-squared-bb';
+  font-family: 'astounder-squared-bb', sans-serif;
   font-size: 1.4em;
   font-weight: bold;
   color: #798BE4;
