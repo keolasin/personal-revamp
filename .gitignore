@@ -59,7 +59,7 @@ typings/
 public
 
 # local files/static images
-src/images
+src/images/galleries
 
 # Mac files
 .DS_Store
