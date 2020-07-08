@@ -45,7 +45,6 @@ exports.onCreateNode = async({
         node.internal.type === "MarkdownRemark" &&
         ( node.frontmatter.image !== null || node.frontmatter.coverImg !== null )
     ) {
-        console.log(`if triggered node creation`);
         let fileNode = await createRemoteFileNode({
             url: node.frontmatter.image || node.frontmatter.coverImg,
             parentNodeId: node.id,

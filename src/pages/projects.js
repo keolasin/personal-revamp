@@ -1,7 +1,6 @@
 import React from "react"
 
-import { useStaticQuery, graphql } from "gatsby"
-import Img from "gatsby-image"
+import { graphql } from "gatsby"
 
 // ../components
 import Layout from "../components/layout"
@@ -11,22 +10,27 @@ import ProjectLink from "../components/projectLink"
 
 // styling imports
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
 
 // query for projects
 export const projectsQuery = graphql`
   query {
-    allMarkdownRemark(sort: { order: DESC, fields: [frontmatter___date] }){
+    allMarkdownRemark(filter: {frontmatter: {draft: {eq: false}}}, sort: {order: DESC, fields: [frontmatter___date]}){
       edges {
         node {
           id
-          excerpt(pruneLength: 250)
-          frontmatter{
+          excerpt(pruneLength: 100)
+          frontmatter {
             date(formatString: "MMMM DD, YYYY")
-            slug
             title
             link
+            imageAlt
+          }
+          image {
+            childImageSharp {
+              fluid( maxWidth: 500, srcSetBreakpoints: [320, 480, 768, 992, 1200] ){
+                ...GatsbyImageSharpFluid_withWebp
+              }
+            }
           }
         }
       }
@@ -34,12 +38,14 @@ export const projectsQuery = graphql`
   }
 `;
 
+// component
 const ProjectPage = ({
   data: {
       allMarkdownRemark: {edges},
   },
 }) => {
   
+  // create ProjectLink components for each project returned from query
   const Projects = edges
     .map(edge => <ProjectLink key={edge.node.id} project={edge.node} />)
 
@@ -61,6 +67,5 @@ const Container = styled.article`
   height: 100%;
   max-height: 90vh;
   text-align: left;
-  overflow: auto;
-  background-color: rgba(0, 0, 0, 0.75);
+  overflow: hidden;
 `;
