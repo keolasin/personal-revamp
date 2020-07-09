@@ -3,8 +3,7 @@ import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery } from '../styles/global.js'
+import { mediaQuery } from "../styles/global.js"
 
 import Gallery from "./gallery.js"
 

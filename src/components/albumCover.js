@@ -1,12 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery } from "../styles/global.js"
-
-import Layout from "../components/layout"
 
 const AlbumCover = ({ album }) => {
 
@@ -15,6 +10,7 @@ const AlbumCover = ({ album }) => {
         <Container>
             <CoverImage 
                 fluid={album.coverImg.childImageSharp.fluid}
+                alt={album.frontmatter.title}
             />
             <Hover>
                 <PhotoText>
@@ -70,11 +66,6 @@ const PhotoText = styled.p`
     transform: translate(-50%, -50%);
     text-align: center;
     line-height: 3rem;
-`;
-
-const ImageTile = styled(Img)`
-    width: 100%;
-    height: 100%;
 `;
 
 const CoverImage = styled(Img)`

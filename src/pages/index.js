@@ -30,8 +30,7 @@ const IndexPage = ({ data }) => {
           fluid={portrait.file.childImageSharp.fluid}
           alt="Yours truly"
         />
-        <BodyText>Hello, I'm <AltEmphasis>Matthew.</AltEmphasis> I live in <Emphasis>San Francisco.</Emphasis></BodyText>
-        <BodyText>Check out my <AltEmphasis>photos</AltEmphasis> or some of the <Emphasis>work</Emphasis> I've done.</BodyText>
+        <BodyText>Hello, I'm <AltEmphasis>Matthew Reyes.</AltEmphasis> I live in <Emphasis>San Francisco.</Emphasis><br/>Check out my photos or some the projects I've done.</BodyText>
       </Container>
     </Layout>
   )
@@ -41,9 +40,10 @@ export default IndexPage
 
 // css styling
 const Container = styled.section`
-  width: 100%;
+  border-radius: 25px;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
   transition: 1s ease 0.3s;
   :hover {
     opacity: 0;
@@ -80,11 +80,13 @@ const BlurbImage = styled(Img)`
 `
 
 const BodyText = styled.p`
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.75);
   color: #DBE7FB;
   font-family: 'acumin-pro', sans-serif;
   line-height: 1.2em;
   font-size: 1rem;
-  padding: 10px 0;
+  padding: 15px;
   margin-bottom: 0px;
   ${mediaQuery[1]} {
       font-size: 1.5rem;

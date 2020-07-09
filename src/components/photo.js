@@ -1,11 +1,9 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
+import { graphql } from "gatsby"
 import Img from "gatsby-image"
 import { navigate } from '@reach/router'
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-
 
 import Layout from "./layout"
 
@@ -32,7 +30,6 @@ export const query = graphql`
 export default ({ data, location }) => {
     const photo = data.file.childImageSharp;
     const photoName = data.file.name;
-    const refLink = data.file.relativeDirectory;
 
     return (
         <Layout>

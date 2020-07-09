@@ -15,7 +15,7 @@ const ContactPage = () => {
     query {
       file(childImageSharp: {}, name: {eq: "coffee"}) {
         childImageSharp {
-          fluid {
+          fluid (quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
           }
         }
@@ -30,13 +30,12 @@ const ContactPage = () => {
           fluid={data.file.childImageSharp.fluid}
           alt="Cup of coffee with succulent"
         />
-          <BodyText>Email or find me on social media</BodyText>
-          <BodyText>
-            <Social style={{color: '#BC9612'}}href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</Social>
-          </BodyText>
-          <BodyText>
-            <Social href="https://github.com/keolasin"> Github </Social>
-            <Social href="https://www.linkedin.com/in/reyesmatthew/">LinkedIn</Social>
+          <BodyText>Email or find me on social media<br/>
+            <Email href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</Email><br/>      
+            <Social href="https://github.com/keolasin">Github </Social>
+            <span />
+            <Social href="https://www.linkedin.com/in/reyesmatthew/">LinkedIn </Social>
+            <Social href="https://www.instagram.com/keolasin/">Instagram</Social>
           </BodyText>
       </Container>
     </Layout>
@@ -49,7 +48,13 @@ export default ContactPage
 const Container = styled.section`
   width: 100%;
   height: 100%;
-  background-color: rgba(0, 0, 0, 0.75);
+  display: grid;
+  place-items: center;
+  transition: 1s ease 0.3s;
+  :hover {
+    opacity: 0;
+    cursor: no-drop;
+  }
 `;
 
 const BlurbImage = styled(Img)`
@@ -81,10 +86,13 @@ const BlurbImage = styled(Img)`
 `
 
 const BodyText = styled.p`
+  background-color: rgba(0, 0, 0, 0.75);
+  border-radius: 25px;
   color: #DBE7FB;
   font-family: 'acumin-pro', sans-serif;
   line-height: 1.5em;
   font-size: 1.2rem;
+  padding: 15px;
   ${mediaQuery[1]} {
       font-size: 1.7rem;
   }
@@ -95,10 +103,39 @@ const BodyText = styled.p`
 
 const Social = styled.a`
   font-family: 'astounder-squared-bb', sans-serif;
-  font-size: 1.4em;
+  font-size: 1.2rem;
   font-weight: bold;
   color: #798BE4;
   text-decoration: none;
+  :hover {
+
+  }
+  :focus {
+
+  }
+  :active {
+
+  }
+  ${mediaQuery[1]} {
+      font-size: 2rem;
+  }
+  ${mediaQuery[4]} {
+      font-size: 2.5rem;
+  }
+`;
+
+const Email = styled(Social)`
+  color: #BC9612;
+  font-size: 1.6rem;
+  :hover {
+
+  }
+  :focus {
+
+  }
+  :active {
+
+  }
   ${mediaQuery[1]} {
       font-size: 2.4rem;
   }

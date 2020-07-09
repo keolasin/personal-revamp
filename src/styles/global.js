@@ -1,4 +1,3 @@
-import styled from "@emotion/styled"
 import { css } from "@emotion/core"
 
 const breakpoints = [320, 480, 768, 992, 1200];

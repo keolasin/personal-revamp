@@ -24,7 +24,7 @@ const Background = ({ children, className }) => {
           }
         }
       }
-      desktopImage: file(name: {eq: "Deserts-2"}) {
+      desktopImage: file(name: {eq: "hiking"}) {
         childImageSharp {
           fluid(maxWidth: 2000, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp

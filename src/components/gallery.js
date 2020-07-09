@@ -1,12 +1,7 @@
 import React from "react"
-import { graphql, Link } from "gatsby"
-import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery } from '../styles/global.js'
-
-import Layout from "../components/layout"
+import { mediaQuery } from "../styles/global.js"
 
 const Gallery = ({ children }) => {
     return (
