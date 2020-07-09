@@ -1,8 +1,8 @@
 backend:
-  name: git-gateway
+  name: github
   repo: keolasin/personal-revamp
   branch: master
-
+  
 publish_mode: editorial_workflow
 
 media_library:
