@@ -17,7 +17,7 @@ import styled from "@emotion/styled"
 const Background = ({ children, className }) => {
   const { mobileImage, desktopImage } = useStaticQuery(graphql`
     query {
-      mobileImage: file(name: {eq: "Deserts-1"}) {
+      mobileImage: file(name: {eq: "jTree"}) {
         childImageSharp {
           fluid(maxWidth: 1000, quality: 100) {
             ...GatsbyImageSharpFluid_withWebp
