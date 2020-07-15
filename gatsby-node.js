@@ -60,7 +60,6 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
             name: `albumTitle`,
             value: node.frontmatter.title
         });
-        console.log(`${node.frontmatter.title} field created on ${node.id}`);
         
         // loop through all photos in the album
         node.frontmatter.photos.forEach( async (photo) => {
@@ -75,21 +74,39 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
 
             if (photoNode) {
                 createParentChildLink({ parent: node, child: photoNode });
+                /* 
+                errors on createNodeField, thinks photoNode is undefined?
+                createNodeField({
+                    photoNode,
+                    name: `slug`,
+                    value: photo.title
+                });
+                */
             }
         });
     }
 
-    if (node.internal.type === `ImageSharp`) {
-        const slug = createFilePath({ node, getNode, basePath: `pages` });
+    if (node.internal.type === `File` && node.internal.mediaType === 'image/jpeg') {
+        console.log(`\n\n creating slug: `);
+        const slug = node.name;
+        console.log(slug);
         
         createNodeField({
             node,
             name: `slug`,
             value: slug
         });
-        
     }
 
+    if ( node.internal.type === 'MarkdownRemark' && node.frontmatter.title ) {
+        const slug = node.frontmatter.title;
+
+        createNodeField({
+            node,
+            name: `slug`,
+            value: slug
+        })
+    }
     if (node.relativeDirectory === `galleries` && node.internal.type === `Directory`) {
         const slug = createFilePath({ node, getNode, basePath: `pages` });
         createNodeField({
@@ -109,9 +126,6 @@ exports.createPages = async ({ graphql, actions }) => {
             allImageSharp {
                 edges {
                     node {
-                        fields {
-                            slug
-                        }
                         parent {
                             ... on File {
                                 relativeDirectory
