@@ -8,6 +8,5 @@ photos:
   - date: 2017-11-22T08:00:00.000Z
     title: UCSF Night
     image: https://res.cloudinary.com/keolasin/image/upload/v1594317277/Cities/Cities-1_zkhhcf.jpg
-    imgAlt: Chicago riverwalk
     imageAlt: UCSF Parnassus Campus at Night from Golden Gate Park
 ---
