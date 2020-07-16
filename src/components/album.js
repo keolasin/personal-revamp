@@ -55,7 +55,7 @@ export default ({ data, location }) => {
                         <span id={image.name} />
                         
                         <Hover>
-                            { /* add this back when the image titles are fixed
+                            { /* add this back when the image titles querying/generation are fixed, see gatsby-node.js
                             <PhotoText>{image.name}</PhotoText>
                             */ }   
                         </Hover>
