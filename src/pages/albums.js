@@ -19,6 +19,9 @@ export const albumsQuery = graphql`
             photographer
             description
           }
+          fields {
+            slug
+          }
           coverImg {
             childImageSharp {
               fluid {

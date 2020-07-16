@@ -11,20 +11,21 @@ import Layout from "../components/layout"
 
 // data query
 export const query = graphql`
-    query($slug: String!, $parentAlbum: String!) {
-        directory (fields: {slug: {eq: $slug }}) {
-            name
-        }
-        allFile (filter: {relativeDirectory: {eq: $parentAlbum }}) {
-            edges {
-                node {
+    query($slug: String!) {
+        markdownRemark(fields: {slug: {eq: $slug }}) {
+            frontmatter {
+                description
+            }
+            children {
+                ... on File {
                     name
+                    fields {
+                        slug
+                    }
                     childImageSharp {
-                        fluid (maxWidth: 1920){
+                        fluid(maxWidth: 3000) {
                             ...GatsbyImageSharpFluid_withWebp
-                        }
-                        fields {
-                            slug
+                            originalName
                         }
                     }
                 }
@@ -35,24 +36,22 @@ export const query = graphql`
 
 // component
 export default ({ data, location }) => {
-    const album = data.directory;
-    const photos = data.allFile.edges;
-    console.log(location);
+    console.log(data);
+    const photos = data.markdownRemark.children;
     
     return (
         <Layout>
-            <AlbumHeader>{album.name.charAt(0).toUpperCase()+album.name.slice(1)}</AlbumHeader>
+            <AlbumHeader>{}</AlbumHeader>
             <Gallery>
-                {photos.map((image, index) => (
-                    <ImageLink key={index} to={image.node.childImageSharp.fields.slug}>
+                {photos.map( (image, index) => (
+                    <ImageLink key={index} to={image.fields.slug}>
                         <ImageTile
-                            fluid={image.node.childImageSharp.fluid}
-                            alt={image.node.childImageSharp.fluid.originalName}
-                            title={image.node.childImageSharp.fluid.originalName}
+                            fluid={image.childImageSharp.fluid}
+                            title={image.childImageSharp.fluid.originalName}
                         />
-                        <span id={image.node.name} />
+                        <span id={image.name} />
                         <Hover>
-                            <PhotoText>{image.node.name}</PhotoText>
+                            <PhotoText>{image.name}</PhotoText>
                         </Hover>
                     </ImageLink>
                 ))}

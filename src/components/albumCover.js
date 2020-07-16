@@ -1,13 +1,12 @@
 import React from "react"
+import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
 
 const AlbumCover = ({ album }) => {
-
-
     return (
-        <Container>
+        <Container to={album.fields.slug}>
             <CoverImage 
                 fluid={album.coverImg.childImageSharp.fluid}
                 alt={album.frontmatter.title}
@@ -23,7 +22,7 @@ const AlbumCover = ({ album }) => {
 
 export default AlbumCover;
 
-const Container = styled.a`
+const Container = styled(Link)`
     position: relative;
     overflow: hidden;
     cursor: pointer;

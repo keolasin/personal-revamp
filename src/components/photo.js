@@ -10,16 +10,12 @@ import Layout from "./layout"
 // data query
 export const query = graphql`
     query($slug: String!) {
-        file(childImageSharp: {fields: {slug: {eq: $slug}}}) {
-            relativeDirectory
+        file(name: {eq: $slug}) {
             name
             childImageSharp {
                 fluid (maxWidth: 3000){
                     ...GatsbyImageSharpFluid_withWebp
                     originalName
-                }
-                fields {
-                    slug
                 }
             }
         }

@@ -87,9 +87,7 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
     }
 
     if (node.internal.type === `File` && node.internal.mediaType === 'image/jpeg') {
-        console.log(`\n\n creating slug: `);
         const slug = node.name;
-        console.log(slug);
         
         createNodeField({
             node,
@@ -123,22 +121,25 @@ exports.createPages = async ({ graphql, actions }) => {
     // need to adjust query to only create pages for those that are part of an album as provided in allMarkDownRemark>edges>node>frontmatter>photos
     const result = await graphql(`
         query {
-            allImageSharp {
+            allMarkdownRemark(filter: {frontmatter: {photos: {elemMatch: {title: {ne: null}}}}, children: {elemMatch: {id: {ne: null}}}}) {
                 edges {
                     node {
-                        parent {
-                            ... on File {
-                                relativeDirectory
-                            }
-                        }
-                    }
-                }
-            }
-            allDirectory(filter: {relativeDirectory: {eq: "galleries"}}) {
-                edges {
-                    node {
+                        id
                         fields {
                             slug
+                        }
+                        children {
+                            ... on File {
+                                id
+                                fields {
+                                    slug
+                                }
+                                parent {
+                                    ... on MarkdownRemark {
+                                        id
+                                    }
+                                }
+                            }
                         }
                     }
                 }
@@ -146,27 +147,28 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    // create unique pages for each photo
-    result.data.allImageSharp.edges.forEach(({ node }) => {
-        createPage({
-            path: node.fields.slug,
-            component: path.resolve(`./src/components/photo.js`),
-            context: {
-                slug: node.fields.slug,
-                parentAlbum: node.parent.relativeDirectory,
-            },
-        });
-    });
-
     // create unique pages for each album
-    result.data.allDirectory.edges.forEach(({ node }) => {
+    result.data.allMarkdownRemark.edges.forEach( ({ node }) => {
         createPage({
-            path: node.fields.slug,
+            path: `albums/${node.fields.slug}`,
             component: path.resolve(`./src/components/album.js`),
             context: {
-                slug: node.fields.slug,
-                parentAlbum: node.fields.slug.slice(1, -1), // passing context to page for the page query to receive the photos in that album
-            },
+                slug: node.fields.slug
+            }
         });
+        console.log('\n\ncreated page for: ', node.fields.slug, '\n\n');
+        
+        // create unique pages for each photo
+        node.children.forEach( (child) => {
+            createPage({
+                path: `albums/${node.fields.slug}/${child.fields.slug}`,
+                component: path.resolve(`./src/components/photo.js`),
+                parentAlbumID: child.parent.id,
+                context: {
+                    slug: child.fields.slug
+                }
+            });
+            console.log('\n\n page created for: ', child.fields.slug, '\n\n');
+        })
     });
 }
