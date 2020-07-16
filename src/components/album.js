@@ -53,9 +53,13 @@ export default ({ data, location }) => {
                             title={image.childImageSharp.fluid.originalName}
                         />
                         <span id={image.name} />
+                        
                         <Hover>
+                            { /* add this back when the image titles are fixed
                             <PhotoText>{image.name}</PhotoText>
+                            */ }   
                         </Hover>
+                                             
                     </ImageLink>
                 ))}
             </Gallery>
@@ -66,7 +70,17 @@ export default ({ data, location }) => {
 const ImageLink = styled(Link)`
     position: relative;
     overflow: hidden;
-    cursor: pointer; 
+    cursor: pointer;
+    box-shadow: 0 4px 8px 0 rgba(121, 139, 228, 0.2), 0 6px 20px 0 rgba(121, 139, 228, 0.15);
+    :hover {
+        box-shadow: 0 4px 8px 0 rgba(121, 139, 228, 0.4), 0 6px 20px 0 rgba(121, 139, 228, 0.35);
+    }
+    :focus {
+        box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4), 0 6px 20px 0 rgba(188, 150, 18, 0.35);
+    }
+    :active {
+        box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4), 0 6px 20px 0 rgba(188, 150, 18, 0.35);
+    }
 `;
 
 const AlbumHeader = styled.h2`

@@ -29,15 +29,17 @@ export default ({ data, location }) => {
 
     return (
         <Layout>
-            <LinkModal onClick={() => {
-                navigate(`../#${photoName}`)
-            }}>
+            <LinkModal>
+                
                 <FullImage
                     fluid={photo.fluid}
                     alt={photo.fluid.originalName}
                     title={photo.fluid.originalName}
                     imgStyle={{objectFit: "contain"}}
                 />
+                <CloseButton onClick={() => {
+                    navigate(`./#${photoName}`)
+                }}>Close</CloseButton>
             </LinkModal>
         </Layout>
     )
@@ -57,6 +59,27 @@ const LinkModal = styled.section`
     bottom: 0;
     padding: 1rem;
     background-color: rgba(0, 0, 0, 0.8);
+`;
+
+const CloseButton = styled.a`
+    color: #BC9612;
+    background-color: none;
+    position: absolute;
+    margin: 20px;
+    top: 0;
+    right: 0;
+    cursor: pointer;
+    font-size: 2rem;
+    :hover {
+        color: #DBE7FB;
+        font-size: 2.2rem;
+    }
+    :focus {
+        color: #798BE4;
+    }
+    :active {
+        color: #798BE4;
+    }
 `;
 
 const FullImage = styled(Img)`
