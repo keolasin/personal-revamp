@@ -118,7 +118,8 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
 // creating pages with slugs
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
-    // need to adjust query to only create pages for those that are part of an album as provided in allMarkDownRemark>edges>node>frontmatter>photos
+    
+    // super convoluted query because I can't use @link extension for types
     const result = await graphql(`
         query {
             allMarkdownRemark(filter: {frontmatter: {photos: {elemMatch: {title: {ne: null}}}}, children: {elemMatch: {id: {ne: null}}}}) {
@@ -147,8 +148,8 @@ exports.createPages = async ({ graphql, actions }) => {
         }
     `);
 
-    // create unique pages for each album
     result.data.allMarkdownRemark.edges.forEach( ({ node }) => {
+        // create unique page for each album
         createPage({
             path: `albums/${node.fields.slug}`,
             component: path.resolve(`./src/components/album.js`),
@@ -156,10 +157,9 @@ exports.createPages = async ({ graphql, actions }) => {
                 slug: node.fields.slug
             }
         });
-        console.log('\n\ncreated page for: ', node.fields.slug, '\n\n');
         
-        // create unique pages for each photo
         node.children.forEach( (child) => {
+            // create unique page for each photo in an album
             createPage({
                 path: `albums/${node.fields.slug}/${child.fields.slug}`,
                 component: path.resolve(`./src/components/photo.js`),
@@ -168,7 +168,6 @@ exports.createPages = async ({ graphql, actions }) => {
                     slug: child.fields.slug
                 }
             });
-            console.log('\n\n page created for: ', child.fields.slug, '\n\n');
         })
     });
 }
