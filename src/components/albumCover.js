@@ -56,7 +56,7 @@ const Hover = styled.section`
 `;
 
 const PhotoText = styled.p`
-    color: white;
+    color: #DBE7FB;
     position: absolute;
     top: 50%;
     left: 50%;

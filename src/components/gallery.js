@@ -15,7 +15,6 @@ export default Gallery
 
 const AlbumGallery = styled.section`
   display: grid;
-  background-color: rgba(0, 0, 0, 0.75);
   padding: 10px;
   grid-gap: 1px;
   grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));

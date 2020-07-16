@@ -51,10 +51,6 @@ const Container = styled.section`
   display: grid;
   place-items: center;
   transition: 1s ease 0.3s;
-  :hover {
-    opacity: 0;
-    cursor: no-drop;
-  }
 `;
 
 const BlurbImage = styled(Img)`
@@ -108,13 +104,13 @@ const Social = styled.a`
   color: #798BE4;
   text-decoration: none;
   :hover {
-
+    color: #BC9612;
   }
   :focus {
-
+    color: #798BE4;
   }
   :active {
-
+    color: #798BE4;
   }
   ${mediaQuery[1]} {
       font-size: 2rem;
@@ -128,13 +124,13 @@ const Email = styled(Social)`
   color: #BC9612;
   font-size: 1.6rem;
   :hover {
-
+    color: #DBE7FB;
   }
   :focus {
-
+    color: #798BE4;
   }
   :active {
-
+    color: #798BE4;
   }
   ${mediaQuery[1]} {
       font-size: 2.4rem;

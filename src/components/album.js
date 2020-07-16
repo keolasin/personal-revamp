@@ -15,6 +15,7 @@ export const query = graphql`
         markdownRemark(fields: {slug: {eq: $slug }}) {
             frontmatter {
                 description
+                title
             }
             children {
                 ... on File {
@@ -36,12 +37,14 @@ export const query = graphql`
 
 // component
 export default ({ data, location }) => {
-    console.log(data);
     const photos = data.markdownRemark.children;
     
     return (
         <Layout>
-            <AlbumHeader>{}</AlbumHeader>
+            <AlbumHeader>{data.markdownRemark.frontmatter.title}
+                <Description>{data.markdownRemark.frontmatter.description}</Description>
+            </AlbumHeader>
+            
             <Gallery>
                 {photos.map( (image, index) => (
                     <ImageLink key={index} to={image.fields.slug}>
@@ -67,17 +70,33 @@ const ImageLink = styled(Link)`
 `;
 
 const AlbumHeader = styled.h2`
-    font-family: 'astounder-squared-bb';
+    border-radius: 25px;
+    font-family: 'astounder-squared-bb', sans-serif;
     color: #BC9612;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-    line-height: 1.5em;
-    font-size: 1.2rem;
+    font-size: 1.4rem;
+    background-color: rgba(0, 0, 0, 0.75);
+    display: inline-block;
+    padding: 0 20px;
+    margin: 10px;
     ${mediaQuery[1]} {
         font-size: 1.8rem;
     }
     ${mediaQuery[4]} {
         font-size: 2.3rem;
+    }
+`;
+
+const Description = styled.p`
+    font-family: 'acumin-pro', sans-serif;
+    color: #DBE7FB;
+    font-size: 1rem;
+    padding: 0 20px;
+    margin: 10px;
+    ${mediaQuery[1]} {
+        font-size: 1.2rem;
+    }
+    ${mediaQuery[4]} {
+        font-size: 1.6rem;
     }
 `;
 
@@ -92,13 +111,14 @@ const Hover = styled.section`
     opacity: 0;
     transition: 0.5s ease;
     background-color: black;
+    border-radius: 25px;
     :hover {
         opacity: 0.8;
     }
 `;
 
 const PhotoText = styled.p`
-    color: white;
+    color: #DBE7FB;
     position: absolute;
     top: 50%;
     left: 50%;
@@ -112,4 +132,5 @@ const PhotoText = styled.p`
 const ImageTile = styled(Img)`
     width: 100%;
     height: 100%;
+    border-radius: 25px;
 `;
