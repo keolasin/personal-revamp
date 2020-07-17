@@ -1,7 +1,7 @@
 ---
 title: Cities
 photographer: Matthew Reyes
-date: 2020-07-07T00:18:47.650Z
+date: 2019-07-08T07:00:00.000Z
 coverImg: https://res.cloudinary.com/keolasin/image/upload/v1594317283/Cities/Tucson%20Portraits.jpg
 description: An album featuring cities and architecture.
 photos:
