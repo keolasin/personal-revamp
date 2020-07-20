@@ -72,7 +72,7 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
     }
 
     if ( node.internal.type === `File` && node.internal.mediaType === `image/jpeg` ) {
-        const photoSlug = decodeURIComponent(node.name);
+        const photoSlug = node.name;
         
         createNodeField({
             node,
@@ -124,8 +124,8 @@ exports.createPages = async ({ graphql, actions }) => {
         // loop through all the photos (children) in the album (parent)
         node.children.forEach( async ( child ) => {
             // slug for photos
-            const photoSlug = decodeURIComponent(child.name).replace(/\s/g, '-');
-            
+            const photoSlug = decodeURIComponent(child.name);
+
             // create unique page for each photo in an album
             await createPage({
                 path: `albums/${albumSlug}/${photoSlug}`,
