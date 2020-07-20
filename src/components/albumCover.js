@@ -6,7 +6,7 @@ import styled from "@emotion/styled"
 
 const AlbumCover = ({ album }) => {
     return (
-        <Container to={album.frontmatter.title}>
+        <Container to={album.frontmatter.title.toLowerCase()}>
             <CoverImage 
                 fluid={album.coverImg.childImageSharp.fluid}
                 alt={album.frontmatter.title}
