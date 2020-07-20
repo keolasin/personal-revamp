@@ -8,9 +8,14 @@ import styled from "@emotion/styled"
 import Layout from "./layout"
 
 // data query
+// context provided from gatsby-node.js:
+/*
+    photoID: child.id,
+    parentAlbum: node.frontmatter.title
+*/
 export const query = graphql`
-    query($slug: String!) {
-        file(name: {eq: $slug}) {
+    query($photoID: String!) {
+        file(id: {eq: $photoID}) {
             name
             childImageSharp {
                 fluid (maxWidth: 3000){
@@ -30,7 +35,6 @@ export default ({ data, location }) => {
     return (
         <Layout>
             <LinkModal>
-                
                 <FullImage
                     fluid={photo.fluid}
                     alt={photo.fluid.originalName}

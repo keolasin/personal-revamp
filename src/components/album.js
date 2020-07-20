@@ -10,19 +10,21 @@ import Gallery from "./gallery.js"
 import Layout from "../components/layout"
 
 // data query
+// context passed from gatsby-node.js file generation:
+// albumID: node.id
 export const query = graphql`
-    query($slug: String!) {
-        markdownRemark(fields: {slug: {eq: $slug }}) {
+    query($albumID: String!) {
+        markdownRemark(id: {eq: $albumID}) {
             frontmatter {
-                description
                 title
+                date
+                photographer
+                description
             }
             children {
                 ... on File {
+                    id
                     name
-                    fields {
-                        slug
-                    }
                     childImageSharp {
                         fluid(maxWidth: 3000) {
                             ...GatsbyImageSharpFluid_withWebp
@@ -37,17 +39,18 @@ export const query = graphql`
 
 // component
 export default ({ data, location }) => {
+    const album = data.markdownRemark;
     const photos = data.markdownRemark.children;
     
     return (
         <Layout>
-            <AlbumHeader>{data.markdownRemark.frontmatter.title}
-                <Description>{data.markdownRemark.frontmatter.description}</Description>
+            <AlbumHeader>{album.frontmatter.title}
+                <Description>{album.frontmatter.description}</Description>
             </AlbumHeader>
             
             <Gallery>
                 {photos.map( (image, index) => (
-                    <ImageLink key={index} to={image.fields.slug}>
+                    <ImageLink key={index} to={decodeURIComponent(image.name).replace(' ', '-')}>
                         <ImageTile
                             fluid={image.childImageSharp.fluid}
                             title={image.childImageSharp.fluid.originalName}
@@ -55,9 +58,7 @@ export default ({ data, location }) => {
                         <span id={image.name} />
                         
                         <Hover>
-                            { /* add this back when the image titles querying/generation are fixed, see gatsby-node.js
-                            <PhotoText>{image.name}</PhotoText>
-                            */ }   
+                            {<PhotoText>{decodeURIComponent(image.name)}</PhotoText>}   
                         </Hover>
                                              
                     </ImageLink>

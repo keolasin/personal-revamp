@@ -19,9 +19,6 @@ export const albumsQuery = graphql`
             photographer
             description
           }
-          fields {
-            slug
-          }
           coverImg {
             childImageSharp {
               fluid {
@@ -38,8 +35,8 @@ export const albumsQuery = graphql`
 const GalleriesPage = ( {data: {allMarkdownRemark: {edges}}} ) => {
   // albums
   const Albums = edges
-    .map(edge => <AlbumCover key={edge.node.id} album={edge.node} />)
-
+    .map( edge => <AlbumCover key={edge.node.id} album={edge.node} />)
+  
   return (
     <Layout>
       <Gallery>
