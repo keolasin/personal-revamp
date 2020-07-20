@@ -53,14 +53,7 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
     }
 
     // for all MarkdownRemark nodes that contain a list of album photos in the frontmatter
-    if ( node.internal.type === `MarkdownRemark` && node.frontmatter.photos ) {
-        // create albumTitle field for easier querying of albums/photos
-        createNodeField({
-            node,
-            name: `albumTitle`,
-            value: node.frontmatter.title
-        });
-        
+    if ( node.internal.type === `MarkdownRemark` && node.frontmatter.photos ) {        
         // loop through all photos in the album
         node.frontmatter.photos.forEach( async (photo) => {
             let photoNode = await createRemoteFileNode({
@@ -74,44 +67,18 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
 
             if (photoNode) {
                 createParentChildLink({ parent: node, child: photoNode });
-                /* 
-                errors on createNodeField, thinks photoNode is undefined?
-                createNodeField({
-                    photoNode,
-                    name: `slug`,
-                    value: photo.title
-                });
-                */
             }
         });
     }
 
-    if (node.internal.type === `File` && node.internal.mediaType === 'image/jpeg') {
-        const slug = node.name;
+    if ( node.internal.type === `File` && node.internal.mediaType === `image/jpeg` ) {
+        const photoSlug = decodeURIComponent(node.name);
         
         createNodeField({
             node,
             name: `slug`,
-            value: slug
-        });
-    }
-
-    if ( node.internal.type === 'MarkdownRemark' && node.frontmatter.title ) {
-        const slug = node.frontmatter.title;
-
-        createNodeField({
-            node,
-            name: `slug`,
-            value: slug
+            value: photoSlug
         })
-    }
-    if (node.relativeDirectory === `galleries` && node.internal.type === `Directory`) {
-        const slug = createFilePath({ node, getNode, basePath: `pages` });
-        createNodeField({
-            node,
-            name: `slug`,
-            value: slug
-        });
     }
 }
 
@@ -119,27 +86,19 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
 exports.createPages = async ({ graphql, actions }) => {
     const { createPage } = actions;
     
-    // super convoluted query because I can't use @link extension for types
     const result = await graphql(`
         query {
-            allMarkdownRemark(filter: {frontmatter: {photos: {elemMatch: {title: {ne: null}}}}, children: {elemMatch: {id: {ne: null}}}}) {
+            allMarkdownRemark(filter: {frontmatter: {photos: {elemMatch: {title: {ne: null}}}}}) {
                 edges {
                     node {
                         id
-                        fields {
-                            slug
+                        frontmatter {
+                            title
                         }
                         children {
                             ... on File {
                                 id
-                                fields {
-                                    slug
-                                }
-                                parent {
-                                    ... on MarkdownRemark {
-                                        id
-                                    }
-                                }
+                                name
                             }
                         }
                     }
@@ -149,23 +108,32 @@ exports.createPages = async ({ graphql, actions }) => {
     `);
 
     result.data.allMarkdownRemark.edges.forEach( ({ node }) => {
+        // slug for albums
+        const albumSlug = decodeURIComponent(node.frontmatter.title).replace(' ', '-');
+
         // create unique page for each album
         createPage({
-            path: `albums/${node.fields.slug}`,
+            path: `albums/${albumSlug}`,
             component: path.resolve(`./src/components/album.js`),
+            // pass albumID in context for page query
             context: {
-                slug: node.fields.slug
+                albumID: node.id
             }
         });
         
-        node.children.forEach( (child) => {
+        // loop through all the photos (children) in the album (parent)
+        node.children.forEach( ( child ) => {
+            // slug for photos
+            const photoSlug = decodeURIComponent(child.name).replace(' ', '-');
+
             // create unique page for each photo in an album
             createPage({
-                path: `albums/${node.fields.slug}/${child.fields.slug}`,
+                path: `albums/${albumSlug}/${photoSlug}`,
                 component: path.resolve(`./src/components/photo.js`),
-                parentAlbumID: child.parent.id,
+                // provide photoID in context for page query
                 context: {
-                    slug: child.fields.slug
+                    photoID: child.id,
+                    parentAlbum: node.frontmatter.title // want to know parent album
                 }
             });
         })
