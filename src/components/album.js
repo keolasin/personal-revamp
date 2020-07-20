@@ -50,7 +50,7 @@ export default ({ data, location }) => {
             
             <Gallery>
                 {photos.map( (image, index) => (
-                    <ImageLink key={index} to={decodeURIComponent(image.name).replace(/\s/g, '-')}>
+                    <ImageLink key={index} to={image.name}>
                         <ImageTile
                             fluid={image.childImageSharp.fluid}
                             title={image.childImageSharp.fluid.originalName}
@@ -58,7 +58,7 @@ export default ({ data, location }) => {
                         <span id={image.name} />
                         
                         <Hover>
-                            {<PhotoText>{decodeURIComponent(image.name)}</PhotoText>}   
+                            {<PhotoText>{image.name.replace(/_/g, ' ')}</PhotoText>}   
                         </Hover>
                                              
                     </ImageLink>
