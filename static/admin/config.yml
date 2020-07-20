@@ -1,7 +1,7 @@
 backend:
-  name: github
-  repo: keolasin/personal-revamp
-  branch: master
+  name: test-repo
+  #repo: keolasin/personal-revamp
+  #branch: master
   
 publish_mode: editorial_workflow
 
@@ -47,6 +47,7 @@ collections:
     description: A photo album showing it's title, the photos in the album, and a short description about the album.
     folder: src/pages/albums
     create: true
+    preview_path: "/albums/{{albums}}"
     fields:
       - { name: title, label: Title }
       - { name: photographer, label: Photographer }
@@ -60,7 +61,4 @@ collections:
           - { name: title, label: Title, widget: string }
           - { name: image, label: Image, widget: image }
           - { name: date, label: Date, widget: date }
-          - { name: imageAlt, label: Image Alt Text, widget: string, required: false, hint: Alternate text to show when an image cannot be loaded or displayed}
-            
-            
-            
+          - { name: imageAlt, label: Image Alternate Text, widget: string, required: false, hint: Alternate text to show when an image cannot be loaded or displayed }
