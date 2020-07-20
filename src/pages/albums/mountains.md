@@ -9,4 +9,8 @@ photos:
     image: https://res.cloudinary.com/mreyes-info/image/upload/v1595213485/Mountains/California_Hills.jpg
     title: California Hills
     imageAlt: Marin Headlands in the Fall
+  - date: 2018-09-01T07:00:00.000Z
+    image: https://res.cloudinary.com/mreyes-info/image/upload/v1595213491/Mountains/Olympic_Trail.jpg
+    title: Olympic Trail
+    imageAlt: Trail in Olympic National Park
 ---
