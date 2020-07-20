@@ -109,7 +109,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
     result.data.allMarkdownRemark.edges.forEach( ({ node }) => {
         // slug for albums
-        const albumSlug = decodeURIComponent(node.frontmatter.title).replace(' ', '-');
+        const albumSlug = decodeURIComponent(node.frontmatter.title).replace(/\s/g, '-');
 
         // create unique page for each album
         createPage({
@@ -122,12 +122,12 @@ exports.createPages = async ({ graphql, actions }) => {
         });
         
         // loop through all the photos (children) in the album (parent)
-        node.children.forEach( ( child ) => {
+        node.children.forEach( async ( child ) => {
             // slug for photos
-            const photoSlug = decodeURIComponent(child.name).replace(' ', '-');
-
+            const photoSlug = decodeURIComponent(child.name).replace(/\s/g, '-');
+            
             // create unique page for each photo in an album
-            createPage({
+            await createPage({
                 path: `albums/${albumSlug}/${photoSlug}`,
                 component: path.resolve(`./src/components/photo.js`),
                 // provide photoID in context for page query
