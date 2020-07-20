@@ -21,7 +21,7 @@ export const albumsQuery = graphql`
           }
           coverImg {
             childImageSharp {
-              fluid {
+              fluid(maxWidth: 800) {
                 ...GatsbyImageSharpFluid_withWebp
               }
             }

@@ -35,7 +35,8 @@ exports.createSchemaCustomization = ({ actions }) => {
     createTypes(typeDefs);
 }
 
-exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeField, createParentChildLink }, store, cache, createNodeId, }) => {
+exports.onCreateNode = async ({ node, getNode, actions: { createNode, createNodeField, createParentChildLink }, store, cache, createNodeId, }) => {
+    // check for all markdown files that have a frontmatter image (albums, projects) and create the image node locally from remote source
     if ( node.internal.type === "MarkdownRemark" && ( node.frontmatter.image !== null || node.frontmatter.coverImg !== null ) ) {
         let fileNode = await createRemoteFileNode({
             url: node.frontmatter.image || node.frontmatter.coverImg,
@@ -53,22 +54,28 @@ exports.onCreateNode = async({ node, getNode, actions: { createNode, createNodeF
     }
 
     // for all MarkdownRemark nodes that contain a list of album photos in the frontmatter
-    if ( node.internal.type === `MarkdownRemark` && node.frontmatter.photos ) {        
-        // loop through all photos in the album
-        node.frontmatter.photos.forEach( async (photo) => {
-            let photoNode = await createRemoteFileNode({
-                url: photo.image, // cloudinary image url
-                parentNodeId: node.id,
-                createNode,
-                createNodeId,
-                cache,
-                store,
-            });
+    if ( node.internal.type === `MarkdownRemark` && node.frontmatter.photos ) {
 
-            if (photoNode) {
-                createParentChildLink({ parent: node, child: photoNode });
-            }
-        });
+        await Promise.all(
+        // loop through all photos in the album
+            node.frontmatter.photos.map( async (photo) => {
+                console.time(`creating photo node-${photo.title}`);
+                let photoNode = await createRemoteFileNode({
+                    url: photo.image, // cloudinary image url
+                    parentNodeId: node.id,
+                    createNode,
+                    createNodeId,
+                    cache,
+                    store,
+                });
+
+                if (photoNode) {
+                    createParentChildLink({ parent: node, child: photoNode });
+                }
+                console.timeEnd(`creating photo node-${photo.title}`);
+            })
+            
+        );
     }
 
     if ( node.internal.type === `File` && node.internal.mediaType === `image/jpeg` ) {

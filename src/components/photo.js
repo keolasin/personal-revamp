@@ -18,7 +18,7 @@ export const query = graphql`
         file(id: {eq: $photoID}) {
             name
             childImageSharp {
-                fluid (maxWidth: 3000){
+                fluid (maxWidth: 1920){
                     ...GatsbyImageSharpFluid_withWebp
                     originalName
                 }
