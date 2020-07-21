@@ -13,4 +13,8 @@ photos:
     image: https://res.cloudinary.com/mreyes-info/image/upload/v1595213491/Mountains/Olympic_Trail.jpg
     title: Olympic Trail
     imageAlt: Trail in Olympic National Park
+  - date: 2018-09-01T07:00:00.000Z
+    title: Olympic Hike
+    image: https://res.cloudinary.com/mreyes-info/image/upload/v1595213489/Mountains/Olympic_Hike.jpg
+    imageAlt: Hiking trail in Olympic National Park
 ---
