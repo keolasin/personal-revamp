@@ -9,7 +9,7 @@ import { mediaQuery } from '../styles/global.js'
 const ProjectLink = ({ project }) => (
     <Container>
         <Project href={project.frontmatter.link}>
-            <Thumbnail fluid={project.image.childImageSharp.fluid} alt ={project.frontmatter.imageAlt} />
+            <Thumbnail fluid={project.image.childImageSharp.fluid} alt ={project.frontmatter.imageAlt || project.frontmatter.title} />
             <Bold>{project.frontmatter.title}</Bold>
             <Date>{project.frontmatter.date}</Date>
             <Excerpt>{project.excerpt}</Excerpt>
