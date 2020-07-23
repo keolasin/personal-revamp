@@ -8,7 +8,7 @@ import { mediaQuery } from '../styles/global.js'
 
 const ProjectLink = ({ project }) => (
     <Container>
-        <Project>
+        <Project href={project.frontmatter.link}>
             <Thumbnail fluid={project.image.childImageSharp.fluid} alt ={project.frontmatter.imageAlt} />
             <Bold>{project.frontmatter.title}</Bold>
             <Date>{project.frontmatter.date}</Date>
@@ -72,7 +72,7 @@ const Date = styled.strong`
     margin: auto 10px;
 `;
 
-const Project = styled(Link)`
+const Project = styled.a`
     font-family: 'acumin-pro', sans-serif;
     text-decoration: none;
     color: #DBE7FB;
