@@ -6,6 +6,7 @@ import { mediaQuery } from "../styles/global.js"
 
 import Layout from "../components/layout"
 import AlbumCover from "../components/albumCover"
+import Gallery from "../components/gallery"
 
 // query for the cover photos of each album, along with the name of each album to appear on the galleries page
 export const albumsQuery = graphql`
@@ -47,7 +48,7 @@ const GalleriesPage = ( {data: {allMarkdownRemark: {edges}}} ) => {
 }
 
 export default GalleriesPage;
-
+/*
 const Gallery = styled.article`
   display: grid;
   padding: 10px;
@@ -82,3 +83,4 @@ const Gallery = styled.article`
     grid-auto-rows: minmax(400px, auto);
   }
 `;
+*/

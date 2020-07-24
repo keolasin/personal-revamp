@@ -24,7 +24,7 @@ const Base = css`
     margin: 5px auto;
 `;
 
-const Container = styled.section`
+const Container = styled.article`
     background-color: rgba(0, 0, 0, 0.75);
     width: 95%;
     margin: 5px auto;
@@ -41,7 +41,7 @@ const Container = styled.section`
     }
 `;
 
-const Bold = styled.strong`
+const Bold = styled.a`
     ${Base}
     font-size: 1.4em;
     font-weight: bold;
@@ -72,7 +72,7 @@ const Date = styled.strong`
     margin: auto 10px;
 `;
 
-const Project = styled.a`
+const Project = styled.section`
     font-family: 'acumin-pro', sans-serif;
     text-decoration: none;
     color: #DBE7FB;
