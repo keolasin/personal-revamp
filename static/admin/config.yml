@@ -8,8 +8,8 @@ publish_mode: editorial_workflow
 media_library:
   name: cloudinary
   config:
-    cloud_name: mreyes-info
-    api_key: 753291915162455
+    cloud_name: keolasin
+    api_key: 267523381728576
 
 media_folder: static/assets
 public_folder: /assets
