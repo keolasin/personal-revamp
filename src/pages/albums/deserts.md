@@ -2,20 +2,12 @@
 title: Deserts
 photographer: Matthew Reyes
 date: 2019-11-29T08:00:00.000Z
-<<<<<<< HEAD
-coverImg: https://res.cloudinary.com/mreyes-info/image/upload/v1595213560/Desert/Joshua_Tree_Climbing.jpg
-description: "The rich ecological and geological variety of deserts are captured in this album. "
-=======
 coverImg: https://res.cloudinary.com/keolasin/image/upload/w_1600,q_auto,f_auto/v1597267956/Desert/Joshua_Tree_Climbing.jpg
-description: "The rich ecological and geological variety of deserts are captured
-  in this album. "
->>>>>>> master
+description: "The rich ecological and geological variety of deserts are captured in this album."
 photos:
   - date: 2020-07-21T18:14:57.797Z
     image: https://res.cloudinary.com/keolasin/image/upload/w_1600,q_auto,f_auto/v1597267956/Desert/Joshua_Tree_Climbing.jpg
     title: Joshua Tree Climbing
-<<<<<<< HEAD
-=======
   - date: 2020-07-21T18:14:58.284Z
     image: https://res.cloudinary.com/keolasin/image/upload/w_1600,q_auto,f_auto/v1597267956/Desert/Joshua_Tree_Stars.jpg
     title: JTree Stars
@@ -43,5 +35,4 @@ photos:
   - date: 2020-07-21T18:15:02.310Z
     image: https://res.cloudinary.com/keolasin/image/upload/w_1600,q_auto,f_auto/v1597267955/Desert/Desert_Reflections.jpg
     title: Desert Puddles
->>>>>>> master
 ---
