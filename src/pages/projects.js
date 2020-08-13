@@ -7,7 +7,6 @@ import Layout from "../components/layout"
 import SEO from "../components/seo"
 import ProjectLink from "../components/projectLink"
 
-
 // styling imports
 import styled from "@emotion/styled"
 
@@ -48,7 +47,7 @@ const ProjectPage = ( {data: {allMarkdownRemark: {edges}}} ) => {
     <Layout>
       <SEO title='projects'/>
       <Container>
-          {Projects}
+        {Projects}
       </Container>
     </Layout>
   )
@@ -56,11 +55,8 @@ const ProjectPage = ( {data: {allMarkdownRemark: {edges}}} ) => {
 
 export default ProjectPage
 
-// css styling
-const Container = styled.article`
-  width: 100%;
-  height: 100%;
-  max-height: 90vh;
+const Container = styled.section`
   text-align: left;
+  height: 100%;
   overflow: hidden;
 `;
