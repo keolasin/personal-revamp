@@ -1,13 +1,14 @@
-import React from "react"
+import { React, useState } from "react"
 
 import { graphql, useStaticQuery } from "gatsby"
 import Img from "gatsby-image"
 
 import styled from "@emotion/styled"
-import { mediaQuery } from '../styles/global.js'
+import { mediaQuery, Container, BlurbImage } from "../styles/global.js"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
+import ToggleButton from "../components/toggleButton.js"
 
 const IndexPage = ({ data }) => {
   const portrait = useStaticQuery(graphql`
@@ -39,61 +40,20 @@ const IndexPage = ({ data }) => {
 export default IndexPage
 
 // css styling
-const Container = styled.section`
-  border-radius: 25px;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  transition: 1s ease 0.3s;
-  :hover {
-    opacity: 0;
-    cursor: no-drop;
-  }
-`;
-
-const BlurbImage = styled(Img)`
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin: 10px auto;
-  ${mediaQuery[0]} {
-    width: 225px;
-    height: 225px;
-  }
-  ${mediaQuery[1]} {
-    width: 250px;
-    height: 250px;
-  }
-  ${mediaQuery[2]} {
-    width: 300px;
-    height: 300px;
-  }
-  ${mediaQuery[3]} {
-    width: 350px;
-    height: 350px;
-  }
-  ${mediaQuery[4]} {
-    width: 450px;
-    height: 450px;
-  }
-`
-
 const BodyText = styled.p`
   border-radius: 25px;
-  background-color: rgba(0, 0, 0, 0.75);
   color: #DBE7FB;
   font-family: 'acumin-pro', sans-serif;
   line-height: 1.2em;
   font-size: 1rem;
-  padding: 15px;
-  margin-bottom: 0px;
-  ${mediaQuery[1]} {
-      font-size: 1.5rem;
+  padding: 5px;
+  margin: auto 0;
+  ${mediaQuery[2]} {
+      font-size: 1.2rem;
+      margin: 10px;
   }
   ${mediaQuery[4]} {
       font-size: 1.7rem;
-      margin: 0 20px;
   }
 `;
 

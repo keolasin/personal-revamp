@@ -8,7 +8,7 @@ import SEO from "../components/seo"
 
 // styling imports
 import styled from "@emotion/styled"
-import { mediaQuery } from '../styles/global.js'
+import { mediaQuery, Container, BlurbImage } from '../styles/global.js'
 
 const ContactPage = () => {
   const data = useStaticQuery(graphql`
@@ -30,13 +30,13 @@ const ContactPage = () => {
           fluid={data.file.childImageSharp.fluid}
           alt="Cup of coffee with succulent"
         />
-          <BodyText>Email or find me on social media<br/>
-            <Email href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</Email><br/>      
-            <Social href="https://github.com/keolasin">Github </Social>
-            <span />
-            <Social href="https://www.linkedin.com/in/reyesmatthew/">LinkedIn </Social>
-            <Social href="https://www.instagram.com/keolasin/">Instagram</Social>
-          </BodyText>
+        <BodyText>Email or find me on social media<br/>
+          <Email href="mailto:Matthew@mreyes.info?Subject=Hi%20Matt">Matthew@mreyes.info</Email><br/>      
+          <Social href="https://github.com/keolasin">Github </Social>
+          <span />
+          <Social href="https://www.linkedin.com/in/reyesmatthew/">LinkedIn </Social>
+          <Social href="https://www.instagram.com/keolasin/">Instagram</Social>
+        </BodyText>
       </Container>
     </Layout>
   )
@@ -44,56 +44,21 @@ const ContactPage = () => {
 
 export default ContactPage
 
-// css styling
-const Container = styled.section`
-  width: 100%;
-  height: 100%;
-  display: grid;
-  place-items: center;
-  transition: 1s ease 0.3s;
-`;
-
-const BlurbImage = styled(Img)`
-  border-radius: 50%;
-  width: 200px;
-  height: 200px;
-  object-fit: cover;
-  margin: 10px auto;
-  ${mediaQuery[0]} {
-    width: 225px;
-    height: 225px;
-  }
-  ${mediaQuery[1]} {
-    width: 250px;
-    height: 250px;
-  }
-  ${mediaQuery[2]} {
-    width: 300px;
-    height: 300px;
-  }
-  ${mediaQuery[3]} {
-    width: 350px;
-    height: 350px;
-  }
-  ${mediaQuery[4]} {
-    width: 450px;
-    height: 450px;
-  }
-`
-
+// specific CSS
 const BodyText = styled.p`
-  background-color: rgba(0, 0, 0, 0.75);
   border-radius: 25px;
   color: #DBE7FB;
   font-family: 'acumin-pro', sans-serif;
-  line-height: 1.5em;
-  font-size: 1.2rem;
-  padding: 15px;
-  ${mediaQuery[1]} {
-      font-size: 1.7rem;
+  line-height: 1.2em;
+  font-size: 0.8rem;
+  padding: 5px;
+  margin: auto 0;
+  ${mediaQuery[2]} {
+      font-size: 1.2rem;
+      margin: 10px;
   }
   ${mediaQuery[4]} {
-      font-size: 2rem;
+      font-size: 1.7rem;
   }
 `;
 
@@ -112,7 +77,7 @@ const Social = styled.a`
   :active {
     color: #798BE4;
   }
-  ${mediaQuery[1]} {
+  ${mediaQuery[2]} {
       font-size: 2rem;
   }
   ${mediaQuery[4]} {
@@ -122,7 +87,8 @@ const Social = styled.a`
 
 const Email = styled(Social)`
   color: #BC9612;
-  font-size: 1.6rem;
+  font-size: 1.2rem;
+  line-height: 1em;
   :hover {
     color: #DBE7FB;
   }
@@ -132,7 +98,7 @@ const Email = styled(Social)`
   :active {
     color: #798BE4;
   }
-  ${mediaQuery[1]} {
+  ${mediaQuery[2]} {
       font-size: 2.4rem;
   }
   ${mediaQuery[4]} {

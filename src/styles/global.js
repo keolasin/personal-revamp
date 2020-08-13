@@ -1,4 +1,6 @@
 import { css } from "@emotion/core"
+import styled from "@emotion/styled"
+import Img from "gatsby-image"
 
 const breakpoints = [320, 480, 768, 992, 1200];
 const mediaQuery = breakpoints.map( breakpoint => {
@@ -28,5 +30,50 @@ const base = css`
     }
 `;
 
-export { base, mediaQuery };
+const Container = styled.section`
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.75);
+  display: flex;
+  flex-flow: column;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  align-items: center;
+  ${mediaQuery[2]} {
+    flex-flow: row;
+    justify-content: center;
+    align-items: center;
+  }
+`;
+
+const BlurbImage = styled(Img)`
+  border-radius: 50%;
+  object-fit: cover;
+  display: none;
+  ${mediaQuery[0]} {
+    width: 125px;
+    height: 125px;
+  }
+  ${mediaQuery[1]} {
+    width: 150px;
+    height: 150px;
+  }
+  ${mediaQuery[2]} {
+    width: 125px;
+    height: 125px;
+    display: inline-block;
+  }
+  ${mediaQuery[3]} {
+    width: 175px;
+    height: 175px;
+  }
+  ${mediaQuery[4]} {
+    width: 225px;
+    height: 225px;
+  }
+`
+
+export { base, mediaQuery, BlurbImage, Container };
 
