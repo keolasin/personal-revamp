@@ -58,8 +58,8 @@ photos:
     title: Clark
     imageAlt: Clark himself.
   - date: 2020-07-11T07:00:00.000Z
-    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597966852/Crater_Lake/Clark's_Friend.jpg
-    title: Clark's Friend
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597966852/Crater_Lake/Friend_of_Clark.jpg
+    title: Friend of Clark
     imageAlt: Clark's Friend
   - date: 2020-07-11T07:00:00.000Z
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597966852/Crater_Lake/Wizard_Island.jpg
