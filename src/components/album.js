@@ -62,11 +62,8 @@ const Album = ({ data, location }) => {
         ...metaData.find((data) => (data.image === photo.url) && data),
         ...photo
     }));
-    // show images by date
-    imageSet.sort((a, b) => {
-        return a.date.localeCompare(b.date);
-    });
-
+    
+    // hooks
     const [ index, setIndex ] = useState(0);
     const [ isOpen, setIsOpen ] = useState(false);
     const prevIndex = index - (1 % imageSet.length);
@@ -77,15 +74,9 @@ const Album = ({ data, location }) => {
             <AlbumHeader>{album.frontmatter.title}
                 <Description>{album.frontmatter.description}</Description>
             </AlbumHeader>
-            <button
-                onClick={() => {
-                    setIsOpen(true);
-                    setIndex(0);
-                }}
-            >Click here to open</button>
             {isOpen && (
                 <Lightbox
-                    mainSrc={imageSet[index].image}
+                    mainSrc={imageSet[index].childImageSharp.full.srcSetWebp}
                     nextSrc={imageSet[nextIndex]}    
                     prevSrc={imageSet[prevIndex]}
                     onCloseRequest={() => {setIsOpen(false)}}
@@ -98,9 +89,12 @@ const Album = ({ data, location }) => {
             <Gallery>
                 {imageSet.map( (image, thumbIndex) => (
                     <ImageLink 
-                        key={image.id}
+                        key={thumbIndex}
+                        onClick={() => {
+                            setIsOpen(true);
+                            setIndex(thumbIndex);
+                        }}
                     >
-                    
                         <ImageTile 
                             fluid={image.childImageSharp.thumb}
                             title={image.title}
