@@ -71,11 +71,7 @@ const Album = ({ data, location }) => {
     const [ isOpen, setIsOpen ] = useState(false);
     const prevIndex = index - (1 % imageSet.length);
     const nextIndex = (index + imageSet.length + 1) % imageSet.length;
-    console.log(`index: ${index}, \n nextIndex: ${nextIndex}, \n prevIndex: ${prevIndex}`);
-    console.log(imageSet);
-    console.log(imageSet[0].childImageSharp.full.src);
-
-    console.log(isOpen);
+    
     return (
         <Layout>
             <AlbumHeader>{album.frontmatter.title}
