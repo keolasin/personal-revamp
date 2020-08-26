@@ -57,36 +57,54 @@ const Album = ({ data, location }) => {
     const photos = album.photos;
     const metaData = album.frontmatter.photos;
     
-    // joining the photo metadata to the imageSharp node image
+    // joining the photo metadata to the imageSharp node image in a single object
     let imageSet = photos.map( photo => ({
         ...metaData.find((data) => (data.image === photo.url) && data),
         ...photo
     }));
+    // show images by date
+    imageSet.sort((a, b) => {
+        return a.date.localeCompare(b.date);
+    });
 
-    console.log(imageSet);
-    /*
-    const [index, setIndex] = useState(0);
-    const [isOpen, setIsOpen] = useState(false);
-    const prevIndex = index - (1 % metaData.length);
-    const nextIndex = (index + metaData.length + 1) % metaData.length;
+    const [ index, setIndex ] = useState(0);
+    const [ isOpen, setIsOpen ] = useState(false);
+    const prevIndex = index - (1 % imageSet.length);
+    const nextIndex = (index + imageSet.length + 1) % imageSet.length;
     console.log(`index: ${index}, \n nextIndex: ${nextIndex}, \n prevIndex: ${prevIndex}`);
-    */
+    console.log(imageSet);
+    console.log(imageSet[0].childImageSharp.full.src);
 
+    console.log(isOpen);
     return (
         <Layout>
             <AlbumHeader>{album.frontmatter.title}
                 <Description>{album.frontmatter.description}</Description>
             </AlbumHeader>
-            
+            <button
+                onClick={() => {
+                    setIsOpen(true);
+                    setIndex(0);
+                }}
+            >Click here to open</button>
+            {isOpen && (
+                <Lightbox
+                    mainSrc={imageSet[index].image}
+                    nextSrc={imageSet[nextIndex]}    
+                    prevSrc={imageSet[prevIndex]}
+                    onCloseRequest={() => {setIsOpen(false)}}
+                    onMovePrevRequest={() => {setIndex(prevIndex)}}
+                    onMoveNextRequest={() => {setIndex(nextIndex)}}
+                    imageTitle={imageSet[index].title}
+                    imageCaption={imageSet[index].imageAlt}                  
+                />
+            )}
             <Gallery>
                 {imageSet.map( (image, thumbIndex) => (
                     <ImageLink 
                         key={image.id}
-                        onClick={() => {
-                            /*setIsOpen(true);
-                            setIndex(thumbIndex);*/
-                        }}
                     >
+                    
                         <ImageTile 
                             fluid={image.childImageSharp.thumb}
                             title={image.title}
@@ -95,36 +113,8 @@ const Album = ({ data, location }) => {
                             {<PhotoText>{image.title}</PhotoText>}
                         </Hover>
                     </ImageLink>
-
-                    /*
-                    <ImageLink key={index} to={image.name}>
-                        <span id={image.name} />
-                        <ImageTile
-                            fluid={image.childImageSharp.full}
-                            title={image.childImageSharp.full.originalName}
-                        />
-                        
-                        
-                        <Hover>
-                            {<PhotoText>{image.name.replace(/_/g, ' ')}</PhotoText>}   
-                        </Hover>
-                                             
-                    </ImageLink>
-                    */
                 ))}
             </Gallery>
-            {/*isOpen && (
-                <Lightbox
-                    mainSrc={metaData[index]}
-                    nextSrc={metaData[nextIndex]}    
-                    prevSrc={metaDada[prevIndex]}
-                    onCloseRequest={() => setIsOpen(false)}
-                    onMovePrevRequest={() => setIndex(prevIndex)}
-                    onMoveNextRequest={() => setIndex(nextIndex)}
-                    imageTitle={metaData[index].title}
-                    imageCaption={metaData[index].imageAlt}                  
-                />
-            )*/}
         </Layout>
     )
 }
