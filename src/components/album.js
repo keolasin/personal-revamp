@@ -62,7 +62,7 @@ const Album = ({ data, location }) => {
         ...metaData.find((data) => (data.image === photo.url) && data),
         ...photo
     }));
-    
+
     // hooks
     const [ index, setIndex ] = useState(0);
     const [ isOpen, setIsOpen ] = useState(false);
@@ -76,7 +76,7 @@ const Album = ({ data, location }) => {
             </AlbumHeader>
             {isOpen && (
                 <Lightbox
-                    mainSrc={imageSet[index].childImageSharp.full.srcSetWebp}
+                    mainSrc={imageSet[index].childImageSharp.full.srcWebp}
                     nextSrc={imageSet[nextIndex]}    
                     prevSrc={imageSet[prevIndex]}
                     onCloseRequest={() => {setIsOpen(false)}}
