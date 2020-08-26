@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
@@ -7,6 +7,9 @@ import { mediaQuery } from "../styles/global.js"
 
 import Gallery from "./gallery.js"
 
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
+
 import Layout from "../components/layout"
 
 // data query
@@ -14,19 +17,30 @@ import Layout from "../components/layout"
 // albumID: node.id
 export const query = graphql`
     query($albumID: String!) {
-        markdownRemark(id: {eq: $albumID}) {
+        album: markdownRemark(id: {eq: $albumID}) {
             frontmatter {
                 title
                 date
                 photographer
                 description
+                photos {
+                    date
+                    image
+                    title
+                    imageAlt
+                }
             }
-            children {
+            photos: children {
                 ... on File {
                     id
                     name
+                    url
                     childImageSharp {
-                        fluid(maxWidth: 800) {
+                        thumb: fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid_withWebp
+                            originalName
+                        }
+                        full: fluid(maxWidth: 1600){
                             ...GatsbyImageSharpFluid_withWebp
                             originalName
                         }
@@ -38,10 +52,26 @@ export const query = graphql`
 `;
 
 // component
-export default ({ data, location }) => {
-    const album = data.markdownRemark;
-    const photos = data.markdownRemark.children;
+const Album = ({ data, location }) => {
+    const album = data.album;
+    const photos = album.photos;
+    const metaData = album.frontmatter.photos;
     
+    // joining the photo metadata to the imageSharp node image
+    let imageSet = photos.map( photo => ({
+        ...metaData.find((data) => (data.image === photo.url) && data),
+        ...photo
+    }));
+
+    console.log(imageSet);
+    /*
+    const [index, setIndex] = useState(0);
+    const [isOpen, setIsOpen] = useState(false);
+    const prevIndex = index - (1 % metaData.length);
+    const nextIndex = (index + metaData.length + 1) % metaData.length;
+    console.log(`index: ${index}, \n nextIndex: ${nextIndex}, \n prevIndex: ${prevIndex}`);
+    */
+
     return (
         <Layout>
             <AlbumHeader>{album.frontmatter.title}
@@ -49,12 +79,29 @@ export default ({ data, location }) => {
             </AlbumHeader>
             
             <Gallery>
-                {photos.map( (image, index) => (
+                {imageSet.map( (image, thumbIndex) => (
+                    <ImageLink 
+                        key={image.id}
+                        onClick={() => {
+                            /*setIsOpen(true);
+                            setIndex(thumbIndex);*/
+                        }}
+                    >
+                        <ImageTile 
+                            fluid={image.childImageSharp.thumb}
+                            title={image.title}
+                        />
+                        <Hover>
+                            {<PhotoText>{image.title}</PhotoText>}
+                        </Hover>
+                    </ImageLink>
+
+                    /*
                     <ImageLink key={index} to={image.name}>
                         <span id={image.name} />
                         <ImageTile
-                            fluid={image.childImageSharp.fluid}
-                            title={image.childImageSharp.fluid.originalName}
+                            fluid={image.childImageSharp.full}
+                            title={image.childImageSharp.full.originalName}
                         />
                         
                         
@@ -63,13 +110,28 @@ export default ({ data, location }) => {
                         </Hover>
                                              
                     </ImageLink>
+                    */
                 ))}
             </Gallery>
+            {/*isOpen && (
+                <Lightbox
+                    mainSrc={metaData[index]}
+                    nextSrc={metaData[nextIndex]}    
+                    prevSrc={metaDada[prevIndex]}
+                    onCloseRequest={() => setIsOpen(false)}
+                    onMovePrevRequest={() => setIndex(prevIndex)}
+                    onMoveNextRequest={() => setIndex(nextIndex)}
+                    imageTitle={metaData[index].title}
+                    imageCaption={metaData[index].imageAlt}                  
+                />
+            )*/}
         </Layout>
     )
 }
 
-const ImageLink = styled(Link)`
+export default Album;
+
+const ImageLink = styled.section`
     position: relative;
     overflow: hidden;
     cursor: pointer;
