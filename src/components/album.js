@@ -66,8 +66,8 @@ const Album = ({ data, location }) => {
     // hooks
     const [ index, setIndex ] = useState(0);
     const [ isOpen, setIsOpen ] = useState(false);
-    const prevIndex = index - (1 % imageSet.length);
-    const nextIndex = (index + imageSet.length + 1) % imageSet.length;
+    const prevIndex = (index + imageSet.length -1) % imageSet.length;
+    const nextIndex = (index + 1) % imageSet.length;
     
     return (
         <Layout>
