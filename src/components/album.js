@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import { graphql, Link } from "gatsby"
 import Img from "gatsby-image"
 
@@ -7,6 +7,9 @@ import { mediaQuery } from "../styles/global.js"
 
 import Gallery from "./gallery.js"
 
+import Lightbox from "react-image-lightbox";
+import "react-image-lightbox/style.css";
+
 import Layout from "../components/layout"
 
 // data query
@@ -14,19 +17,30 @@ import Layout from "../components/layout"
 // albumID: node.id
 export const query = graphql`
     query($albumID: String!) {
-        markdownRemark(id: {eq: $albumID}) {
+        album: markdownRemark(id: {eq: $albumID}) {
             frontmatter {
                 title
                 date
                 photographer
                 description
+                photos {
+                    date
+                    image
+                    title
+                    imageAlt
+                }
             }
-            children {
+            photos: children {
                 ... on File {
                     id
                     name
+                    url
                     childImageSharp {
-                        fluid(maxWidth: 800) {
+                        thumb: fluid(maxWidth: 800) {
+                            ...GatsbyImageSharpFluid_withWebp
+                            originalName
+                        }
+                        full: fluid(maxWidth: 1600){
                             ...GatsbyImageSharpFluid_withWebp
                             originalName
                         }
@@ -38,30 +52,57 @@ export const query = graphql`
 `;
 
 // component
-export default ({ data, location }) => {
-    const album = data.markdownRemark;
-    const photos = data.markdownRemark.children;
+const Album = ({ data, location }) => {
+    const album = data.album;
+    const photos = album.photos;
+    const metaData = album.frontmatter.photos;
+    
+    // joining the photo metadata to the imageSharp node image in a single object
+    let imageSet = photos.map( photo => ({
+        ...metaData.find((data) => (data.image === photo.url) && data),
+        ...photo
+    }));
+
+    // hooks
+    const [ index, setIndex ] = useState(0);
+    const [ isOpen, setIsOpen ] = useState(false);
+    const prevIndex = (index + imageSet.length -1) % imageSet.length;
+    const nextIndex = (index + 1) % imageSet.length;
     
     return (
         <Layout>
             <AlbumHeader>{album.frontmatter.title}
                 <Description>{album.frontmatter.description}</Description>
             </AlbumHeader>
-            
+            {isOpen && (
+                <Lightbox
+                    mainSrc={imageSet[index].childImageSharp.full.srcWebp}
+                    nextSrc={imageSet[nextIndex].childImageSharp.full.srcWebp}    
+                    prevSrc={imageSet[prevIndex].childImageSharp.full.srcWebp}
+                    onCloseRequest={() => {setIsOpen(false)}}
+                    onMovePrevRequest={() => {setIndex(prevIndex)}}
+                    onMoveNextRequest={() => {setIndex(nextIndex)}}
+                    imageTitle={imageSet[index].title}
+                    imageCaption={imageSet[index].imageAlt}
+                    imageLoadErrorMessage={imageSet[index].title}                  
+                />
+            )}
             <Gallery>
-                {photos.map( (image, index) => (
-                    <ImageLink key={index} to={image.name}>
-                        <span id={image.name} />
-                        <ImageTile
-                            fluid={image.childImageSharp.fluid}
-                            title={image.childImageSharp.fluid.originalName}
+                {imageSet.map( (image, thumbIndex) => (
+                    <ImageLink 
+                        key={thumbIndex}
+                        onClick={() => {
+                            setIsOpen(true);
+                            setIndex(thumbIndex);
+                        }}
+                    >
+                        <ImageTile 
+                            fluid={image.childImageSharp.thumb}
+                            title={image.title}
                         />
-                        
-                        
                         <Hover>
-                            {<PhotoText>{image.name.replace(/_/g, ' ')}</PhotoText>}   
+                            {<PhotoText>{image.title}</PhotoText>}
                         </Hover>
-                                             
                     </ImageLink>
                 ))}
             </Gallery>
@@ -69,7 +110,9 @@ export default ({ data, location }) => {
     )
 }
 
-const ImageLink = styled(Link)`
+export default Album;
+
+const ImageLink = styled.section`
     position: relative;
     overflow: hidden;
     cursor: pointer;

@@ -8,7 +8,6 @@ import { mediaQuery, Container, BlurbImage } from "../styles/global.js"
 
 import Layout from "../components/layout"
 import SEO from "../components/seo"
-import ToggleButton from "../components/toggleButton.js"
 
 const IndexPage = ({ data }) => {
   const portrait = useStaticQuery(graphql`
