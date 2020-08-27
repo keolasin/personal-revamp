@@ -77,8 +77,8 @@ const Album = ({ data, location }) => {
             {isOpen && (
                 <Lightbox
                     mainSrc={imageSet[index].childImageSharp.full.srcWebp}
-                    nextSrc={imageSet[nextIndex]}    
-                    prevSrc={imageSet[prevIndex]}
+                    nextSrc={imageSet[nextIndex].childImageSharp.full.srcWebp}    
+                    prevSrc={imageSet[prevIndex].childImageSharp.full.srcWebp}
                     onCloseRequest={() => {setIsOpen(false)}}
                     onMovePrevRequest={() => {setIndex(prevIndex)}}
                     onMoveNextRequest={() => {setIndex(nextIndex)}}
