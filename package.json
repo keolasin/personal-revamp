@@ -32,8 +32,11 @@
     "smooth-scroll": "^16.1.2"
   },
   "devDependencies": {
+    "@testing-library/cypress": "^6.0.1",
+    "@testing-library/react": "^10.4.9",
     "babel-jest": "^26.3.0",
     "babel-preset-gatsby": "^0.5.7",
+    "cypress": "^5.0.0",
     "eslint": "^7.7.0",
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
@@ -51,7 +54,8 @@
     "lint-staged": "^10.2.13",
     "prettier": "^1.19.1",
     "puppeteer": "^5.2.1",
-    "react-test-renderer": "^16.13.1"
+    "react-test-renderer": "^16.13.1",
+    "start-server-and-test": "^1.11.3"
   },
   "keywords": [
     "gatsby"
@@ -64,13 +68,11 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "lint:js": "eslint \"**/*.{js,jsx}\"",
-    "lint": "run-p lint:*",
-    "precommit": "lint-staged",
-    "test-write": "jest --watch",
-    "test": "run-p test:* -cn",
-    "test:lint": "npm run lint",
-    "test:functional": "jest"
+    "test": "jest",
+    "cy:open": "cypress open",
+    "cy:run": "cypress run",
+    "test:e2e": "start-server-and-test develop http://localhost:8000 cy:open",
+    "test:e2e:ci": "start-server-and-test develop http://localhost:8000 cy:run"
   },
   "repository": {
     "type": "git",
@@ -79,7 +81,12 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
   "lint-staged": {
-    "*.{js,json,css,md}": ["prettier --write", "git add"]
+    "*.js": "eslint --cache --fix"
   }
 }
