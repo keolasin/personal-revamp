@@ -38,14 +38,19 @@
     "eslint-config-airbnb": "^18.2.0",
     "eslint-config-prettier": "^6.11.0",
     "eslint-plugin-import": "^2.22.0",
+    "eslint-plugin-jest": "^23.20.0",
     "eslint-plugin-jsx-a11y": "^6.3.1",
     "eslint-plugin-prettier": "^3.1.4",
     "eslint-plugin-react": "^7.20.6",
+    "gatsby-plugin-eslint": "^2.0.8",
     "husky": "^4.2.5",
     "identity-obj-proxy": "^3.0.0",
     "jest": "^26.4.2",
+    "jest-config": "^26.4.2",
+    "jest-puppeteer": "^4.4.0",
     "lint-staged": "^10.2.13",
     "prettier": "^1.19.1",
+    "puppeteer": "^5.2.1",
     "react-test-renderer": "^16.13.1"
   },
   "keywords": [
@@ -59,7 +64,13 @@
     "start": "npm run develop",
     "serve": "gatsby serve",
     "clean": "gatsby clean",
-    "test": "jest"
+    "lint:js": "eslint \"**/*.{js,jsx}\"",
+    "lint": "run-p lint:*",
+    "precommit": "lint-staged",
+    "test-write": "jest --watch",
+    "test": "run-p test:* -cn",
+    "test:lint": "npm run lint",
+    "test:functional": "jest"
   },
   "repository": {
     "type": "git",
@@ -68,4 +79,7 @@
   "bugs": {
     "url": "https://github.com/gatsbyjs/gatsby/issues"
   },
+  "lint-staged": {
+    "*.{js,json,css,md}": ["prettier --write", "git add"]
+  }
 }
