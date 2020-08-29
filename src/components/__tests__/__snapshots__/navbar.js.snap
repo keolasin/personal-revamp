@@ -1,0 +1,236 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Navbar renders correctly 1`] = `
+<nav
+  className="css-5w8dkp"
+>
+  <a
+    css={
+      Object {
+        "map": undefined,
+        "name": "782jr7",
+        "next": undefined,
+        "styles": "
+  
+    font-family: 'astounder-squared-bb', sans-serif;
+    font-size: 62.5%;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    @media (min-width: 320px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 480px) {
+        font-size: 1.4rem;
+    }
+    @media (min-width: 768px) {
+        font-size: 1.6rem;
+    }
+    @media (min-width: 992px) {
+        font-size: 1.8rem;
+    }
+    @media (min-width: 1200px) {
+        font-size: 3rem;
+    }
+;
+  font-size: 1.8rem;
+  grid-area: home;
+  @media (min-width: 320px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 480px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 2.3rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 2.5rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 3.5rem;
+  }
+",
+        "toString": [Function],
+      }
+    }
+    href="/"
+  >
+    MReyes
+  </a>
+  <a
+    css={
+      Object {
+        "map": undefined,
+        "name": "1e7yghs",
+        "next": undefined,
+        "styles": "
+  
+    font-family: 'astounder-squared-bb', sans-serif;
+    font-size: 62.5%;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    @media (min-width: 320px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 480px) {
+        font-size: 1.4rem;
+    }
+    @media (min-width: 768px) {
+        font-size: 1.6rem;
+    }
+    @media (min-width: 992px) {
+        font-size: 1.8rem;
+    }
+    @media (min-width: 1200px) {
+        font-size: 3rem;
+    }
+;
+  font-size: 1.4rem;
+  @media (min-width: 320px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 480px) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+",
+        "toString": [Function],
+      }
+    }
+    href="/albums"
+    style={
+      Object {
+        "gridArea": "photos",
+      }
+    }
+  >
+    Photos
+  </a>
+  <a
+    css={
+      Object {
+        "map": undefined,
+        "name": "1e7yghs",
+        "next": undefined,
+        "styles": "
+  
+    font-family: 'astounder-squared-bb', sans-serif;
+    font-size: 62.5%;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    @media (min-width: 320px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 480px) {
+        font-size: 1.4rem;
+    }
+    @media (min-width: 768px) {
+        font-size: 1.6rem;
+    }
+    @media (min-width: 992px) {
+        font-size: 1.8rem;
+    }
+    @media (min-width: 1200px) {
+        font-size: 3rem;
+    }
+;
+  font-size: 1.4rem;
+  @media (min-width: 320px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 480px) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+",
+        "toString": [Function],
+      }
+    }
+    href="/projects"
+    style={
+      Object {
+        "gridArea": "projects",
+      }
+    }
+  >
+    Projects
+  </a>
+  <a
+    css={
+      Object {
+        "map": undefined,
+        "name": "1e7yghs",
+        "next": undefined,
+        "styles": "
+  
+    font-family: 'astounder-squared-bb', sans-serif;
+    font-size: 62.5%;
+    text-decoration: none;
+    text-align: center;
+    margin: 0 auto;
+    @media (min-width: 320px) {
+        font-size: 1rem;
+    }
+    @media (min-width: 480px) {
+        font-size: 1.4rem;
+    }
+    @media (min-width: 768px) {
+        font-size: 1.6rem;
+    }
+    @media (min-width: 992px) {
+        font-size: 1.8rem;
+    }
+    @media (min-width: 1200px) {
+        font-size: 3rem;
+    }
+;
+  font-size: 1.4rem;
+  @media (min-width: 320px) {
+    font-size: 1.4rem;
+  }
+  @media (min-width: 480px) {
+    font-size: 1.6rem;
+  }
+  @media (min-width: 768px) {
+    font-size: 1.8rem;
+  }
+  @media (min-width: 992px) {
+    font-size: 2rem;
+  }
+  @media (min-width: 1200px) {
+    font-size: 2.5rem;
+  }
+",
+        "toString": [Function],
+      }
+    }
+    href="/contact"
+    style={
+      Object {
+        "gridArea": "contact",
+      }
+    }
+  >
+    Contact
+  </a>
+</nav>
+`;
