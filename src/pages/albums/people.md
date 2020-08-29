@@ -3,8 +3,8 @@ title: People
 photographer: Matthew Reyes
 date: 2020-07-21T23:20:37.419Z
 coverImg: https://res.cloudinary.com/keolasin/image/upload/w_1600,q_auto,f_auto/v1597268109/People/Logan_Desert.jpg
-description: "\"I don't know half of you half as well as I should like; and I
-  like less than half of you half as well as you deserve.\" Tolkien"
+description: '"I don''t know half of you half as well as I should like; and I
+  like less than half of you half as well as you deserve." Tolkien'
 photos:
   - date: 2020-07-21T23:23:50.859Z
     image: https://res.cloudinary.com/keolasin/image/upload/w_1600,q_auto,f_auto/v1597268111/People/Riverwalk_Reflections.jpg

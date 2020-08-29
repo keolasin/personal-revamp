@@ -5,59 +5,55 @@
  * See: https://www.gatsbyjs.org/docs/use-static-query/
  */
 
-import React from "react"
+import React from "react";
 
 // gatsby
-import { useStaticQuery, graphql } from "gatsby"
-import BackgroundImage from 'gatsby-background-image'
+import { useStaticQuery, graphql } from "gatsby";
+import BackgroundImage from "gatsby-background-image";
 
 // styling imports
-import styled from "@emotion/styled"
+import styled from "@emotion/styled";
 
 const Background = ({ children, className }) => {
-  const { mobileImage, desktopImage } = useStaticQuery(graphql`
-    query {
-      mobileImage: file(name: {eq: "jTree"}) {
-        childImageSharp {
-          fluid(maxWidth: 1000, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-      desktopImage: file(name: {eq: "hiking"}) {
-        childImageSharp {
-          fluid(maxWidth: 2000, quality: 100) {
-            ...GatsbyImageSharpFluid_withWebp
-          }
-        }
-      }
-    }
-  `);
+	const { mobileImage, desktopImage } = useStaticQuery(graphql`
+		query {
+			mobileImage: file(name: { eq: "jTree" }) {
+				childImageSharp {
+					fluid(maxWidth: 1000, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
+			}
+			desktopImage: file(name: { eq: "hiking" }) {
+				childImageSharp {
+					fluid(maxWidth: 2000, quality: 100) {
+						...GatsbyImageSharpFluid_withWebp
+					}
+				}
+			}
+		}
+	`);
 
-  const sources = [
-    mobileImage.childImageSharp.fluid,
-    {
-      ...desktopImage.childImageSharp.fluid,
-      media: `(min-width: 1200px)`
-    }
-  ];
+	const sources = [
+		mobileImage.childImageSharp.fluid,
+		{
+			...desktopImage.childImageSharp.fluid,
+			media: `(min-width: 1200px)`,
+		},
+	];
 
-  return (
-    <BackgroundImage
-      fluid={sources}
-      Tag={`section`}
-      className={className}
-    >
-      {children}
-    </BackgroundImage>
-  )
-}
+	return (
+		<BackgroundImage fluid={sources} Tag={`section`} className={className}>
+			{children}
+		</BackgroundImage>
+	);
+};
 
 // css styling
 const ArtBackground = styled(Background)`
-  width: 100%;
-  min-height: 100vh;
-  background-color: transparent;
+	width: 100%;
+	min-height: 100vh;
+	background-color: transparent;
 `;
 
-export default ArtBackground
+export default ArtBackground;
