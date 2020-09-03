@@ -31,7 +31,7 @@ const base = css`
 `;
 
 const Container = styled.section`
-	border-radius: 25px;
+	border-radius: 25px 25px 0px 0px;
 	background-color: rgba(0, 0, 0, 0.75);
 	display: flex;
 	flex-flow: column;

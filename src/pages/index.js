@@ -3,9 +3,11 @@ import { React, useState } from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Img from "gatsby-image";
 
+// styling
 import styled from "@emotion/styled";
 import { mediaQuery, Container, BlurbImage } from "../styles/global.js";
 
+// components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 
@@ -44,7 +46,7 @@ const IndexPage = ({ data }) => {
 export default IndexPage;
 
 // css styling
-const BodyText = styled.p`
+const BodyText = styled.h1`
 	border-radius: 25px;
 	color: #dbe7fb;
 	font-family: "acumin-pro", sans-serif;

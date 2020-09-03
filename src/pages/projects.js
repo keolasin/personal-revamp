@@ -2,10 +2,11 @@ import React from "react";
 
 import { graphql } from "gatsby";
 
-// ../components
+// components
 import Layout from "../components/layout";
 import SEO from "../components/seo";
 import ProjectLink from "../components/projectLink";
+import Header from "../components/header";
 
 // styling imports
 import styled from "@emotion/styled";
@@ -57,6 +58,7 @@ const ProjectPage = ({
 	return (
 		<Layout>
 			<SEO title="projects" />
+			<Header>Projects</Header>
 			<Container>{Projects}</Container>
 		</Layout>
 	);

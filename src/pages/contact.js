@@ -3,12 +3,13 @@ import React from "react";
 import { useStaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 
-import Layout from "../components/layout";
-import SEO from "../components/seo";
-
 // styling imports
 import styled from "@emotion/styled";
 import { mediaQuery, Container, BlurbImage } from "../styles/global.js";
+
+// components
+import Layout from "../components/layout";
+import SEO from "../components/seo";
 
 const ContactPage = () => {
 	const data = useStaticQuery(graphql`

@@ -6,6 +6,7 @@ import styled from "@emotion/styled";
 import { mediaQuery } from "../styles/global.js";
 
 import Gallery from "./gallery.js";
+import Header from "./header.js";
 
 import Lightbox from "react-image-lightbox";
 import "react-image-lightbox/style.css";
@@ -71,10 +72,10 @@ const Album = ({ data, location }) => {
 
 	return (
 		<Layout>
-			<AlbumHeader>
+			<Header>
 				{album.frontmatter.title}
 				<Description>{album.frontmatter.description}</Description>
-			</AlbumHeader>
+			</Header>
 			{isOpen && (
 				<Lightbox
 					mainSrc={imageSet[index].childImageSharp.full.srcWebp}
@@ -134,23 +135,6 @@ const ImageLink = styled.section`
 	:active {
 		box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4),
 			0 6px 20px 0 rgba(188, 150, 18, 0.35);
-	}
-`;
-
-const AlbumHeader = styled.h2`
-	border-radius: 25px;
-	font-family: "astounder-squared-bb", sans-serif;
-	color: #bc9612;
-	font-size: 1.4rem;
-	background-color: rgba(0, 0, 0, 0.75);
-	display: inline-block;
-	padding: 0 20px;
-	margin: 10px;
-	${mediaQuery[1]} {
-		font-size: 1.8rem;
-	}
-	${mediaQuery[4]} {
-		font-size: 2.3rem;
 	}
 `;
 

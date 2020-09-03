@@ -1,9 +1,11 @@
 import React from "react";
 import { graphql } from "gatsby";
 
+// components
 import Layout from "../components/layout";
 import AlbumCover from "../components/albumCover";
 import Gallery from "../components/gallery";
+import Header from "../components/header";
 
 // query for the cover photos of each album, along with the name of each album to appear on the galleries page
 export const albumsQuery = graphql`
@@ -46,6 +48,7 @@ const GalleriesPage = ({
 
 	return (
 		<Layout>
+			<Header>Albums</Header>
 			<Gallery>{Albums}</Gallery>
 		</Layout>
 	);

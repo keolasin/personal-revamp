@@ -62,6 +62,8 @@ const Container = styled.nav`
 	grid-template-areas:
 		". home ."
 		"photos projects contact";
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 0px 0px 25px 25px;
 	a {
 		color: #dbe7fb;
 		-webkit-text-stroke-width: 1px;
@@ -88,29 +90,34 @@ const homeLink = css`
 	${base}
 	font-size: 1.8rem;
 	grid-area: home;
+	margin-top: 5px;
 	${mediaQuery[0]} {
 		font-size: 1.8rem;
+		margin-top: 5px;
 	}
 	${mediaQuery[1]} {
 		font-size: 2rem;
+		margin-top: 10px;
+		margin-bottom: 5px;
 	}
 	${mediaQuery[2]} {
 		font-size: 2.3rem;
+		margin-top: 10px;
+		margin-bottom: 5px;
 	}
 	${mediaQuery[3]} {
 		font-size: 2.5rem;
 	}
 	${mediaQuery[4]} {
 		font-size: 3.5rem;
+		margin-top: 20px;
+		margin-bottom: 22px;
 	}
 `;
 
 const linkStyle = css`
 	${base}
 	font-size: 1.4rem;
-	${mediaQuery[0]} {
-		font-size: 1.4rem;
-	}
 	${mediaQuery[1]} {
 		font-size: 1.6rem;
 	}
