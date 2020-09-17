@@ -5,7 +5,7 @@ import styled from "@emotion/styled";
 import { mediaQuery } from "../styles/global";
 
 const Header = ({ children }) => {
-	return <Head>{children}</Head>;
+	return <StyledHeader>{children}</StyledHeader>;
 };
 
 export default Header;
@@ -14,7 +14,7 @@ Header.propTypes = {
 	children: PropTypes.node.isRequired,
 };
 
-const Head = styled.h1`
+const StyledHeader = styled.h1`
 	border-radius: 25px;
 	font-family: "astounder-squared-bb", sans-serif;
 	color: #bc9612;
