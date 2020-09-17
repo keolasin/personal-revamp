@@ -14,7 +14,7 @@ import styled from "@emotion/styled";
 // query for projects
 export const projectsQuery = graphql`
 	query {
-		allMarkdownRemark(
+		projects: allMarkdownRemark(
 			filter: { frontmatter: { draft: { eq: false } } }
 			sort: { order: DESC, fields: [frontmatter___date] }
 		) {
@@ -25,7 +25,6 @@ export const projectsQuery = graphql`
 					frontmatter {
 						date(formatString: "MMMM DD, YYYY")
 						title
-						link
 						imageAlt
 					}
 					image {
@@ -47,7 +46,7 @@ export const projectsQuery = graphql`
 // component
 const ProjectPage = ({
 	data: {
-		allMarkdownRemark: { edges },
+		projects: { edges },
 	},
 }) => {
 	// create ProjectLink components for each project returned from query
