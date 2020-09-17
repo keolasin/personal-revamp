@@ -108,7 +108,7 @@ exports.createPages = async ({ graphql, actions }) => {
 
 	const result = await graphql(`
 		query {
-			allMarkdownRemark(
+			albums: allMarkdownRemark(
 				filter: {
 					frontmatter: { photos: { elemMatch: { title: { ne: null } } } }
 				}
@@ -128,10 +128,38 @@ exports.createPages = async ({ graphql, actions }) => {
 					}
 				}
 			}
+			projects: allMarkdownRemark(
+				filter: {
+					frontmatter: { link: { ne: null }, draft: { eq: false } }
+				}
+			) {
+				edges {
+					node {
+						id
+						frontmatter {
+							title
+						}
+					}
+				}
+			}
 		}
 	`);
 
-	result.data.allMarkdownRemark.edges.forEach(({ node }) => {
+	result.data.projects.edges.forEach(({ node }) => {
+		// slug for projects
+		const projectSlug = node.frontmatter.title;
+
+		// create unique page for the project
+		createPage({
+			path: `projects/${projectSlug}`,
+			component: path.resolve(`./src/templates/projectTemplate.js`),
+			context: {
+				projectID: node.id,
+			},
+		});
+	});
+
+	result.data.albums.edges.forEach(({ node }) => {
 		// slug for albums
 		const albumSlug = node.frontmatter.title;
 
@@ -145,6 +173,8 @@ exports.createPages = async ({ graphql, actions }) => {
 			},
 		});
 
+		/* 
+		***currently using react-image-lightbox to loop through all images, don't need unique url/context for each photo, may change in the future***
 		// loop through all the photos (children) in the album (parent)
 		node.children.forEach(async child => {
 			// slug for photos
@@ -161,5 +191,6 @@ exports.createPages = async ({ graphql, actions }) => {
 				},
 			});
 		});
+		*/
 	});
 };
