@@ -48,6 +48,30 @@ const Container = styled.section`
 	}
 `;
 
+const Date = styled.strong`
+	${base}
+	color: #BC9612;
+	font-weight: bold;
+	font-size: 1rem;
+	margin: auto 10px;
+	${mediaQuery[0]} {
+		font-size: 1rem;
+	}
+	${mediaQuery[1]} {
+		font-size: 1.1rem;
+	}
+	${mediaQuery[2]} {
+		font-size: 1.2rem;
+	}
+	${mediaQuery[3]} {
+		font-size: 1.3rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 1.4rem;
+	}
+
+`;
+
 const BlurbImage = styled(Img)`
 	border-radius: 50%;
 	object-fit: cover;
@@ -75,4 +99,4 @@ const BlurbImage = styled(Img)`
 	}
 `;
 
-export { base, mediaQuery, BlurbImage, Container };
+export { base, mediaQuery, BlurbImage, Container, Date };
