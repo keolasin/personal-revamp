@@ -54,6 +54,7 @@ export const query = graphql`
 
 // component
 const Album = ({ data, location }) => {
+	// useful variable names
 	const album = data.album;
 	const photos = album.photos;
 	const metaData = album.frontmatter.photos;
@@ -76,7 +77,7 @@ const Album = ({ data, location }) => {
 				{album.frontmatter.title}
 				<Description>{album.frontmatter.description}</Description>
 			</Header>
-			{isOpen && (
+			{isOpen && ( // react-image-lightbox opened
 				<Lightbox
 					mainSrc={imageSet[index].childImageSharp.full.srcWebp}
 					nextSrc={imageSet[nextIndex].childImageSharp.full.srcWebp}
@@ -100,6 +101,7 @@ const Album = ({ data, location }) => {
 					<ImageLink
 						key={thumbIndex}
 						onClick={() => {
+							// open the react-image-lightbox
 							setIsOpen(true);
 							setIndex(thumbIndex);
 						}}
