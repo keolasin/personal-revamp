@@ -69,7 +69,6 @@ const Date = styled.strong`
 	${mediaQuery[4]} {
 		font-size: 1.4rem;
 	}
-
 `;
 
 const BlurbImage = styled(Img)`

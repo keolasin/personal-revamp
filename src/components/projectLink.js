@@ -6,7 +6,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { mediaQuery, base, Date } from "../styles/global.js";
 
-const ProjectLink = ({ project }) => {	
+const ProjectLink = ({ project }) => {
 	return (
 		<Container>
 			<Project to={project.frontmatter.title}>
@@ -19,7 +19,7 @@ const ProjectLink = ({ project }) => {
 				<Excerpt>{project.excerpt}</Excerpt>
 			</Project>
 		</Container>
-	)
+	);
 };
 
 export default ProjectLink;
