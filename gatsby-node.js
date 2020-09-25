@@ -129,9 +129,7 @@ exports.createPages = async ({ graphql, actions }) => {
 				}
 			}
 			projects: allMarkdownRemark(
-				filter: {
-					frontmatter: { link: { ne: null }, draft: { eq: false } }
-				}
+				filter: { frontmatter: { link: { ne: null }, draft: { eq: false } } }
 			) {
 				edges {
 					node {
