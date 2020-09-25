@@ -43,7 +43,14 @@ const Background = ({ children, className }) => {
 	];
 
 	return (
-		<BackgroundImage fluid={sources} Tag={`section`} className={className}>
+		<BackgroundImage 
+			fluid={sources}
+			Tag={`section`}
+			className={className}
+			title="Fullscreen Background"
+			role="img"
+			aria-label="Art-directed fullscreen background image"
+		>
 			{children}
 		</BackgroundImage>
 	);

@@ -5,13 +5,13 @@ import { useStaticQuery } from "gatsby";
 import Project from "../projectTemplate";
 
 // Mocks and fixate generate className
-import { mobileImage, desktopImage } from "../../../__mocks__/file-mock.js";
+import { projectTemplateMock } from "../../../__mocks__/file-mock.js";
 jest.mock('short-uuid');
 
 beforeEach(()=> {
     useStaticQuery.mockImplementation(() => ({
-        mobileImage,
-        desktopImage
+        mobileImage: projectTemplateMock.mobileImage,
+        desktopImage: projectTemplateMock.desktopImage
     }));
     
     const uuid = require('short-uuid');
