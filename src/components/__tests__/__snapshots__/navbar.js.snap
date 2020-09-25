@@ -1,112 +1,235 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`Navbar renders correctly 1`] = `
+.emotion-4 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  place-items: center center;
+  width: 100%;
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". home ." "photos projects contact";
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 0px 0px 25px 25px;
+}
+
+@media (min-width:320px) {
+  .emotion-4 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-4 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-4 {
+    font-size: 3rem;
+  }
+}
+
+.emotion-4 a {
+  color: #dbe7fb;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.emotion-4 a:hover {
+  color: #798be4;
+}
+
+.emotion-4 a:focus {
+  color: #bc9612;
+}
+
+.emotion-4 a:active {
+  color: #bc9612;
+}
+
+@media (min-width:1200px) {
+  .emotion-4 {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "home photos projects contact";
+  }
+}
+
+.emotion-0 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  grid-area: home;
+  margin-top: 5px;
+}
+
+@media (min-width:320px) {
+  .emotion-0 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-0 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-0 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-0 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:320px) {
+  .emotion-0 {
+    font-size: 1.8rem;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-0 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    font-size: 2.3rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-0 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-0 {
+    font-size: 3.5rem;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+}
+
+.emotion-1 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
+@media (min-width:320px) {
+  .emotion-1 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-1 {
+    font-size: 2.5rem;
+  }
+}
+
 <nav
-  className="css-owoe6t"
+  className="emotion-4 emotion-5"
 >
   <a
-    css={
-      Object {
-        "map": undefined,
-        "name": "j670iw",
-        "next": undefined,
-        "styles": "
-	
-	font-family: \\"astounder-squared-bb\\", sans-serif;
-	font-size: 62.5%;
-	text-decoration: none;
-	text-align: center;
-	margin: 0 auto;
-	@media (min-width: 320px) {
-		font-size: 1rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 3rem;
-	}
-;
-	font-size: 1.8rem;
-	grid-area: home;
-	@media (min-width: 320px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 2rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 2.3rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 2.5rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 3.5rem;
-	}
-",
-        "toString": [Function],
-      }
-    }
+    className="emotion-0"
     href="/"
   >
     MReyes
   </a>
   <a
-    css={
-      Object {
-        "map": undefined,
-        "name": "1klj2yt",
-        "next": undefined,
-        "styles": "
-	
-	font-family: \\"astounder-squared-bb\\", sans-serif;
-	font-size: 62.5%;
-	text-decoration: none;
-	text-align: center;
-	margin: 0 auto;
-	@media (min-width: 320px) {
-		font-size: 1rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 3rem;
-	}
-;
-	font-size: 1.4rem;
-	@media (min-width: 320px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 2rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 2.5rem;
-	}
-",
-        "toString": [Function],
-      }
-    }
+    className="emotion-1"
     href="/albums"
     style={
       Object {
@@ -117,54 +240,7 @@ exports[`Navbar renders correctly 1`] = `
     Photos
   </a>
   <a
-    css={
-      Object {
-        "map": undefined,
-        "name": "1klj2yt",
-        "next": undefined,
-        "styles": "
-	
-	font-family: \\"astounder-squared-bb\\", sans-serif;
-	font-size: 62.5%;
-	text-decoration: none;
-	text-align: center;
-	margin: 0 auto;
-	@media (min-width: 320px) {
-		font-size: 1rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 3rem;
-	}
-;
-	font-size: 1.4rem;
-	@media (min-width: 320px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 2rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 2.5rem;
-	}
-",
-        "toString": [Function],
-      }
-    }
+    className="emotion-1"
     href="/projects"
     style={
       Object {
@@ -175,54 +251,7 @@ exports[`Navbar renders correctly 1`] = `
     Projects
   </a>
   <a
-    css={
-      Object {
-        "map": undefined,
-        "name": "1klj2yt",
-        "next": undefined,
-        "styles": "
-	
-	font-family: \\"astounder-squared-bb\\", sans-serif;
-	font-size: 62.5%;
-	text-decoration: none;
-	text-align: center;
-	margin: 0 auto;
-	@media (min-width: 320px) {
-		font-size: 1rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 3rem;
-	}
-;
-	font-size: 1.4rem;
-	@media (min-width: 320px) {
-		font-size: 1.4rem;
-	}
-	@media (min-width: 480px) {
-		font-size: 1.6rem;
-	}
-	@media (min-width: 768px) {
-		font-size: 1.8rem;
-	}
-	@media (min-width: 992px) {
-		font-size: 2rem;
-	}
-	@media (min-width: 1200px) {
-		font-size: 2.5rem;
-	}
-",
-        "toString": [Function],
-      }
-    }
+    className="emotion-1"
     href="/contact"
     style={
       Object {
