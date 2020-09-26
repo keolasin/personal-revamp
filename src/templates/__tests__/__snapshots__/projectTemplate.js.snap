@@ -442,11 +442,8 @@ exports[`Project renders correctly 1`] = `
 
 <div>
   <section
-    aria-label="Art-directed fullscreen background image"
     class="emotion-13 emotion-14 gbi--1561385816-73WakrfVbNJBaAmhQtEeDv"
-    role="img"
     style="background-position: center; background-repeat: no-repeat; background-size: cover; background-color: transparent; position: relative; opacity: 0.99;"
-    title="Fullscreen Background"
   >
     <style>
       
