@@ -1,0 +1,538 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Project renders correctly 1`] = `
+.emotion-13 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.emotion-4 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  place-items: center center;
+  width: 100%;
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". home ." "photos projects contact";
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 0px 0px 25px 25px;
+}
+
+@media (min-width:320px) {
+  .emotion-4 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-4 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-4 {
+    font-size: 3rem;
+  }
+}
+
+.emotion-4 a {
+  color: #dbe7fb;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.emotion-4 a:hover {
+  color: #798be4;
+}
+
+.emotion-4 a:focus {
+  color: #bc9612;
+}
+
+.emotion-4 a:active {
+  color: #bc9612;
+}
+
+@media (min-width:1200px) {
+  .emotion-4 {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "home photos projects contact";
+  }
+}
+
+.emotion-0 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  grid-area: home;
+  margin-top: 5px;
+}
+
+@media (min-width:320px) {
+  .emotion-0 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-0 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-0 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-0 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:320px) {
+  .emotion-0 {
+    font-size: 1.8rem;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-0 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    font-size: 2.3rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-0 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-0 {
+    font-size: 3.5rem;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+}
+
+.emotion-1 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
+@media (min-width:320px) {
+  .emotion-1 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-1 {
+    font-size: 2.5rem;
+  }
+}
+
+.emotion-12 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  overflow: auto;
+}
+
+@media (min-width:320px) {
+  .emotion-12 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-12 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-12 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-12 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-12 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-12 {
+    width: 95%;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-12 {
+    width: 90%;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-12 {
+    width: 80%;
+  }
+}
+
+.emotion-6 {
+  border-radius: 25px;
+  font-family: "astounder-squared-bb",sans-serif;
+  color: #bc9612;
+  font-size: 1.4rem;
+  background-color: rgba(0,0,0,0.75);
+  display: inline-block;
+  padding: 0 20px;
+  margin: 10px;
+}
+
+@media (min-width:480px) {
+  .emotion-6 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-6 {
+    font-size: 2.3rem;
+  }
+}
+
+.emotion-10 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 25px;
+  text-align: left;
+  color: #dbe7fb;
+  font-family: "acumin-pro",sans-serif;
+  line-height: 1.2em;
+  font-size: 1rem;
+  padding: 5px;
+  margin: auto 0;
+}
+
+@media (min-width:320px) {
+  .emotion-10 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-10 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-10 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-10 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-10 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-10 {
+    font-size: 1.2rem;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-10 {
+    font-size: 1.7rem;
+  }
+}
+
+.emotion-8 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  color: #BC9612;
+  font-weight: bold;
+  font-size: 1rem;
+  margin: auto 10px;
+}
+
+@media (min-width:320px) {
+  .emotion-8 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-8 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-8 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-8 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-8 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:320px) {
+  .emotion-8 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-8 {
+    font-size: 1.1rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-8 {
+    font-size: 1.2rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-8 {
+    font-size: 1.3rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-8 {
+    font-size: 1.4rem;
+  }
+}
+
+<div>
+  <section
+    class="emotion-13 emotion-14 gbi--1561385816-73WakrfVbNJBaAmhQtEeDv"
+    style="background-position: center; background-repeat: no-repeat; background-size: cover; background-color: transparent; position: relative; opacity: 0.99;"
+  >
+    <style>
+      
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:before,
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            
+            transition: opacity 0.5s ease 250ms;
+            background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-color: transparent;
+
+          }
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:before {
+            z-index: -100;
+            
+            
+            opacity: 1; 
+          }
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:after {
+            z-index: -101;
+            
+            
+            
+          }
+        
+    </style>
+    <noscript />
+    <nav
+      class="emotion-4 emotion-5"
+    >
+      <a
+        class="emotion-0"
+        href="/"
+      >
+        MReyes
+      </a>
+      <a
+        class="emotion-1"
+        href="/albums"
+        style="grid-area: photos;"
+      >
+        Photos
+      </a>
+      <a
+        class="emotion-1"
+        href="/projects"
+        style="grid-area: projects;"
+      >
+        Projects
+      </a>
+      <a
+        class="emotion-1"
+        href="/contact"
+        style="grid-area: contact;"
+      >
+        Contact
+      </a>
+    </nav>
+    <main
+      class="emotion-12"
+    >
+      <h1
+        class="emotion-6 emotion-7"
+      >
+        Chatter
+      </h1>
+      <article
+        class="emotion-10 emotion-11"
+      >
+        <strong
+          class="emotion-8 emotion-9"
+        >
+          April 01, 2020
+        </strong>
+        <section>
+          <p>
+            A chatroom app built with create-react-app and firebase.
+          </p>
+        </section>
+      </article>
+    </main>
+  </section>
+</div>
+`;

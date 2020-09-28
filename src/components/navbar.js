@@ -1,133 +1,133 @@
-import React from "react"
+import React from "react";
 
-import { Link } from "gatsby"
+import { Link } from "gatsby";
 
-import styled from "@emotion/styled"
-import { css } from "@emotion/core"
-import { mediaQuery, base } from '../styles/global.js'
+import styled from "@emotion/styled";
+import { css } from "@emotion/core";
+import { mediaQuery, base } from "../styles/global.js";
 
 const NavBar = () => {
-  // site layout HTML
-  return (
-      <Container>
-        <Link 
-            css={homeLink} 
-            to="/" 
-            activeStyle={{ color: '#BC9612' }}
-        >
-            MReyes
-        </Link>
+	// site layout HTML
+	return (
+		<Container>
+			<Link css={homeLink} to="/" activeStyle={{ color: "#BC9612" }}>
+				MReyes
+			</Link>
 
-        <Link 
-            css={linkStyle} 
-            style={{gridArea: 'photos'}} 
-            to="/albums" 
-            activeStyle={{ color: '#BC9612' }} 
-            partiallyActive={true}
-        >
-            Photos
-        </Link>
+			<Link
+				css={linkStyle}
+				style={{ gridArea: "photos" }}
+				to="/albums"
+				activeStyle={{ color: "#BC9612" }}
+				partiallyActive={true}
+			>
+				Photos
+			</Link>
 
-        <Link 
-            css={linkStyle} 
-            style={{gridArea: 'projects'}} 
-            to="/projects" 
-            activeStyle={{ color: '#BC9612' }} 
-            partiallyActive={true}
-        >
-            Projects
-        </Link>
+			<Link
+				css={linkStyle}
+				style={{ gridArea: "projects" }}
+				to="/projects"
+				activeStyle={{ color: "#BC9612" }}
+				partiallyActive={true}
+			>
+				Projects
+			</Link>
 
-        <Link 
-            css={linkStyle} 
-            style={{gridArea: 'contact'}} 
-            to="/contact" 
-            activeStyle={{ color: '#BC9612' }} 
-            partiallyActive={true}
-        >
-            Contact
-        </Link>
-      </Container>
-  )
-}
+			<Link
+				css={linkStyle}
+				style={{ gridArea: "contact" }}
+				to="/contact"
+				activeStyle={{ color: "#BC9612" }}
+				partiallyActive={true}
+			>
+				Contact
+			</Link>
+		</Container>
+	);
+};
 
-export default NavBar
+export default NavBar;
 
 // Styling
 // media query breakpoints array = [320, 480, 768, 992, 1200];
 const Container = styled.nav`
-  ${base}
-  place-items: center center;
-  width: 100%;
-  min-height: 10vh;
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-template-rows: 1fr 1fr;
-  grid-template-areas:
-    ". home ."
-    "photos projects contact";
-  a {
-    color: #DBE7FB;
-    -webkit-text-stroke-width: 1px;
-    -webkit-text-stroke-color: black;
-  }
-  a:hover {
-    color: #798BE4;
-  }
-  a:focus {
-    color: #BC9612;
-  }
-  a:active {
-    color: #BC9612;
-  }
-  ${mediaQuery[4]} {
-    width: 80%;
-    grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr;
-    grid-template-areas:
-        "home photos projects contact";
-  }
+	${base}
+	place-items: center center;
+	width: 100%;
+	min-height: 10vh;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr;
+	grid-template-areas:
+		". home ."
+		"photos projects contact";
+	background-color: rgba(0, 0, 0, 0.75);
+	border-radius: 0px 0px 25px 25px;
+	a {
+		color: #dbe7fb;
+		-webkit-text-stroke-width: 1px;
+		-webkit-text-stroke-color: black;
+	}
+	a:hover {
+		color: #798be4;
+	}
+	a:focus {
+		color: #bc9612;
+	}
+	a:active {
+		color: #bc9612;
+	}
+	${mediaQuery[4]} {
+		width: 80%;
+		grid-template-columns: 1fr 1fr 1fr 1fr;
+		grid-template-rows: 1fr;
+		grid-template-areas: "home photos projects contact";
+	}
 `;
 
 const homeLink = css`
-  ${base}
-  font-size: 1.8rem;
-  grid-area: home;
-  ${mediaQuery[0]} {
-    font-size: 1.8rem;
-  }
-  ${mediaQuery[1]} {
-    font-size: 2rem;
-  }
-  ${mediaQuery[2]} {
-    font-size: 2.3rem;
-  }
-  ${mediaQuery[3]} {
-    font-size: 2.5rem;
-  }
-  ${mediaQuery[4]} {
-    font-size: 3.5rem;
-  }
+	${base}
+	font-size: 1.8rem;
+	grid-area: home;
+	margin-top: 5px;
+	${mediaQuery[0]} {
+		font-size: 1.8rem;
+		margin-top: 5px;
+	}
+	${mediaQuery[1]} {
+		font-size: 2rem;
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	${mediaQuery[2]} {
+		font-size: 2.3rem;
+		margin-top: 10px;
+		margin-bottom: 5px;
+	}
+	${mediaQuery[3]} {
+		font-size: 2.5rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 3.5rem;
+		margin-top: 20px;
+		margin-bottom: 22px;
+	}
 `;
 
 const linkStyle = css`
-  ${base}
-  font-size: 1.4rem;
-  ${mediaQuery[0]} {
-    font-size: 1.4rem;
-  }
-  ${mediaQuery[1]} {
-    font-size: 1.6rem;
-  }
-  ${mediaQuery[2]} {
-    font-size: 1.8rem;
-  }
-  ${mediaQuery[3]} {
-    font-size: 2rem;
-  }
-  ${mediaQuery[4]} {
-    font-size: 2.5rem;
-  }
+	${base}
+	font-size: 1.4rem;
+	${mediaQuery[1]} {
+		font-size: 1.6rem;
+	}
+	${mediaQuery[2]} {
+		font-size: 1.8rem;
+	}
+	${mediaQuery[3]} {
+		font-size: 2rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 2.5rem;
+	}
 `;
-
-

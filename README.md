@@ -8,12 +8,12 @@
 ## Overview
 
 The goal was to showcase my photography, share my work and project experiences, and share some information about myself. To meet these goals, I needed the site to be:
-  
-  1. Accessible
-  2. Beautifully responsive
-  3. Easily navigable
-  4. Quickly loaded
-  5. Easy to update content
+
+1. Accessible
+2. Beautifully responsive
+3. Easily navigable
+4. Quickly loaded
+5. Easy to update content
 
 To meet these goals, I decided to use Gatsby (built on React and GraphQL) to create the site and programmatically add content, Netlify CMS for easy content updates without needing to dive into the code, and deployed the site using Vercel.
 
@@ -44,16 +44,16 @@ Top-level overview of the project structure:
 1.  **`/node_modules`**: This directory contains all of the modules of code that your project depends on (npm packages) are automatically installed.
 
 2.  **`/src`**: Where the magic happens. Here we have the front-end code for the site, with sub-directories:
-  
-    a.  **`/components`**: Here we have site-wide components (such as buttons and layouts), along with components used for programmatically creating pages (such as the gallery view or individual photo view).
 
-    b.  **`/images`**: Here we store our images, either in `galleries` or for site-wide use - just make sure to direct to use the right path for site-wide images. 
-    
+    a. **`/components`**: Here we have site-wide components (such as buttons and layouts), along with components used for programmatically creating pages (such as the gallery view or individual photo view).
+
+    b. **`/images`**: Here we store our images, either in `galleries` or for site-wide use - just make sure to direct to use the right path for site-wide images.
+
     _Note: This directory is ignored in our version control to avoid uploading large image files to github. Check out `.gitignore` to see what else is not watched by version control._
 
-    c.  **`/pages`**: Components that are created as full pages in our site. `index.js` acts as our homepage `mreyes.info/`, while our `contact.js` component provides our `mreyes.info/contact/` page.
+    c. **`/pages`**: Components that are created as full pages in our site. `index.js` acts as our homepage `mreyes.info/`, while our `contact.js` component provides our `mreyes.info/contact/` page.
 
-    d.  **`/styles`**: Our global styling - mainly used to create responsive breakpoints for our site design and maintain consistent typography site-wide.
+    d. **`/styles`**: Our global styling - mainly used to create responsive breakpoints for our site design and maintain consistent typography site-wide.
 
 3.  **`.gitignore`**: This file tells git which files it should not track / not maintain a version history for.
 
@@ -65,10 +65,9 @@ Top-level overview of the project structure:
 
 7.  **`LICENSE`**: Gatsby is licensed under the MIT license.
 
-8. **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
+8.  **`package.json`**: A manifest file for Node.js projects, which includes things like metadata (the project’s name, author, etc). This manifest is how npm knows which packages to install for your project.
 
-9. **`README.md`**: The file you're reading right now, hopefully it has been helpful.
-
+9.  **`README.md`**: The file you're reading right now, hopefully it has been helpful.
 
 ## Local development
 
@@ -90,6 +89,7 @@ Top-level overview of the project structure:
     ```shell
     mkdir src/images/galleries
     ```
+
     You can now add your photo albums to the galleries directory and add images to those albums! Albums will appear according to the name of its directory, and photos will be titled according to their file name.
 
     ```shell
@@ -98,10 +98,9 @@ Top-level overview of the project structure:
     touch vacation.jpg barcelona.jpg
     ```
 
-     Navigate into the site's directory and load it up in your browser using `gatsby develop`.
+    Navigate into the site's directory and load it up in your browser using `gatsby develop`.
 
-
-3.  **Open the source code and start editing!**
+3)  **Open the source code and start editing!**
 
     Navigate back to the root directory and start editing!
 
