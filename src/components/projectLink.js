@@ -3,7 +3,6 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import { mediaQuery, base, Date } from "../styles/global.js";
 
 const ProjectLink = ({ project }) => {

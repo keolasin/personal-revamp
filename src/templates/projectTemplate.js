@@ -1,16 +1,13 @@
 import React from "react";
 
-import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
+import { graphql } from "gatsby";
 
 // imported components
 import Layout from "../components/layout";
-import SEO from "../components/seo";
 import Header from "../components/header";
 
 // styling imports
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
 import { mediaQuery, base, Date } from "../styles/global.js";
 
 // query
@@ -39,7 +36,7 @@ export const projectQuery = graphql`
 // component
 function Project({ data }) {
 	const project = data.project;
-	const { frontmatter, html, image } = project;
+	const { frontmatter, html } = project;
 
 	return (
 		<Layout>

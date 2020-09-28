@@ -43,11 +43,7 @@ const Background = ({ children, className }) => {
 	];
 
 	return (
-		<BackgroundImage
-			fluid={sources}
-			Tag={`section`}
-			className={className}
-		>
+		<BackgroundImage fluid={sources} Tag={`section`} className={className}>
 			{children}
 		</BackgroundImage>
 	);
