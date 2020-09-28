@@ -1,7 +1,6 @@
 import React from "react";
 
 import { useStaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
 
 // styling imports
 import styled from "@emotion/styled";
@@ -53,7 +52,7 @@ const ContactPage = () => {
 export default ContactPage;
 
 // specific CSS
-const BodyText = styled.p`
+const BodyText = styled.h1`
 	border-radius: 25px;
 	color: #dbe7fb;
 	font-family: "acumin-pro", sans-serif;
