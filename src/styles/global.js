@@ -48,12 +48,12 @@ const Container = styled.section`
 	}
 `;
 
-const Date = styled.strong`
+const Date = styled.p`
 	${base}
 	color: #BC9612;
-	font-weight: bold;
 	font-size: 1rem;
 	margin: auto 10px;
+	text-align: left;
 	${mediaQuery[0]} {
 		font-size: 1rem;
 	}

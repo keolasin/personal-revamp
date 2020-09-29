@@ -9,7 +9,7 @@ import ProjectLink from "../components/projectLink";
 import Header from "../components/header";
 
 // styling imports
-import styled from "@emotion/styled";
+import Gallery from "../components/gallery";
 
 // query for projects
 export const projectsQuery = graphql`
@@ -58,15 +58,9 @@ const ProjectPage = ({
 		<Layout>
 			<SEO title="projects" />
 			<Header>Projects</Header>
-			<Container>{Projects}</Container>
+			<Gallery>{Projects}</Gallery>
 		</Layout>
 	);
 };
 
 export default ProjectPage;
-
-const Container = styled.section`
-	text-align: left;
-	height: 100%;
-	overflow: hidden;
-`;

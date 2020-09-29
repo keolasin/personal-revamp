@@ -13,7 +13,7 @@ const ProjectLink = ({ project }) => {
 					fluid={project.image.childImageSharp.fluid}
 					alt={project.frontmatter.imageAlt || project.frontmatter.title}
 				/>
-				<Bold>{project.frontmatter.title}</Bold>
+				<Title>{project.frontmatter.title}</Title>
 				<Date>{project.frontmatter.date}</Date>
 				<Excerpt>{project.excerpt}</Excerpt>
 			</Project>
@@ -44,28 +44,13 @@ const Container = styled.article`
 	}
 `;
 
-const Bold = styled.h2`
+const Title = styled.h2`
 	${base}
 	text-align: left;
-	font-size: 1.2rem;
+	font-size: 1.4rem;
 	font-weight: bold;
 	color: #798be4;
-	margin-left: 5px;
-	${mediaQuery[0]} {
-		font-size: 1.4rem;
-	}
-	${mediaQuery[1]} {
-		font-size: 1.5rem;
-	}
-	${mediaQuery[2]} {
-		font-size: 1.6rem;
-	}
-	${mediaQuery[3]} {
-		font-size: 1.8rem;
-	}
-	${mediaQuery[4]} {
-		font-size: 2rem;
-	}
+	margin-left: 10px;
 	:hover {
 		color: #bc9612;
 	}
@@ -74,6 +59,21 @@ const Bold = styled.h2`
 	}
 	:active {
 		color: #798be4;
+	}
+	${mediaQuery[0]} {
+		font-size: 1.6rem;
+	}
+	${mediaQuery[1]} {
+		font-size: 1.7rem;
+	}
+	${mediaQuery[2]} {
+		font-size: 1.8rem;
+	}
+	${mediaQuery[3]} {
+		font-size: 1.9rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 2.2rem;
 	}
 `;
 
@@ -92,13 +92,23 @@ const Project = styled(Link)`
 
 const Excerpt = styled.p`
 	font-family: "acumin-pro", sans-serif;
-	font-size: 1.2rem;
+	font-size: 1rem;
+	text-align: left;
 	text-decoration: none;
 	display: inline-block;
 	color: #dbe7fb;
-	margin-bottom: 0px;
-	margin: 10px;
+	margin: 0px 10px;
+	margin-bottom: 20px;
+	${mediaQuery[0]} {
+		font-size: 1.1rem;
+	}
 	${mediaQuery[1]} {
+		font-size: 1.2rem;
+	}
+	${mediaQuery[2]} {
+		font-size: 1.3rem;
+	}
+	${mediaQuery[3]} {
 		font-size: 1.4rem;
 	}
 	${mediaQuery[4]} {
@@ -108,7 +118,6 @@ const Excerpt = styled.p`
 
 const Thumbnail = styled(Img)`
 	max-width: 100%;
-	margin: 4px auto;
 	max-height: 200px;
 	border-radius: 25px 25px 0 0;
 	object-fit: contain;
