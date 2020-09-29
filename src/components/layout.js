@@ -41,7 +41,13 @@ export default Layout;
 // css
 const main = css`
 	${base}
-	overflow: auto;
+	overflow-y: auto;
+	height: 85vh;
+	scrollbar-width: none;
+	-ms-verflow-style: none;
+	::-webkit-scrollbar {
+		display: none;
+	}
 	${mediaQuery[2]} {
 		width: 95%;
 	}

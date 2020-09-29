@@ -38,7 +38,7 @@ const Background = ({ children, className }) => {
 		mobileImage.childImageSharp.fluid,
 		{
 			...desktopImage.childImageSharp.fluid,
-			media: `(min-width: 1200px)`,
+			media: `(min-width: 530px)`,
 		},
 	];
 
