@@ -15,6 +15,29 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
+  - name: landings
+    label: Landings
+    label_singular: Landing
+    description: Content for static landing pages suchs as index and contact.
+    folder: src/pages/landings
+    create: true
+    view_filters:
+      - label: Drafts
+        field: draft
+        pattern: true
+    fields:
+      - { name: title, label: Title }
+      - { name: draft, label: Draft, widget: boolean, default: true }
+      - { name: date, label: Date, widget: date, dateFormat: MM-DD-YYYY }
+      - { name: body, label: Body, widget: markdown, hint: Main page content goes here }
+      - { name: thumbnailImg, label: Thumbnail Image, widget: image, required: true }
+      - name: socialLinks
+        label: Social Media Links
+        widget: list
+        fields:
+          - { name: website, label: Website name, widget: String, hint: The name of the site, like Twitter }
+          - { name: link, label: Website Link, widget: String, hint: The website url, like wwww.twitter.com }
+
   - name: projects
     label: Projects
     label_singular: Project
@@ -34,7 +57,7 @@ collections:
         pattern: true
     fields:
         - { name: title, label: Title }
-        - { name: draft, label: Draft, widget: boolean, default: false }
+        - { name: draft, label: Draft, widget: boolean, default: true }
         - { name: date, label: Date, widget: date, dateFormat: MM-DD-YYYY }
         - { name: link, label: Link, widget: string, hint: Link to the live site/demo }
         - { name: body, label: Body, widget: markdown, hint: Main content goes here }
