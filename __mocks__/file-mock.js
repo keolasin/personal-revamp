@@ -1,4 +1,17 @@
 module.exports = {
+	thumnailImg: {
+		childImageSharp: {
+			fluid: {
+				aspectRatio: 1,
+				src: "/static/adc26bdf4e25d6796d9fe999ba7cec1a/14b42/portrait.jpg",
+				srcSet: "/static/adc26bdf4e25d6796d9fe999ba7cec1a/f836f/portrait.jpg 200w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/2244e/portrait.jpg 400w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/14b42/portrait.jpg 800w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/47498/portrait.jpg 1200w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/0e329/portrait.jpg 1600w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/70963/portrait.jpg 3456w",
+				srcWebp: "/static/adc26bdf4e25d6796d9fe999ba7cec1a/58556/portrait.webp",
+				srcSetWebp: "/static/adc26bdf4e25d6796d9fe999ba7cec1a/61e93/portrait.webp 200w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/1f5c5/portrait.webp 400w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/58556/portrait.webp 800w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/99238/portrait.webp 1200w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/7c22d/portrait.webp 1600w,\n/static/adc26bdf4e25d6796d9fe999ba7cec1a/cadd6/portrait.webp 3456w",
+				sizes: "(max-width: 800px) 100vw, 800px",
+				originalImg: "/static/adc26bdf4e25d6796d9fe999ba7cec1a/70963/portrait.jpg"
+			}
+		}
+	},
 	mobileImage: {
 		childImageSharp: {
 			fluid: {
