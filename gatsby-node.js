@@ -24,6 +24,7 @@ exports.createSchemaCustomization = ({ actions }) => {
             frontmatter: Frontmatter
             image: File @link(from: "image___NODE")
             coverImg: File @link(from: "coverImg___NODE")
+			fields: Field
         }
 
         type Frontmatter {
@@ -32,6 +33,10 @@ exports.createSchemaCustomization = ({ actions }) => {
             imageAlt: String
             coverImg: String
         }
+
+		type Field {
+			slug: String
+		}
     `;
 
 	createTypes(typeDefs);
@@ -46,10 +51,7 @@ exports.onCreateNode = async ({
 	createNodeId,
 }) => {
 	// check for all markdown files that have a frontmatter image (albums, projects) and create the image node locally from remote source
-	if (
-		node.internal.type === "MarkdownRemark" &&
-		(node.frontmatter.image !== null || node.frontmatter.coverImg !== null)
-	) {
+	if (node.internal.type === "MarkdownRemark" && (node.frontmatter.image || node.frontmatter.coverImg)) {
 		let fileNode = await createRemoteFileNode({
 			url: node.frontmatter.image || node.frontmatter.coverImg,
 			parentNodeId: node.id,
@@ -88,17 +90,25 @@ exports.onCreateNode = async ({
 		);
 	}
 
-	if (
-		node.internal.type === `File` &&
-		node.internal.mediaType === `image/jpeg`
-	) {
-		const photoSlug = node.name;
-
+	if (node.internal.type === `MarkdownRemark` && node.frontmatter.templateKey) {
+		const slug = createFilePath({ node, getNode });
 		createNodeField({
 			node,
 			name: `slug`,
-			value: photoSlug,
+			value: slug
 		});
+
+		let imageNode = await createRemoteFileNode({
+			url: node.frontmatter.thumbnailImg,
+			parentNodeId: node.id,
+			createNode,
+			createNodeId,
+			cache,
+			store,
+		});
+		if (imageNode) {
+			createParentChildLink({ parent: node, child: imageNode });
+		}
 	}
 };
 
@@ -140,9 +150,36 @@ exports.createPages = async ({ graphql, actions }) => {
 					}
 				}
 			}
+			templates: allMarkdownRemark(
+				filter: { frontmatter: { templateKey: { ne: null } } }
+			) {
+				edges {
+					node {
+						id
+						fields {
+							slug
+						}
+						frontmatter {
+							templateKey
+						}
+					}
+				}
+			}
 		}
 	`);
 
+	// create template pages
+	result.data.templates.edges.forEach(({ node }) => {
+		createPage({
+			path: node.fields.slug,
+			component: path.resolve(`./src/templates/${String(node.frontmatter.templateKey)}.js`),
+			context: {
+				nodeId: node.id,
+			}
+		});
+	});
+
+	// create project pages
 	result.data.projects.edges.forEach(({ node }) => {
 		// slug for projects
 		const projectSlug = node.frontmatter.title;
@@ -157,6 +194,7 @@ exports.createPages = async ({ graphql, actions }) => {
 		});
 	});
 
+	// create album pages
 	result.data.albums.edges.forEach(({ node }) => {
 		// slug for albums
 		const albumSlug = node.frontmatter.title;
