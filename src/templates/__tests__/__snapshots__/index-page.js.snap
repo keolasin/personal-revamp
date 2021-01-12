@@ -1,0 +1,534 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index Page matches the snapshot 1`] = `
+.emotion-13 {
+  width: 100%;
+  min-height: 100vh;
+  background-color: transparent;
+}
+
+.emotion-4 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  place-items: center center;
+  width: 100%;
+  min-height: 10vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  grid-template-areas: ". home ." "photos projects contact";
+  background-color: rgba(0,0,0,0.75);
+  border-radius: 0px 0px 25px 25px;
+}
+
+@media (min-width:320px) {
+  .emotion-4 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-4 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-4 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-4 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-4 {
+    font-size: 3rem;
+  }
+}
+
+.emotion-4 a {
+  color: #dbe7fb;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: black;
+}
+
+.emotion-4 a:hover {
+  color: #798be4;
+}
+
+.emotion-4 a:focus {
+  color: #bc9612;
+}
+
+.emotion-4 a:active {
+  color: #bc9612;
+}
+
+@media (min-width:1200px) {
+  .emotion-4 {
+    width: 80%;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr;
+    grid-template-areas: "home photos projects contact";
+  }
+}
+
+.emotion-0 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.8rem;
+  grid-area: home;
+  margin-top: 5px;
+}
+
+@media (min-width:320px) {
+  .emotion-0 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-0 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-0 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-0 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:320px) {
+  .emotion-0 {
+    font-size: 1.8rem;
+    margin-top: 5px;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-0 {
+    font-size: 2rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-0 {
+    font-size: 2.3rem;
+    margin-top: 10px;
+    margin-bottom: 5px;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-0 {
+    font-size: 2.5rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-0 {
+    font-size: 3.5rem;
+    margin-top: 20px;
+    margin-bottom: 22px;
+  }
+}
+
+.emotion-1 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  font-size: 1.4rem;
+}
+
+@media (min-width:320px) {
+  .emotion-1 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-1 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-1 {
+    font-size: 3rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-1 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-1 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-1 {
+    font-size: 2rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-1 {
+    font-size: 2.5rem;
+  }
+}
+
+.emotion-12 {
+  font-family: "astounder-squared-bb",sans-serif;
+  font-size: 62.5%;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  text-align: center;
+  margin: 0 auto;
+  overflow-y: auto;
+  height: 85vh;
+  -webkit-scrollbar-width: none;
+  -moz-scrollbar-width: none;
+  -ms-scrollbar-width: none;
+  scrollbar-width: none;
+  -ms-verflow-style: none;
+}
+
+@media (min-width:320px) {
+  .emotion-12 {
+    font-size: 1rem;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-12 {
+    font-size: 1.4rem;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-12 {
+    font-size: 1.6rem;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-12 {
+    font-size: 1.8rem;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-12 {
+    font-size: 3rem;
+  }
+}
+
+.emotion-12::-webkit-scrollbar {
+  display: none;
+}
+
+@media (min-width:768px) {
+  .emotion-12 {
+    width: 95%;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-12 {
+    width: 90%;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-12 {
+    width: 80%;
+  }
+}
+
+.emotion-10 {
+  border-radius: 25px 25px 0px 0px;
+  background-color: rgba(0,0,0,0.75);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-flex-flow: column;
+  -ms-flex-flow: column;
+  flex-flow: column;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  -webkit-align-items: center;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+@media (min-width:768px) {
+  .emotion-10 {
+    -webkit-flex-flow: row;
+    -ms-flex-flow: row;
+    flex-flow: row;
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+    -ms-flex-pack: center;
+    justify-content: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    -ms-flex-align: center;
+    align-items: center;
+  }
+}
+
+.emotion-6 {
+  border-radius: 50%;
+  object-fit: cover;
+  display: none;
+}
+
+@media (min-width:320px) {
+  .emotion-6 {
+    width: 125px;
+    height: 125px;
+  }
+}
+
+@media (min-width:480px) {
+  .emotion-6 {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (min-width:768px) {
+  .emotion-6 {
+    width: 125px;
+    height: 125px;
+    display: inline-block;
+  }
+}
+
+@media (min-width:992px) {
+  .emotion-6 {
+    width: 175px;
+    height: 175px;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-6 {
+    width: 225px;
+    height: 225px;
+  }
+}
+
+.emotion-8 {
+  border-radius: 25px;
+  color: #dbe7fb;
+  font-family: "acumin-pro",sans-serif;
+  line-height: 1.2em;
+  font-size: 1rem;
+  padding: 5px;
+  margin: auto 0;
+}
+
+@media (min-width:768px) {
+  .emotion-8 {
+    font-size: 1.2rem;
+    margin: 10px;
+  }
+}
+
+@media (min-width:1200px) {
+  .emotion-8 {
+    font-size: 1.7rem;
+  }
+}
+
+<div>
+  <section
+    class="emotion-13 emotion-14 gbi--1561385816-73WakrfVbNJBaAmhQtEeDv"
+    style="background-position: center; background-repeat: no-repeat; background-size: cover; background-color: transparent; position: relative; opacity: 0.99;"
+  >
+    <style>
+      
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:before,
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:after {
+            content: '';
+            display: block;
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: 0;
+            
+            transition: opacity 0.5s ease 250ms;
+            background-position: center;
+background-repeat: no-repeat;
+background-size: cover;
+background-color: transparent;
+
+          }
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:before {
+            z-index: -100;
+            
+            
+            opacity: 1; 
+          }
+          .emotion-13.emotion-14.gbi--1561385816-73WakrfVbNJBaAmhQtEeDv:after {
+            z-index: -101;
+            
+            
+            
+          }
+        
+    </style>
+    <noscript />
+    <nav
+      class="emotion-4 emotion-5"
+    >
+      <a
+        class="emotion-0"
+        href="/"
+      >
+        MReyes
+      </a>
+      <a
+        class="emotion-1"
+        href="/albums"
+        style="grid-area: photos;"
+      >
+        Photos
+      </a>
+      <a
+        class="emotion-1"
+        href="/projects"
+        style="grid-area: projects;"
+      >
+        Projects
+      </a>
+      <a
+        class="emotion-1"
+        href="/contact"
+        style="grid-area: contact;"
+      >
+        Contact
+      </a>
+    </nav>
+    <main
+      class="emotion-12"
+    >
+      <section
+        class="emotion-10 emotion-11"
+      >
+        <div
+          class="emotion-6 emotion-7 gatsby-image-wrapper"
+          style="position: relative; overflow: hidden;"
+        >
+          <div
+            aria-hidden="true"
+            style="width: 100%; padding-bottom: 100%;"
+          />
+          <img
+            alt=""
+            aria-hidden="true"
+            src="data:image/jpeg;base64,/9j/2wBDABALDA4MChAODQ4SERATGCgaGBYWGDEjJR0oOjM9PDkzODdASFxOQERXRTc4UG1RV19iZ2hnPk1xeXBkeFxlZ2P/2wBDARESEhgVGC8aGi9jQjhCY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2NjY2P/wgARCAAUABQDASIAAhEBAxEB/8QAGAABAQEBAQAAAAAAAAAAAAAAAAQFAgP/xAAWAQEBAQAAAAAAAAAAAAAAAAAAAQL/2gAMAwEAAhADEAAAAa5NLNxv3EUxlnYP/8QAGhAAAgMBAQAAAAAAAAAAAAAAAREAAgMxIv/aAAgBAQABBQLTlStC2QxVDc3D7D6KE//EABYRAQEBAAAAAAAAAAAAAAAAAAIQMf/aAAgBAwEBPwE5DP/EABYRAQEBAAAAAAAAAAAAAAAAAAEQMf/aAAgBAgEBPwF2M//EABoQAAICAwAAAAAAAAAAAAAAAAERABACITH/2gAIAQEABj8C6oAMm73Rjr//xAAZEAEAAwEBAAAAAAAAAAAAAAABABExIRD/2gAIAQEAAT8h4OK9YL+NC35C6wM5KzyMWhBWy7Sf/9oADAMBAAIAAwAAABCwAH3/xAAYEQADAQEAAAAAAAAAAAAAAAAAARExcf/aAAgBAwEBPxCW4uGGU//EABgRAQEAAwAAAAAAAAAAAAAAAAEAEBFh/9oACAECAQE/ECgk7jov/8QAGxABAAIDAQEAAAAAAAAAAAAAAQARITFBYXH/2gAIAQEAAT8QCbVD2FOojJqTwTf2IKOAHkQKmXBYUSyqW2DgE87BJwvUDiN1P//Z"
+            style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 1; transition-delay: 500ms;"
+          />
+          <picture>
+            <source
+              srcset="/static/b1cb549c6d70b9d75525fb6e7fb3ac08/84d81/portrait.jpg 250w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/f0719/portrait.jpg 500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/724c8/portrait.jpg 1000w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/d79bd/portrait.jpg 1500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/06655/portrait.jpg 1600w"
+            />
+            <img
+              alt="Yours truly"
+              loading="lazy"
+              src="/static/b1cb549c6d70b9d75525fb6e7fb3ac08/724c8/portrait.jpg"
+              srcset="/static/b1cb549c6d70b9d75525fb6e7fb3ac08/84d81/portrait.jpg 250w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/f0719/portrait.jpg 500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/724c8/portrait.jpg 1000w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/d79bd/portrait.jpg 1500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/06655/portrait.jpg 1600w"
+              style="position: absolute; top: 0px; left: 0px; width: 100%; height: 100%; object-fit: cover; object-position: center; opacity: 0; transition: opacity 500ms;"
+            />
+          </picture>
+          <noscript>
+            &lt;picture&gt;&lt;source srcset="/static/b1cb549c6d70b9d75525fb6e7fb3ac08/84d81/portrait.jpg 250w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/f0719/portrait.jpg 500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/724c8/portrait.jpg 1000w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/d79bd/portrait.jpg 1500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/06655/portrait.jpg 1600w" /&gt;&lt;img loading="lazy" srcset="/static/b1cb549c6d70b9d75525fb6e7fb3ac08/84d81/portrait.jpg 250w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/f0719/portrait.jpg 500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/724c8/portrait.jpg 1000w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/d79bd/portrait.jpg 1500w,
+/static/b1cb549c6d70b9d75525fb6e7fb3ac08/06655/portrait.jpg 1600w" src="/static/b1cb549c6d70b9d75525fb6e7fb3ac08/724c8/portrait.jpg" alt="Yours truly" style="position:absolute;top:0;left:0;opacity:1;width:100%;height:100%;object-fit:cover;object-position:center"/&gt;&lt;/picture&gt;
+          </noscript>
+        </div>
+        <h1
+          class="emotion-8 emotion-9"
+        >
+          <p>
+            Test body
+          </p>
+        </h1>
+      </section>
+    </main>
+  </section>
+</div>
+`;

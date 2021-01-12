@@ -1,5 +1,5 @@
 backend:
-  name: git-gateway
+  name: test-repo
   repo: keolasin/personal-revamp
   branch: master
   
@@ -15,6 +15,35 @@ media_folder: static/assets
 public_folder: /assets
 
 collections:
+  - name: mainPages
+    label: Main Pages
+    dsecription: Main pages such as home page, contact
+    files: 
+      - file: src/pages/index.md
+        label: Home page
+        name: index
+        fields:
+          - { name: templateKey, label: Template Key, widget: hidden, default: index-page }
+          - { name: title, label: Title, widget: string }
+          - { name: thumbnailImg, label: Thumbnail Image, widget: image }
+          - { name: heading, label: Heading, widget: string }
+          - { name: body, label: Body, widget: markdown }
+      - file: src/pages/contact.md
+        label: Contact Page
+        name: contact
+        fields:
+          - { name: templateKey, label: Template Key, widget: hidden, default: contact-page }
+          - { name: title, label: Title, widget: string }
+          - { name: thumbnailImg, label: Thumbnail Image, widget: image }
+          - { name: heading, label: Heading, widget: string }
+          - { name: body, label: Body, widget: markdown }
+          - name: socialLinks
+            label: Social Media Links
+            widget: list
+            fields:
+              - { name: website, label: Website Name, widget: string, hint: The name of the site (ex mreyes) }
+              - { name: link, label: Website Link, widget: string, hint: The website url (ex www.mreyes.info) }
+
   - name: projects
     label: Projects
     label_singular: Project
@@ -34,7 +63,7 @@ collections:
         pattern: true
     fields:
         - { name: title, label: Title }
-        - { name: draft, label: Draft, widget: boolean, default: false }
+        - { name: draft, label: Draft, widget: boolean, default: true }
         - { name: date, label: Date, widget: date, dateFormat: MM-DD-YYYY }
         - { name: link, label: Link, widget: string, hint: Link to the live site/demo }
         - { name: body, label: Body, widget: markdown, hint: Main content goes here }
