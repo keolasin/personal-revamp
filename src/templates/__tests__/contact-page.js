@@ -12,28 +12,49 @@ beforeEach(() => {
 	useStaticQuery.mockImplementation(() => ({
 		mobileImage,
 		desktopImage,
+		site: {
+            siteMetadata: {
+                title: `MReyes`,
+                description: `Personal portfolio and photography site featuring the work of Matthew Reyes`,
+                author: `@keolasin`,
+            }
+        }
 	}));
 
 	const uuid = require("short-uuid");
 	uuid.generate.mockImplementation(() => "73WakrfVbNJBaAmhQtEeDv");
 });
 
-describe("Project", () => {
+describe("Contact Page", () => {
 	// mock data
 	const data = {
-		project: {
-			html: "<p>A chatroom app built with create-react-app and firebase.</p>",
+		markdownRemark: {
+			html: "<p>Contact test body</p>",
 			frontmatter: {
-				title: "Chatter",
-				date: "April 01, 2020",
-				link: "https://bloc-chat-react-m1d0mp1ge.now.sh",
-				imageAlt: "Riverwalk Talk",
+				title: "Contact test page",
+				heading: "Contact test header",
+				thumbnailImg: "contactTestImg.jpg",
 			},
-		},
+            childrenFile: [
+                {
+                    childImageSharp: {
+                        fluid: {
+                            aspectRatio: 1,
+                            originalName: "TestImg",
+                        }
+                    }
+                }
+            ]
+		}
 	};
 
-	it("renders correctly", () => {
-		const { container } = render(<Project data={data} />);
-		expect(container).toMatchSnapshot();
+	it("renders data correctly", () => {
+		const { container, getByText } = render(<ContactPage data={data} />);
+        expect(getByText('Contact test body')).toBeInTheDocument();
 	});
+
+    it("matches the snapshot", () => {
+        const { container } = render(<ContactPage data={data} />);
+        expect(container).toMatchSnapshot();
+    });
 });
