@@ -41,7 +41,7 @@ collections:
             label: Social Media Links
             widget: list
             fields:
-              - { name: website, label: Website name, widget: string, hint: The name of the site (ex mreyes) }
+              - { name: website, label: Website Name, widget: string, hint: The name of the site (ex mreyes) }
               - { name: link, label: Website Link, widget: string, hint: The website url (ex www.mreyes.info) }
 
   - name: projects

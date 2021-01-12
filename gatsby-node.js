@@ -90,14 +90,17 @@ exports.onCreateNode = async ({
 		);
 	}
 
+	// check for templated pages (such as index, contact) and create linked node for remote images
 	if (node.internal.type === `MarkdownRemark` && node.frontmatter.templateKey) {
 		const slug = createFilePath({ node, getNode });
+		// creating url slug
 		createNodeField({
 			node,
 			name: `slug`,
 			value: slug
 		});
 
+		// creating remote image node
 		let imageNode = await createRemoteFileNode({
 			url: node.frontmatter.thumbnailImg,
 			parentNodeId: node.id,
@@ -106,6 +109,8 @@ exports.onCreateNode = async ({
 			cache,
 			store,
 		});
+		
+		// linking image node as child to parent node
 		if (imageNode) {
 			createParentChildLink({ parent: node, child: imageNode });
 		}
