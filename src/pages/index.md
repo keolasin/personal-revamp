@@ -1,6 +1,6 @@
 ---
 templateKey: index-page
-title: mreyes.info
+title: Home
 thumbnailImg: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597109380/personal-revamp/portrait.jpg
 heading: About
 ---

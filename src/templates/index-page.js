@@ -82,6 +82,7 @@ const AltEmphasis = css`
 `;
 
 const BodyText = styled.article`
+    max-width: 80%;
     h2 {
         border-radius: 25px;
         color: #dbe7fb;
@@ -90,12 +91,13 @@ const BodyText = styled.article`
         font-size: 1rem;
         padding: 5px;
         margin: auto 0;
+        max-width: 1000px;
         ${mediaQuery[2]} {
             font-size: 1.2rem;
             margin: 10px;
         }
         ${mediaQuery[4]} {
-            font-size: 1.7rem;
+            font-size: 1.4rem;
         }
     }
     strong {
