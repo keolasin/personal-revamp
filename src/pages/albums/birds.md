@@ -18,7 +18,7 @@ photos:
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597287037/Birds/Grebe.jpg
     title: Grebe
   - date: 2020-04-13T07:00:00.000Z
-    image: https://res.cloudinary.com/keolasin/image/upload/v1597287037/Birds/Grebes.jpg
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597287037/Birds/Grebes.jpg
     title: Grebes
   - date: 2020-04-13T07:00:00.000Z
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597287036/Birds/Duck_Butt.jpg
