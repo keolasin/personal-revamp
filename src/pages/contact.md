@@ -13,3 +13,6 @@ socialLinks:
 ---
 
 ## Email or find me on social media
+
+[Matthew@mreyes.info](mailto:matthew@mreyes.info?subject=Hello there)<br>
+[LinkedIn]( https://www.linkedin.com/in/reyesmatthew/) [GitHub](https://github.com/keolasin) [Instagram](https://www.instagram.com/keolasin/)
