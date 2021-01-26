@@ -43,7 +43,7 @@ export const ContactPageTemplate = ({
                 fluid={image}
                 alt="Yours truly"
             />
-            <BodyText dangerouslySetInnerHTML={{ __html: body }} />
+            <BodyText dangerouslySetInnerHTML={{ __html: body }}/>
         </Container>
 	);
 };
@@ -61,7 +61,8 @@ const ContactPage = ({ data }) => {
                 title={frontmatter.title}
                 heading={frontmatter.heading}
                 body={html}
-            />
+            >
+            </ContactPageTemplate>
         </Layout>
     )
 }
@@ -69,41 +70,76 @@ const ContactPage = ({ data }) => {
 export default ContactPage;
 
 // css styling
-const Emphasis = css`
-	font-size: 1em;
-	font-weight: bold;
-	color: #798be4;
+const SocialLink = css`
+    text-decoration: none;
+    color: #798be4;
+    -webkit-text-stroke-width: 1px;
+	-webkit-text-stroke-color: black;
+    font-size: 1.2rem;
+	:hover {
+		color: #dbe7fb;
+	}
+	:focus {
+		color: #bc9612;
+	}
+	:active {
+		color: #bc9612;
+	}
+	${mediaQuery[2]} {
+		font-size: 2rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 2.4rem;
+	}
 `;
 
-const AltEmphasis = css`
+const Email = css`
+    ${SocialLink}
 	color: #bc9612;
-	font-weight: bold;
-	font-size: 1em;
+    font-size: 1.6rem;
+    :hover {
+		color: #dbe7fb;
+	}
+	:focus {
+		color: #798be4;
+	}
+	:active {
+		color: #798be4;
+	}
+    ${mediaQuery[2]} {
+		font-size: 2.4rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 2.6rem;
+	}
+`;
+
+const H2 = css`
+    border-radius: 25px;
+    font-family: "acumin-pro", sans-serif;
+    padding: 5px;
+    margin: auto 0;
+    margin-bottom: 0;
+    max-width: 1000px;
+    font-size: 1rem;
+    color: #dbe7fb;
+    ${mediaQuery[2]} {
+        font-size: 1.2rem;
+    }
+    ${mediaQuery[4]} {
+        font-size: 1.4rem;
+    }
 `;
 
 const BodyText = styled.article`
-    max-width: 80%;
     h2 {
-        border-radius: 25px;
-        color: #dbe7fb;
-        font-family: "acumin-pro", sans-serif;
-        line-height: 1.2em;
-        font-size: 1rem;
-        padding: 5px;
-        margin: auto 0;
-        max-width: 1000px;
-        ${mediaQuery[2]} {
-            font-size: 1.2rem;
-            margin: 10px;
-        }
-        ${mediaQuery[4]} {
-            font-size: 1.4rem;
+        ${H2}
+    }
+    a {
+        ${SocialLink}
+        :first-child {
+            ${Email}
         }
     }
-    strong {
-        ${Emphasis}
-    }
-    em {
-        ${AltEmphasis}
-    }
+    max-width: 80%;
 `;
