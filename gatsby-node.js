@@ -113,38 +113,42 @@ exports.onCreateNode = async ({
 			store,
 		});
 
-		let wideBackground = await createRemoteFileNode({
-			url: node.frontmatter.wideBackground,
-			parentNodeId: node.id,
-			createNode,
-			createNodeId,
-			cache,
-			store,
-		});
-
-		let tallBackground = await createRemoteFileNode({
-			url: node.frontmatter.tallBackground,
-			parentNodeId: node.id,
-			createNode,
-			createNodeId,
-			cache,
-			store,
-		});
-		
-		// linking remote nodes as children to parent node (see typeDefs at top)
+		// link thumbnailImg node to parent node as 'thumbnailImg' field on parent node
 		if (imageNode) {
 			createParentChildLink({ parent: node, child: imageNode });
 			node.thumbnailImg___NODE = imageNode.id;
 		}
 
-		if (wideBackground) {
-			createParentChildLink({ parent: node, child: wideBackground });
-			node.wideBackground___NODE = wideBackground.id;
-		}
+		// triggers for index-page template
+		if (node.frontmatter.wideBackground && node.frontmatter.tallBackground) {
+			let wideBackground = await createRemoteFileNode({
+				url: node.frontmatter.wideBackground,
+				parentNodeId: node.id,
+				createNode,
+				createNodeId,
+				cache,
+				store,
+			});
 
-		if (tallBackground) {
-			createParentChildLink({ parent: node, child: tallBackground });
-			node.tallBackground___NODE = tallBackground.id;
+			let tallBackground = await createRemoteFileNode({
+				url: node.frontmatter.tallBackground,
+				parentNodeId: node.id,
+				createNode,
+				createNodeId,
+				cache,
+				store,
+			});
+
+			// linking remote nodes as children to parent node (see typeDefs at top)
+			if (wideBackground) {
+				createParentChildLink({ parent: node, child: wideBackground });
+				node.wideBackground___NODE = wideBackground.id;
+			}
+
+			if (tallBackground) {
+				createParentChildLink({ parent: node, child: tallBackground });
+				node.tallBackground___NODE = tallBackground.id;
+			}
 		}
 	}
 };
