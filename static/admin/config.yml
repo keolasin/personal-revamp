@@ -28,6 +28,8 @@ collections:
           - { name: thumbnailImg, label: Thumbnail Image, widget: image }
           - { name: heading, label: Heading, widget: string }
           - { name: body, label: Body, widget: markdown }
+          - { name: wideBackground, label: Wide Background, widget: image, hint: A backround image for a desktop view }
+          - { name: tallBackground, label: Tall Background, widget: image, hint: A background image for a mobile view }
       - file: src/pages/contact.md
         label: Contact Page
         name: contact
