@@ -17,17 +17,21 @@ import styled from "@emotion/styled";
 const Background = ({ children, className }) => {
 	const { mobileImage, desktopImage } = useStaticQuery(graphql`
 		query {
-			mobileImage: file(name: { eq: "jTree" }) {
-				childImageSharp {
-					fluid(maxWidth: 1000, quality: 100) {
-						...GatsbyImageSharpFluid_withWebp
+			mobileImage: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+				tallBackground {
+					childImageSharp {
+						fluid(maxWidth: 1000, quality: 100) {
+							...GatsbyImageSharpFluid_withWebp
+						}
 					}
 				}
 			}
-			desktopImage: file(name: { eq: "hiking" }) {
-				childImageSharp {
-					fluid(maxWidth: 2000, quality: 100) {
-						...GatsbyImageSharpFluid_withWebp
+			desktopImage: markdownRemark(frontmatter: { templateKey: { eq: "index-page" } }) {
+				wideBackground {
+					childImageSharp {
+						fluid(maxWidth: 1000, quality: 100) {
+							...GatsbyImageSharpFluid_withWebp
+						}
 					}
 				}
 			}
@@ -35,9 +39,9 @@ const Background = ({ children, className }) => {
 	`);
 
 	const sources = [
-		mobileImage.childImageSharp.fluid,
+		mobileImage.tallBackground.childImageSharp.fluid,
 		{
-			...desktopImage.childImageSharp.fluid,
+			...desktopImage.wideBackground.childImageSharp.fluid,
 			media: `(min-width: 530px)`,
 		},
 	];

@@ -20,7 +20,7 @@ export const pageQuery = graphql`
                 heading
                 thumbnailImg
             }
-            childrenFile {
+            thumbnailImg {
                 childImageSharp {
                     fluid (maxWidth: 1000, quality: 100) {
                         ...GatsbyImageSharpFluid_withWebp
@@ -49,15 +49,14 @@ export const ContactPageTemplate = ({
 };
 
 const ContactPage = ({ data }) => {
-    const { frontmatter, html } = data.markdownRemark;
-    const { childImageSharp } = data.markdownRemark.childrenFile[0];
+    const { frontmatter, html, thumbnailImg } = data.markdownRemark;
     
     // templateKey, title, thumbnailImg, heading, body
     return (
         <Layout>
             <SEO title={frontmatter.title} />
             <ContactPageTemplate
-                image={childImageSharp.fluid}
+                image={thumbnailImg.childImageSharp.fluid}
                 title={frontmatter.title}
                 heading={frontmatter.heading}
                 body={html}

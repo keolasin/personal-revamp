@@ -24,6 +24,9 @@ exports.createSchemaCustomization = ({ actions }) => {
             frontmatter: Frontmatter
             image: File @link(from: "image___NODE")
             coverImg: File @link(from: "coverImg___NODE")
+			thumbnailImg: File @link(from: "thumbnailImg___NODE")
+			tallBackground: File @link(from: "tallBackground___NODE")
+			wideBackground: File @link(from: "wideBackground___NODE")
 			fields: Field
         }
 
@@ -100,7 +103,7 @@ exports.onCreateNode = async ({
 			value: slug
 		});
 
-		// creating remote image node
+		// creating remote image nodes
 		let imageNode = await createRemoteFileNode({
 			url: node.frontmatter.thumbnailImg,
 			parentNodeId: node.id,
@@ -109,10 +112,43 @@ exports.onCreateNode = async ({
 			cache,
 			store,
 		});
-		
-		// linking image node as child to parent node
+
+		// link thumbnailImg node to parent node as 'thumbnailImg' field on parent node
 		if (imageNode) {
 			createParentChildLink({ parent: node, child: imageNode });
+			node.thumbnailImg___NODE = imageNode.id;
+		}
+
+		// triggers for index-page template
+		if (node.frontmatter.wideBackground && node.frontmatter.tallBackground) {
+			let wideBackground = await createRemoteFileNode({
+				url: node.frontmatter.wideBackground,
+				parentNodeId: node.id,
+				createNode,
+				createNodeId,
+				cache,
+				store,
+			});
+
+			let tallBackground = await createRemoteFileNode({
+				url: node.frontmatter.tallBackground,
+				parentNodeId: node.id,
+				createNode,
+				createNodeId,
+				cache,
+				store,
+			});
+
+			// linking remote nodes as children to parent node (see typeDefs at top)
+			if (wideBackground) {
+				createParentChildLink({ parent: node, child: wideBackground });
+				node.wideBackground___NODE = wideBackground.id;
+			}
+
+			if (tallBackground) {
+				createParentChildLink({ parent: node, child: tallBackground });
+				node.tallBackground___NODE = tallBackground.id;
+			}
 		}
 	}
 };
