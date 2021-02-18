@@ -1,9 +1,9 @@
 ---
-title: Ethan
+title: In loving Memory of Nathaniel Ethan Reyes
 photographer: Family
 date: 2021-02-12T18:58:32.602Z
 coverImg: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613672579/Ethan/Flowers.jpg
-description: In loving memory of Nathaniel Ethan Reyes, August 11, 2001 - February 02, 2021
+description: August 11, 2001 - February 12, 2021
 photos:
   - date: 2021-02-12T07:00:00.000Z
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613673371/Ethan/ET.jpg
@@ -33,4 +33,8 @@ photos:
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613672781/Ethan/Petting_Zoo.jpg
     title: Petting Zoo
     imageAlt: Andrew and Ethan at the Petting Zoo
+  - date: 2021-02-12T07:00:00.000Z
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613672743/Ethan/Ariel.jpg
+    title: Ethan and Ariel
+    imageAlt: Ethan and The Little Mermaid
 ---
