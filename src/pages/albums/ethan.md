@@ -25,4 +25,12 @@ photos:
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613672908/Ethan/Andrew_and_Ethan_bars.jpg
     title: Andrew and Ethan Bars
     imageAlt: Andrew and Ethan behind bars at Disneyland
+  - date: 2021-02-12T07:00:00.000Z
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613672892/Ethan/Peter_Pan_Ethan.jpg
+    title: Peter Pan Ethan
+    imageAlt: Ethan with the cast of Peter Pan
+  - date: 2021-02-18T23:40:29.057Z
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1613672781/Ethan/Petting_Zoo.jpg
+    title: Petting Zoo
+    imageAlt: Andrew and Ethan at the Petting Zoo
 ---
