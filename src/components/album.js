@@ -18,32 +18,36 @@ import Layout from "../components/layout";
 // albumID: node.id
 export const query = graphql`
 	query($albumID: String!) {
-		album: markdownRemark(id: { eq: $albumID }) {
-			frontmatter {
-				title
-				date
-				photographer
-				description
-				photos {
-					date
-					image
-					title
-					imageAlt
-				}
-			}
-			photos: children {
-				... on File {
-					id
-					name
-					url
-					childImageSharp {
-						thumb: fluid(maxWidth: 800) {
-							...GatsbyImageSharpFluid_withWebp
-							originalName
+		allMarkdownRemark(sort: {fields: [frontmatter___photos___date, frontmatter___photos___title], order: DESC}, filter: {id: {eq: $albumID}}) {
+			edges {
+				album: node {
+					frontmatter {
+						title
+						date(formatString: "x")
+						photographer
+						description
+						photos {
+							date(formatString: "x")
+							image
+							imageAlt
+							title
 						}
-						full: fluid(maxWidth: 1600) {
-							...GatsbyImageSharpFluid_withWebp
-							originalName
+					}
+					photos: children {
+						... on File {
+							id
+							name
+							url
+							childImageSharp {
+								thumb: fluid(maxWidth: 800) {
+									...GatsbyImageSharpFluid_withWebp
+									originalName
+								}
+								full: fluid(maxWidth: 1600) {
+									...GatsbyImageSharpFluid_withWebp
+									originalName
+								}
+							}
 						}
 					}
 				}
@@ -55,15 +59,17 @@ export const query = graphql`
 // component
 const Album = ({ data, location }) => {
 	// useful variable names
-	const album = data.album;
-	const photos = album.photos;
-	const metaData = album.frontmatter.photos;
+	const album = data.allMarkdownRemark.edges[0].album;
+	const photos = album.photos; // cloudinary nodes
+	const metaData = album.frontmatter.photos; // netlify-cms data of photos
 
-	// joining the photo metadata to the imageSharp node image in a single object
+	// netlify-cms frontmatter.photos.image value will match the cloudinary source photos.url variable
+
+	// joining the photo metadata to the imageSharp node image in a single object, then sort by date
 	let imageSet = photos.map(photo => ({
-		...metaData.find(data => data.image === photo.url && data),
+		...metaData.find(metaItem => metaItem.image === photo.url && metaItem),
 		...photo,
-	}));
+	})).sort((a, b) => a.title.localeCompare(b.title)).sort((alpha, beta) => alpha.date - beta.date);
 
 	// hooks
 	const [index, setIndex] = useState(0);
