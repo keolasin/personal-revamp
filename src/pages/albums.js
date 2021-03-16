@@ -13,7 +13,8 @@ export const albumsQuery = graphql`
 		allMarkdownRemark(
 			filter: {
 				frontmatter: { photos: { elemMatch: { title: { ne: null } } } }
-			}
+			},
+			sort: { order: DESC, fields: [frontmatter___date] }
 		) {
 			edges {
 				node {
