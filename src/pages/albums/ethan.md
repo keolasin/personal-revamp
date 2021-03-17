@@ -35,4 +35,7 @@ photos:
   - date: 2002-10-04T07:00:00.000Z
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867428/Ethan/Fireplace_2_mx2bya.jpg
     title: Fireplace 2
+  - date: 2002-10-04T07:00:00.000Z
+    title: Shoe
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867427/Ethan/Shoe_zolvcj.jpg
 ---
