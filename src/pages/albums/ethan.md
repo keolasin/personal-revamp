@@ -71,4 +71,28 @@ photos:
   - date: 2021-03-17T23:27:51.294Z
     title: Grammy and Ethan 3
     image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867436/Ethan/Grammy_and_Ethan_3_pcgmj6.jpg
+  - date: 2002-10-19T07:00:00.000Z
+    title: Andrew
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867434/Ethan/Andrew_fsvrem.jpg
+  - date: 2002-10-19T07:00:00.000Z
+    title: Bottle
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867437/Ethan/Bottle_hswzlg.jpg
+  - date: 2021-03-17T23:35:41.418Z
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867437/Ethan/Chair_Throw_nowpsa.jpg
+    title: Chair Throw
+  - date: 2002-10-19T07:00:00.000Z
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867437/Ethan/Gardening_vrx8c5.jpg
+    title: Gardening
+  - date: 2003-08-24T07:00:00.000Z
+    title: Big Shoes
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867437/Ethan/Big_Shoes_sc6rxa.jpg
+  - date: 2003-08-24T07:00:00.000Z
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867435/Ethan/Computer_Games_wlt66b.jpg
+    title: Computer Games
+  - date: 2003-08-24T07:00:00.000Z
+    title: Downstairs
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867437/Ethan/Downstairs_ucslrq.jpg
+  - date: 2003-08-24T07:00:00.000Z
+    title: Lifting
+    image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867438/Ethan/Lifting_dxhohu.jpg
 ---
