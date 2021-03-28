@@ -3,7 +3,7 @@ templateKey: index-page
 title: Home
 thumbnailImg: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597109380/personal-revamp/portrait.jpg
 heading: About
-wideBackground: https://res.cloudinary.com/keolasin/image/upload/v1594317277/Cities/Girona_Bridge.jpg
+wideBackground: https://res.cloudinary.com/keolasin/image/upload/c_scale,q_100,w_3840/v1597268108/People/Golden_Gate_Fog.jpg
 tallBackground: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597267956/Desert/Joshua_Tree_Climbing.jpg
 ---
 
