@@ -1,5 +1,5 @@
 ---
-title: In loving Memory of Nathaniel Ethan Reyes
+title: Ethan
 photographer: Family
 date: 2021-02-12T18:58:32.602Z
 coverImg: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1615867448/Ethan/Moose_3_uu8iau.jpg
