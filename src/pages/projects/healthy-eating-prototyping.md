@@ -1,6 +1,6 @@
 ---
 title: Healthy Eating Prototyping
-draft: true
+draft: false
 date: 2021-08-15T14:24:02.865Z
 link: https://youtu.be/17uU1IuJwpA
 image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1636961740/Screenshot_2021-11-15_at_07-35-04_Matthew_s_Public_Health_Communications_Portfolio_-_Synthesis_q0iij4.png
