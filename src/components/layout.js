@@ -14,7 +14,7 @@ import { mediaQuery, base } from "../styles/global.js";
 import "./layout.css";
 
 // components
-import ArtBackground from "./background.js";
+import Video from "./video.js";
 import NavBar from "./navbar.js";
 
 if (typeof window !== "undefined") {
@@ -25,10 +25,11 @@ if (typeof window !== "undefined") {
 const Layout = ({ children }) => {
 	// site layout HTML
 	return (
-		<ArtBackground>
+		<>
+			<Video />
 			<NavBar />
 			<main css={main}>{children}</main>
-		</ArtBackground>
+		</>
 	);
 };
 
