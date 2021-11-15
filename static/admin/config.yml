@@ -30,6 +30,7 @@ collections:
           - { name: body, label: Body, widget: markdown }
           - { name: wideBackground, label: Wide Background, widget: image, hint: A backround image for a desktop view }
           - { name: tallBackground, label: Tall Background, widget: image, hint: A background image for a mobile view }
+          - { name: videoURL, label: video URL, widget: image, hint: A background video for the site }
       - file: src/pages/contact.md
         label: Contact Page
         name: contact

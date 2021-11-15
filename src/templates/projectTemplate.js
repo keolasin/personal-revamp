@@ -6,8 +6,7 @@ import Img from "gatsby-image";
 
 // styling
 import styled from "@emotion/styled";
-import { css } from "@emotion/core";
-import { mediaQuery, base, Date, Container } from "../styles/global.js";
+import { mediaQuery, base, Date } from "../styles/global.js";
 
 // imported components
 import Layout from "../components/layout";

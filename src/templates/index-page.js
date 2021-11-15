@@ -19,6 +19,7 @@ export const pageQuery = graphql`
                 title
                 heading
                 thumbnailImg
+                videoURL
             }
             thumbnailImg {
                 childImageSharp {

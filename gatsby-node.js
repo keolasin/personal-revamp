@@ -25,8 +25,6 @@ exports.createSchemaCustomization = ({ actions }) => {
             image: File @link(from: "image___NODE")
             coverImg: File @link(from: "coverImg___NODE")
 			thumbnailImg: File @link(from: "thumbnailImg___NODE")
-			tallBackground: File @link(from: "tallBackground___NODE")
-			wideBackground: File @link(from: "wideBackground___NODE")
 			fields: Field
         }
 
