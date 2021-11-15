@@ -1,14 +1,18 @@
 import React from "react";
 
 import { graphql } from "gatsby";
+import Img from "gatsby-image";
+
+
+// styling
+import styled from "@emotion/styled";
+import { css } from "@emotion/core";
+import { mediaQuery, base, Date, Container } from "../styles/global.js";
 
 // imported components
 import Layout from "../components/layout";
 import Header from "../components/header";
-
-// styling imports
-import styled from "@emotion/styled";
-import { mediaQuery, base, Date } from "../styles/global.js";
+import SEO from "../components/seo";
 
 // query
 export const projectQuery = graphql`
@@ -33,23 +37,58 @@ export const projectQuery = graphql`
 	}
 `;
 
+//component template
+export const ProjectPageTemplate = ({
+    title,
+    image,
+    body,
+	date,
+	externalLink
+}) => {
+	return (
+        <Article>
+			<ExternalLink
+				href={externalLink}
+				activeStyle={{ color: "#BC9612" }}
+				partiallyActive={true}
+				target="_blank"
+			>
+				<Thumbnail
+                	fluid={image}
+                	alt={title}
+            	/>
+				<Date>{date}</Date>
+			
+            	<BodyText dangerouslySetInnerHTML={{ __html: body }}/>
+			</ExternalLink>
+			
+        </Article>
+	);
+};
+
+
 // component
-function Project({ data }) {
+const ProjectPage = ({ data }) => {
 	const project = data.project;
-	const { frontmatter, html } = project;
+	const { frontmatter, html, image } = project;
 
 	return (
 		<Layout>
+			<SEO title={frontmatter.title} />
 			<Header>{frontmatter.title}</Header>
-			<Article>
-				<Date>{frontmatter.date}</Date>
-				<section dangerouslySetInnerHTML={{ __html: html }} />
-			</Article>
+			<ProjectPageTemplate
+				title={frontmatter.title}
+				image={image.childImageSharp.fluid}
+				date={frontmatter.date}
+				body={html}
+				externalLink={frontmatter.link}
+			>
+			</ProjectPageTemplate>
 		</Layout>
 	);
 }
 
-export default Project;
+export default ProjectPage;
 
 const Article = styled.article`
 	${base}
@@ -67,6 +106,54 @@ const Article = styled.article`
 		margin: 10px;
 	}
 	${mediaQuery[4]} {
-		font-size: 1.7rem;
+		font-size: 1.5rem;
 	}
 `;
+
+const Thumbnail = styled(Img)`
+	max-width: 95%;
+	max-height: 125px;
+	border-radius: 10px 10px 5px 5px;
+	object-fit: contain;
+	margin: 5px auto;
+	${mediaQuery[2]} {
+		max-height: 200px;
+	}
+	${mediaQuery[4]} {
+		max-height: 300px;
+	}
+	
+`;
+
+const ExternalLink = styled.a`
+    text-decoration: none;
+    color: #798be4;
+    font-size: 1.2rem;
+	:hover {
+		color: #dbe7fb;
+		box-shadow: 0 4px 8px 0 rgba(121, 139, 228, 0.4),
+			0 6px 20px 0 rgba(121, 139, 228, 0.35);
+	}
+	:focus {
+		color: #bc9612;
+		box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4),
+			0 6px 20px 0 rgba(188, 150, 18, 0.35);
+	}
+	:active {
+		color: #bc9612;
+		box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4),
+			0 6px 20px 0 rgba(188, 150, 18, 0.35);
+	}
+	${mediaQuery[2]} {
+		font-size: 2rem;
+	}
+	${mediaQuery[4]} {
+		font-size: 2.4rem;
+	}
+`;
+
+const BodyText = styled.article`
+    max-width: 90%;
+	margin: auto 0;
+`;
+
