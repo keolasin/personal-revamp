@@ -15,7 +15,7 @@
  
  const Video = ({ videoSrcURL, videoTitle }) => {
 
-    videoSrcURL ="https://res.cloudinary.com/keolasin/video/upload/v1636956625/test_eugurq.mp4";
+    videoSrcURL ="https://res.cloudinary.com/keolasin/video/upload/v1636960796/flowers_ewsvwe.mp4";
     videoTitle ="test";
 
      return (
