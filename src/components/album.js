@@ -3,7 +3,7 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 
 import styled from "@emotion/styled";
-import { mediaQuery } from "../styles/global.js";
+import { mediaQuery, colors } from "../styles/global.js";
 
 import Gallery from "./gallery.js";
 import Header from "./header.js";
@@ -148,7 +148,7 @@ const ImageLink = styled.section`
 
 const Description = styled.p`
 	font-family: "acumin-pro", sans-serif;
-	color: #dbe7fb;
+	color: ${colors.tertiaryColor};
 	font-size: 1rem;
 	padding: 0 20px;
 	margin: 10px;
@@ -178,7 +178,7 @@ const Hover = styled.section`
 `;
 
 const PhotoText = styled.p`
-	color: #dbe7fb;
+	color: ${colors.tertiaryColor};
 	position: absolute;
 	top: 50%;
 	left: 50%;

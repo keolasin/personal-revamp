@@ -6,7 +6,7 @@ import Img from "gatsby-image";
 
 // styling
 import styled from "@emotion/styled";
-import { mediaQuery, base, Date } from "../styles/global.js";
+import { mediaQuery, base, Date, colors } from "../styles/global.js";
 
 // imported components
 import Layout from "../components/layout";
@@ -48,7 +48,7 @@ export const ProjectPageTemplate = ({
         <Article>
 			<ExternalLink
 				href={externalLink}
-				activeStyle={{ color: "#BC9612" }}
+				activeStyle={{ color: colors.primaryColor }}
 				partiallyActive={true}
 				target="_blank"
 			>
@@ -94,7 +94,7 @@ const Article = styled.article`
 	background-color: rgba(0,0,0,0.75);
 	border-radius: 25px;
 	text-align: left;
-	color: #dbe7fb;
+	color: ${colors.tertiaryColor};
 	font-family: "acumin-pro", sans-serif;
 	line-height: 1.2em;
 	font-size: 1rem;
@@ -126,20 +126,20 @@ const Thumbnail = styled(Img)`
 
 const ExternalLink = styled.a`
     text-decoration: none;
-    color: #798be4;
+    color: ${colors.tertiaryColor};
     font-size: 1.2rem;
 	:hover {
-		color: #dbe7fb;
+		color: ${colors.secondaryColor};
 		box-shadow: 0 4px 8px 0 rgba(121, 139, 228, 0.4),
 			0 6px 20px 0 rgba(121, 139, 228, 0.35);
 	}
 	:focus {
-		color: #bc9612;
+		color: ${colors.secondaryColor};
 		box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4),
 			0 6px 20px 0 rgba(188, 150, 18, 0.35);
 	}
 	:active {
-		color: #bc9612;
+		color: ${colors.primaryColor};
 		box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4),
 			0 6px 20px 0 rgba(188, 150, 18, 0.35);
 	}
@@ -154,5 +154,10 @@ const ExternalLink = styled.a`
 const BodyText = styled.article`
     max-width: 90%;
 	margin: auto 0;
+	p {
+		padding: 10px;
+		margin: auto 10px;
+		text-align: left;
+	}
 `;
 

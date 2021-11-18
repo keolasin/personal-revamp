@@ -3,6 +3,7 @@ import { Link } from "gatsby";
 import Img from "gatsby-image";
 
 import styled from "@emotion/styled";
+import { colors } from "../styles/global.js";
 
 const AlbumCover = ({ album }) => {
 	return (
@@ -29,7 +30,7 @@ const Container = styled(Link)`
 			0 6px 20px 0 rgba(121, 139, 228, 0.35);
 	}
 	:focus {
-		box-shadow: 0 4px 8px 0 rgba(188, 150, 18, 0.4),
+		box-shadow: 0 4px 8px 0 rgba(188, 1#dbe7fb50, 18, 0.4),
 			0 6px 20px 0 rgba(188, 150, 18, 0.35);
 	}
 	:active {
@@ -55,7 +56,7 @@ const Hover = styled.section`
 `;
 
 const PhotoText = styled.p`
-	color: #dbe7fb;
+	color: ${colors.tertiaryColor};
 	position: absolute;
 	top: 50%;
 	left: 50%;

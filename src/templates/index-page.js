@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 // styling
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { mediaQuery, Container, BlurbImage } from "../styles/global.js";
+import { mediaQuery, Container, BlurbImage, colors } from "../styles/global.js";
 
 // components
 import Layout from "../components/layout";
@@ -72,11 +72,11 @@ export default IndexPage;
 const Emphasis = css`
 	font-size: 1em;
 	font-weight: bold;
-	color: #798be4;
+	color: ${colors.secondaryColor};
 `;
 
 const AltEmphasis = css`
-	color: #bc9612;
+	color: ${colors.primaryColor};
 	font-weight: bold;
 	font-size: 1em;
 `;
@@ -85,7 +85,7 @@ const BodyText = styled.article`
     max-width: 80%;
     h2 {
         border-radius: 25px;
-        color: #dbe7fb;
+        color: ${colors.tertiaryColor};
         font-family: "acumin-pro", sans-serif;
         line-height: 1.2em;
         font-size: 1rem;
@@ -93,11 +93,11 @@ const BodyText = styled.article`
         margin: auto 0;
         max-width: 1000px;
         ${mediaQuery[2]} {
-            font-size: 1.2rem;
+            font-size: 1.4rem;
             margin: 10px;
         }
         ${mediaQuery[4]} {
-            font-size: 1.4rem;
+            font-size: 2rem;
         }
     }
     strong {

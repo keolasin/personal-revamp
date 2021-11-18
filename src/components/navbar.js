@@ -4,13 +4,13 @@ import { Link } from "gatsby";
 
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { mediaQuery, base } from "../styles/global.js";
+import { mediaQuery, base, colors } from "../styles/global.js";
 
 const NavBar = () => {
 	// site layout HTML
 	return (
 		<Container>
-			<Link css={homeLink} to="/" activeStyle={{ color: "#BC9612" }}>
+			<Link css={homeLink} to="/" activeStyle={{ color: colors.primaryColor }}>
 				MReyes
 			</Link>
 
@@ -18,7 +18,7 @@ const NavBar = () => {
 				css={linkStyle}
 				style={{ gridArea: "photos" }}
 				to="/albums"
-				activeStyle={{ color: "#BC9612" }}
+				activeStyle={{ color: colors.primaryColor }}
 				partiallyActive={true}
 			>
 				Photos
@@ -28,7 +28,7 @@ const NavBar = () => {
 				css={linkStyle}
 				style={{ gridArea: "projects" }}
 				to="/projects"
-				activeStyle={{ color: "#BC9612" }}
+				activeStyle={{ color: colors.primaryColor }}
 				partiallyActive={true}
 			>
 				Projects
@@ -38,7 +38,7 @@ const NavBar = () => {
 				css={linkStyle}
 				style={{ gridArea: "contact" }}
 				to="/contact"
-				activeStyle={{ color: "#BC9612" }}
+				activeStyle={{ color: colors.primaryColor }}
 				partiallyActive={true}
 			>
 				Contact
@@ -53,6 +53,10 @@ export default NavBar;
 // media query breakpoints array = [320, 480, 768, 992, 1200];
 const Container = styled.nav`
 	${base}
+	position: absolute;
+	left: 0;
+	right: 0;
+	bottom: 0;
 	place-items: center center;
 	width: 100%;
 	min-height: 10vh;
@@ -63,20 +67,26 @@ const Container = styled.nav`
 		". home ."
 		"photos projects contact";
 	background-color: rgba(0, 0, 0, 0.75);
-	border-radius: 0px 0px 25px 25px;
+	border-radius: 25px 25px 0px 0px;
 	a {
-		color: #dbe7fb;
+		color: ${colors.tertiaryColor};
 		-webkit-text-stroke-width: 1px;
 		-webkit-text-stroke-color: black;
 	}
 	a:hover {
-		color: #798be4;
+		color: ${colors.secondaryColor};
 	}
 	a:focus {
-		color: #bc9612;
+		color: ${colors.primaryColor}};
 	}
 	a:active {
-		color: #bc9612;
+		color: ${colors.primaryColor};
+	}
+	${mediaQuery[2]} {
+		position: relative;
+		top: 0;
+		bottom: unset;
+		border-radius: 0px 0px 25px 25px;
 	}
 	${mediaQuery[4]} {
 		width: 80%;
@@ -117,7 +127,10 @@ const homeLink = css`
 
 const linkStyle = css`
 	${base}
-	font-size: 1.4rem;
+	font-size: 1.2rem;
+	${mediaQuery[0]} {
+		font-size: 1.4rem;
+	}
 	${mediaQuery[1]} {
 		font-size: 1.6rem;
 	}

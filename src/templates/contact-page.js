@@ -5,7 +5,7 @@ import { graphql } from "gatsby";
 // styling
 import styled from "@emotion/styled";
 import { css } from "@emotion/core";
-import { mediaQuery, Container, BlurbImage } from "../styles/global.js";
+import { mediaQuery, Container, BlurbImage, colors } from "../styles/global.js";
 
 // components
 import Layout from "../components/layout";
@@ -71,18 +71,18 @@ export default ContactPage;
 // css styling
 const SocialLink = css`
     text-decoration: none;
-    color: #798be4;
+    color: ${colors.secondaryColor};
     -webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: black;
     font-size: 1.2rem;
 	:hover {
-		color: #dbe7fb;
+		color: ${colors.tertiaryColor};
 	}
 	:focus {
-		color: #bc9612;
+		color: ${colors.primaryColor};
 	}
 	:active {
-		color: #bc9612;
+		color: ${colors.primaryColor};
 	}
 	${mediaQuery[2]} {
 		font-size: 2rem;
@@ -94,16 +94,16 @@ const SocialLink = css`
 
 const Email = css`
     ${SocialLink}
-	color: #bc9612;
+	color: ${colors.primaryColor};
     font-size: 1.6rem;
     :hover {
-		color: #dbe7fb;
+		color: ${colors.tertiaryColor};
 	}
 	:focus {
-		color: #798be4;
+		color: ${colors.secondaryColor};
 	}
 	:active {
-		color: #798be4;
+		color: ${colors.secondaryColor};
 	}
     ${mediaQuery[2]} {
 		font-size: 2.4rem;
@@ -121,7 +121,7 @@ const H2 = css`
     margin-bottom: 0;
     max-width: 1000px;
     font-size: 1rem;
-    color: #dbe7fb;
+    color: ${colors.tertiaryColor};
     ${mediaQuery[2]} {
         font-size: 1.2rem;
     }
@@ -139,6 +139,10 @@ const BodyText = styled.article`
         :first-child {
             ${Email}
         }
+    }
+    p {
+        margin-bottom: 0px;
+        padding-bottom: 10px;
     }
     max-width: 80%;
 `;

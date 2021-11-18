@@ -7,16 +7,14 @@
 
  import React from "react";
 
- // gatsby
- import { useStaticQuery, graphql } from "gatsby";
- 
  // styling imports
  import { css } from "@emotion/core";
+import { mediaQuery } from "../styles/global.js";
  
  const Video = ({ videoSrcURL, videoTitle }) => {
 
     videoSrcURL ="https://res.cloudinary.com/keolasin/video/upload/v1636960796/flowers_ewsvwe.mp4";
-    videoTitle ="test";
+    videoTitle = "flowers";
 
      return (
          <video
@@ -30,7 +28,6 @@
                  src={videoSrcURL}
                  type="video/mp4"
              />
-             {videoTitle}
          </video>
      );
  };
@@ -39,12 +36,16 @@
  
  // css styling
  const videoBackground = css`
-    position: absolute;
-     height: 100vh;
-     width: 100vw;
-     z-index: -1;
-     object-fit: cover;
-     object-position: center;
+    display: none;
+    ${mediaQuery[2]} {
+        display: block;
+        height: 100%;
+        width: 100%;
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        z-index: -1;
+        object-fit: cover;
+        object-position: center;
+    }
  `;
-
- 

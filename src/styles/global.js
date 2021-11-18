@@ -7,6 +7,12 @@ const mediaQuery = breakpoints.map(breakpoint => {
 	return `@media (min-width: ${breakpoint}px)`;
 });
 
+const colors = {
+	primaryColor: "#e1b8c8",		// yellow #BC9612
+	secondaryColor: "#e6d2c9",		// purple #798be4 gold #e6d2c9
+	tertiaryColor: "#dbe7fb",		// white #dbe7fb
+};
+
 const base = css`
 	font-family: "astounder-squared-bb", sans-serif;
 	font-size: 62.5%;
@@ -31,17 +37,20 @@ const base = css`
 `;
 
 const Container = styled.section`
-	border-radius: 25px 25px 0px 0px;
+	border-radius: 0px 0px 25px 25px;
 	background-color: rgba(0, 0, 0, 0.75);
 	display: flex;
 	flex-flow: column;
-	position: fixed;
-	bottom: 0;
+	position: absolute;
+	top: 0;
 	left: 0;
 	right: 0;
 	justify-content: center;
 	align-items: center;
 	${mediaQuery[2]} {
+		top: unset;
+		bottom: 0;
+		border-radius: 25px 25px 0px 0px;
 		flex-flow: row;
 		justify-content: center;
 		align-items: center;
@@ -50,7 +59,7 @@ const Container = styled.section`
 
 const Date = styled.p`
 	${base}
-	color: #BC9612;
+	color: ${colors.primaryColor};
 	font-size: 1rem;
 	margin: auto 10px;
 	text-align: left;
@@ -98,4 +107,4 @@ const BlurbImage = styled(Img)`
 	}
 `;
 
-export { base, mediaQuery, BlurbImage, Container, Date };
+export { base, mediaQuery, BlurbImage, Container, Date, colors };
