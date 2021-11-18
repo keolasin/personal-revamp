@@ -8,9 +8,9 @@ const mediaQuery = breakpoints.map(breakpoint => {
 });
 
 const colors = {
-	primaryColor: "#BC9612",		// yellow
-	secondaryColor: "#798be4",		// purple
-	tertiaryColor: "#dbe7fb",		// white
+	primaryColor: "#e1b8c8",		// yellow #BC9612
+	secondaryColor: "#e6d2c9",		// purple #798be4 gold #e6d2c9
+	tertiaryColor: "#dbe7fb",		// white #dbe7fb
 };
 
 const base = css`
