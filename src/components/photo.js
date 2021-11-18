@@ -3,7 +3,9 @@ import { graphql } from "gatsby";
 import Img from "gatsby-image";
 import { navigate } from "@reach/router";
 
+// styling
 import styled from "@emotion/styled";
+import { colors } from "../styles/global";
 
 import Layout from "./layout";
 
@@ -70,7 +72,7 @@ const LinkModal = styled.section`
 `;
 
 const CloseButton = styled.a`
-	color: #bc9612;
+	color: ${colors.primaryColor};
 	background-color: none;
 	position: absolute;
 	margin: 20px;
@@ -79,14 +81,14 @@ const CloseButton = styled.a`
 	cursor: pointer;
 	font-size: 2rem;
 	:hover {
-		color: #dbe7fb;
+		color: ${colors.tertiaryColor};
 		font-size: 2.2rem;
 	}
 	:focus {
-		color: #798be4;
+		color: ${colors.secondaryColor};
 	}
 	:active {
-		color: #798be4;
+		color: ${colors.secondaryColor};
 	}
 `;
 

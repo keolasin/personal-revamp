@@ -10,6 +10,8 @@ const Gallery = ({ children }) => {
 export default Gallery;
 
 const AlbumGallery = styled.section`
+	background-color: rgba( 0, 0, 0, 0.75);
+	border-radius: 25px;
 	display: grid;
 	padding: 10px;
 	grid-gap: 1px;

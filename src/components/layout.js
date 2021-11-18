@@ -9,6 +9,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 // styling imports
+import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { mediaQuery, base } from "../styles/global.js";
 import "./layout.css";
@@ -27,6 +28,7 @@ const Layout = ({ children }) => {
 	return (
 		<>
 			<Video />
+			<BackupImage />
 			<NavBar />
 			<main css={main}>{children}</main>
 		</>
@@ -59,3 +61,15 @@ const main = css`
 		width: 80%;
 	}
 `;
+
+const BackupImage = styled.div`
+	position: fixed;
+	min-height: 100vh;
+	width: 100vw;
+    z-index: -1;
+    background: url("https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1597267956/Desert/Joshua_Tree_Climbing.jpg") center;
+	background-size: cover;
+    ${mediaQuery[2]} {
+		display: none;
+    }
+ `;

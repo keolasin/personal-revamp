@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import styled from "@emotion/styled";
-import { mediaQuery } from "../styles/global";
+import { mediaQuery, colors } from "../styles/global";
 
 const Header = ({ children }) => {
 	return <StyledHeader>{children}</StyledHeader>;
@@ -17,7 +17,7 @@ Header.propTypes = {
 const StyledHeader = styled.h1`
 	border-radius: 25px;
 	font-family: "astounder-squared-bb", sans-serif;
-	color: #bc9612;
+	color: ${colors.primaryColor};
 	font-size: 1.4rem;
 	background-color: rgba(0, 0, 0, 0.75);
 	display: inline-block;
