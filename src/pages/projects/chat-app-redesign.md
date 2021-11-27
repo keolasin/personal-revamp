@@ -89,4 +89,4 @@ Based on user feedback, adjustments were made to the brand guide and component l
 
 After settling on the proposed design, I took the design spec and used it to adjust the codebase for the live product. [You can view the final product here.](https://bloc-chat-react.vercel.app/) You can also see the [full design spec and case study on Behance](Behance.com) as well.
 
-From this project, I'm particularly proud of learning Figma and applying atomic design principles to the design library. In the future, I would like to improve my Figma prototyping (the prototype viewed on my phone was very glitchy, but okay on browser), and perform more preliminary user research. 
+From this project, I'm particularly proud of learning Figma and applying atomic design principles to the design library. In the future, I would like to improve my Figma prototyping (the prototype viewed on my phone was very glitchy, but okay on browser), and perform more preliminary user research.
