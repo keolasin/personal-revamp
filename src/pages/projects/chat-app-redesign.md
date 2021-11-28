@@ -1,10 +1,12 @@
 ---
 title: Chat App Redesign
-draft: true
+draft: false
 date: 2021-11-27T19:27:11.639Z
-link: https://bloc-chat-react.vercel.app/
+link: https://www.behance.net/matthewreyes6
+image: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_default/v1638074200/Brand_Guide_sszzxl.png
+imageAlt: Chatter Brand Guide Cover
 ---
-Check out the full design on [Behance](behance.com).
+Check out the full design on [Behance](https://www.behance.net/matthewreyes6).
 
 ## Summary
 
@@ -87,6 +89,6 @@ Based on user feedback, adjustments were made to the brand guide and component l
 
 ## Wrap-up
 
-After settling on the proposed design, I took the design spec and used it to adjust the codebase for the live product. [You can view the final product here.](https://bloc-chat-react.vercel.app/) You can also see the [full design spec and case study on Behance](Behance.com) as well.
+After settling on the proposed design, I took the design spec and used it to adjust the codebase for the live product. [You can view the final product here.](https://bloc-chat-react.vercel.app/) You can also see the [full design spec and case study on Behance](https://www.behance.net/matthewreyes6) as well. You can find the [Figma file here.](https://www.figma.com/file/wAnc8d4jgMeRWVnsCiBWTT/Chatter-Design?node-id=71%3A444)
 
 From this project, I'm particularly proud of learning Figma and applying atomic design principles to the design library. In the future, I would like to improve my Figma prototyping (the prototype viewed on my phone was very glitchy, but okay on browser), and perform more preliminary user research.
