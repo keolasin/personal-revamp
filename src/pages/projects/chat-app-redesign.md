@@ -2,7 +2,7 @@
 title: Chat App Redesign
 draft: true
 date: 2021-11-27T19:27:11.639Z
-link: https://bloc-chat-react.vercel.app/?
+link: https://bloc-chat-react.vercel.app/
 ---
 Check out the full design on [Behance](behance.com).
 
