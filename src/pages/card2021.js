@@ -5,6 +5,7 @@ import styled from "@emotion/styled";
 import { css } from "@emotion/core";
 import { keyframes } from "@emotion/react";
 import { mediaQuery } from "../styles/global.js"
+import "../styles/holidayCard.css";
 
 const CardPage2021 = () => {
     return (
@@ -435,11 +436,11 @@ const CardPage2021 = () => {
                             />
                         </g>
                         <g id="text">
-                            <text className="cls-13" transform="translate(1400 1059.51)">
+                            <text className="cls-13" transform="translate(865 860)">
                                 <RSVP href="mailto:matthew@mreyes.info?subject=Holiday Party&body=Thanks for the invite, I'll be there! Sounds like fun.">{"RSVP"}</RSVP>
                             </text>
                             <text
-                                transform="translate(1150 321.51)"
+                                transform="translate(1200 321.51)"
                                 fontSize="48px"
                                 fontFamily="Rumba-Large,Rumba"
                                 fill="#002923"
@@ -449,21 +450,21 @@ const CardPage2021 = () => {
                                     {"holiday season."}
                                 </tspan>
                                 <tspan fontSize="60px" fill="#ba2320">
-                                    <tspan x={-15} y={201.6}>
+                                    <tspan x={0} y={201.6}>
                                         {"December 11, 2021"}
                                     </tspan>
-                                    <tspan x={160} y={273.6} letterSpacing="-.03em">
+                                    <tspan x={140} y={273.6} letterSpacing="-.03em">
                                         {"6:15 pm"}
                                     </tspan>
                                 </tspan>
                                 <tspan fontSize="36px">
-                                    <tspan x={-49.18} y={388.8}>
+                                    <tspan x={-30} y={388.8}>
                                         {"Please bring drinks or tapas to share."}
                                     </tspan>
-                                    <tspan x={70.99} y={432}>
+                                    <tspan x={90} y={432}>
                                         {"446 Warren Drive #5"}
                                     </tspan>
-                                    <tspan x={95.43} y={475.2}>
+                                    <tspan x={112} y={475.2}>
                                         {"San Francisco, CA"}
                                     </tspan>
                                 </tspan>
@@ -744,7 +745,7 @@ const CardPage2021 = () => {
                     </g>
                     <g id="Text">
                         <text
-                        transform="translate(444.57 2205.5)"
+                        transform="translate(450 2205.5)"
                         fontFamily="Rumba-Large,Rumba"
                         fontSize="90px"
                         fill="#ba2320"
@@ -752,18 +753,18 @@ const CardPage2021 = () => {
                         >
                         <RSVP href="mailto:matthew@mreyes.info?subject=Holiday Party&body=Thanks for the invite, I'll be there! Sounds like fun.">{"RSVP"}</RSVP>
                         </text>
-                        <text className="cls-12" transform="translate(268.07 1628)">
+                        <text className="cls-12" transform="translate(320 1628)">
                         {"Join us to celebrate"}
-                        <tspan x={15} y={72}>
+                        <tspan x={10} y={72}>
                             {"the holiday season"}
                         </tspan>
                         <tspan fontSize="72px" fill="#ba2320">
-                            <tspan x={-50} y={230.4}>
+                            <tspan x={-45} y={230.4}>
                             {"December 11, 2021"}
                             </tspan>
                         </tspan>
                         <tspan letterSpacing="-.03em" fontSize="72px" fill="#ba2320">
-                            <tspan x={173.55} y={316.8}>
+                            <tspan x={150} y={316.8}>
                             {"6:15pm"}
                             </tspan>
                         </tspan>
@@ -776,20 +777,20 @@ const CardPage2021 = () => {
                             </tspan>
                         </tspan>
                         </text>
-                        <text className="cls-12" transform="translate(369.39 745.31)">
+                        <text className="cls-12" transform="translate(410 745.31)">
                         <tspan letterSpacing="-.05em">{"You're Invited"}</tspan>
                         </text>
                         <text
-                        transform="translate(395.6 332.85)"
+                        transform="translate(260 332.85)"
                         fontSize="120px"
                         fontFamily="Rumba-Large,Rumba"
                         fill="#ba2320"
                         >
                         <tspan className="cls-31">{"Tapas,"}</tspan>
-                        <tspan className="cls-31" x={-100.16} y={144}>
+                        <tspan className="cls-31" x={100} y={144}>
                             {"Tamales y"}
                         </tspan>
-                        <tspan x={-20.76} y={288} letterSpacing="-.07em">
+                        <tspan x={300} y={288} letterSpacing="-.07em">
                             {"Tequila"}
                         </tspan>
                         </text>
@@ -843,14 +844,19 @@ const flash = keyframes`
 const ContainerSVG = styled.div`
     display: none;
     ${mediaQuery[4]} {
-        display: inline-block;
+        display: block;
         position: relative;
-        height: 100vh;
+        top: 0;
+        left: 0;
         width: 100vw;
+        height: 100vh;
     }
 `;
 
 const MobileContainer = styled.div`
+    position: relative;
+    width: 100%;
+    height: auto;
     ${mediaQuery[4]} {
         display: none;
     }
@@ -863,6 +869,7 @@ const colorFlash = css`
 `;
 
 const svgContent = css`
+    font-family: "Rumba-Large,Rumba";
     display: inline-block;
     position: absolute;
     top: 0;
