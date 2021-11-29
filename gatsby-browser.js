@@ -4,6 +4,7 @@
  * See: https://www.gatsbyjs.org/docs/browser-apis/
  */
 import { globalHistory } from "@reach/router";
+
 export const onInitialClientRender = () => {
 	/**
 	 * This is a workaround for a bug in Gatsby
