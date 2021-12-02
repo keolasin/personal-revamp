@@ -98,25 +98,25 @@ const Container = styled.nav`
 
 const homeLink = css`
 	${base}
-	font-size: 1.8rem;
+	font-size: 2.2rem;
 	grid-area: home;
 	margin-top: 5px;
 	${mediaQuery[0]} {
-		font-size: 1.8rem;
+		font-size: 2.4rem;
 		margin-top: 5px;
 	}
 	${mediaQuery[1]} {
-		font-size: 2rem;
+		font-size: 2.6rem;
 		margin-top: 10px;
 		margin-bottom: 5px;
 	}
 	${mediaQuery[2]} {
-		font-size: 2.3rem;
+		font-size: 2.8rem;
 		margin-top: 10px;
 		margin-bottom: 5px;
 	}
 	${mediaQuery[3]} {
-		font-size: 2.5rem;
+		font-size: 3rem;
 	}
 	${mediaQuery[4]} {
 		font-size: 3.5rem;
@@ -127,20 +127,20 @@ const homeLink = css`
 
 const linkStyle = css`
 	${base}
-	font-size: 1.2rem;
+	font-size: 1.8rem;
 	${mediaQuery[0]} {
-		font-size: 1.4rem;
-	}
-	${mediaQuery[1]} {
-		font-size: 1.6rem;
-	}
-	${mediaQuery[2]} {
 		font-size: 1.8rem;
 	}
-	${mediaQuery[3]} {
+	${mediaQuery[1]} {
 		font-size: 2rem;
 	}
+	${mediaQuery[2]} {
+		font-size: 2.2rem;
+	}
+	${mediaQuery[3]} {
+		font-size: 2.4rem;
+	}
 	${mediaQuery[4]} {
-		font-size: 2.5rem;
+		font-size: 2.6rem;
 	}
 `;
