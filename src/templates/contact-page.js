@@ -74,7 +74,7 @@ const SocialLink = css`
     color: ${colors.secondaryColor};
     -webkit-text-stroke-width: 1px;
 	-webkit-text-stroke-color: black;
-    font-size: 1.2rem;
+    font-size: 1.6rem;
 	:hover {
 		color: ${colors.tertiaryColor};
 	}
@@ -95,7 +95,7 @@ const SocialLink = css`
 const Email = css`
     ${SocialLink}
 	color: ${colors.primaryColor};
-    font-size: 1.6rem;
+    font-size: 2.4rem;
     :hover {
 		color: ${colors.tertiaryColor};
 	}
