@@ -1,5 +1,5 @@
 ---
-title: "Rosie: The Open Source Patient Health Record"
+title: "Rosie: The Open Source Personal Health Record"
 draft: false
 date: 2022-07-18T23:22:25.116Z
 link: https://open-health-manager.github.io/Design/
@@ -36,7 +36,7 @@ While other developed countries have personal health record tools and standards 
 
 Recognizing the need for a PHR that's useful across the nation and it's many unique communities, a successful PHR should be designed around the needs of those communities. The United States faces serious public health problems, such as cardiovascular disease, Covid-19, maternal and child mortality, and gun violence, many of which are exacerbated in marginalized and disadvantaged communities. Failing to address health disparities contributes to our worsening national life expectancy, and [further harms vulnerable populations](https://www.apha.org/-/media/Files/PDF/advocacy/SPEAK/210825_Racial_Equity_Fact_Sheet.ashx)
 
-So how can a personal health record help to advance [health equity](https://youtu.be/Arpzx6TJuQI]? Although there are concerns of a [deepening digital divide](https://www.modernhealthcare.com/opinion-editorial/failing-bridge-digital-divide-will-deepen-health-disparities), there is evidence that the issue isn't [access to technology](https://www.commonwealthfund.org/blog/2018/time-now-case-digital-health-innovation-poor-and-underserved), but rather, [technology that is accessible](https://www.himss.org/resources/digital-divide-healthcare-its-not-just-access).
+So how can a personal health record help to advance [health equity](https://youtu.be/Arpzx6TJuQI)? Although there are concerns of a [deepening digital divide](https://www.modernhealthcare.com/opinion-editorial/failing-bridge-digital-divide-will-deepen-health-disparities), there is evidence that the issue isn't [access to technology](https://www.commonwealthfund.org/blog/2018/time-now-case-digital-health-innovation-poor-and-underserved), but rather, [technology that is accessible](https://www.himss.org/resources/digital-divide-healthcare-its-not-just-access).
 
 ## The Design Process
 
