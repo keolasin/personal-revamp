@@ -1,6 +1,6 @@
 ---
 title: Environmental Justice through R and ArcGIS
-draft: true
+draft: false
 date: 2022-04-01T22:18:42.134Z
 link: https://storymaps.arcgis.com/stories/ca62f865cb5144d9b606fadac85354f8
 image: https://res.cloudinary.com/keolasin/image/upload/v1658097435/arcGIS_uranium_f2spna.png
