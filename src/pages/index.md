@@ -10,4 +10,4 @@ videoURL: https://res.cloudinary.com/keolasin/video/upload/v1636956625/test_eugu
 
 ## Hello, I'm **Matthew Reyes**, and I live in **Oakland, CA**. 
 
-Check out my [photos](https://mreyes.info/albums), [projects](https://mreyes.info/projects), or data science [blog](https://blog.mreyes.info).
+## Check out my [photos](https://mreyes.info/albums), [projects](https://mreyes.info/projects), or data science [blog](https://blog.mreyes.info).
