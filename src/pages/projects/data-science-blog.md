@@ -1,6 +1,6 @@
 ---
 title: Data Science Blog
-draft: true
+draft: false
 date: 2023-09-07T03:10:42.119Z
 link: https://blog.mreyes.info
 image: https://res.cloudinary.com/keolasin/image/upload/v1694055707/blog_screenshot.png
