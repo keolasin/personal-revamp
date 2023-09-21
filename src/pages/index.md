@@ -8,6 +8,6 @@ tallBackground: https://res.cloudinary.com/keolasin/image/upload/t_mreyes_defaul
 videoURL: https://res.cloudinary.com/keolasin/video/upload/v1636956625/test_eugurq.mp4
 ---
 
-## Hello, I'm **Matthew Reyes**, and I live in **Oakland, CA**. 
+## Hello, I'm **Matthew Reyes**, and I live in **Oakland, CA**
 
-## Check out my [photos](https://mreyes.info/albums), [projects](https://mreyes.info/projects), or data science [blog](https://blog.mreyes.info).
+## Check out my **[photos](https://mreyes.info/albums)**, **[projects](https://mreyes.info/projects)**, or data science **[blog](https://blog.mreyes.info)**
