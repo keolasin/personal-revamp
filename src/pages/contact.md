@@ -6,13 +6,13 @@ heading: Contact
 socialLinks:
   - website: Linkedin
     link: https://www.linkedin.com/in/reyesmatthew/
-  - website: Instagram
-    link: https://www.instagram.com/keolasin/
   - website: GitHub
     link: https://github.com/keolasin
+  - website: Blog
+    link: https://blog.mreyes.info
 ---
 
-## Email or find me on social media
+## Email me or check out my other pages
 
 [Matthew@mreyes.info](mailto:matthew@mreyes.info?subject=Hello there)  
-[LinkedIn]( https://www.linkedin.com/in/reyesmatthew/) [GitHub](https://github.com/keolasin) [Instagram](https://www.instagram.com/keolasin/)
+[LinkedIn](https://www.linkedin.com/in/reyesmatthew/) [GitHub](https://github.com/keolasin) [Blog](https://blog.mreyes.info)
